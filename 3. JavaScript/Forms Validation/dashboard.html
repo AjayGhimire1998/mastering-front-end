@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <style>
+        #dashbaord {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40%;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome</h1>
+    <main id="dashbaord">
+        <h2>Welcome to the dashboard weary traveler.</h1>
+            <p>You must've been tired validating all those inputs.</p>
+            <em>What refreshment would you like ?</em>
+            <section>
+                <input type="radio" id="lemonade" name="drinks" value="Lemonade">
+                <label for="lemonade">Lemonade</label><br>
+                <input type="radio" id="yoghurt" name="drinks" value="Yoghurt">
+                <label for="yoghurt">Yoghurt</label><br>
+                <input type="radio" id="potion" name="drinks" value="Chill-axin' potion">
+                <label for="potion">Chill-axin' potion 😝</label>
+            </section>
+    </main>
+
 </body>
+
 </html>
