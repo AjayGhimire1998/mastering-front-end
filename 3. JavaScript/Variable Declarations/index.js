@@ -63,14 +63,7 @@
 // console.log(message); //ReferenceError: message is not defined
 // message = "Hello";
 
-console.log(greeting); // ReferenceError
-let greeting = "Hello!!";
 
-
-console.log(greet()); // Hello!!
-function greet(){
-  return "Hello!!"
-}
 
 
 
