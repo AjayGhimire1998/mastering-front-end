@@ -9,17 +9,22 @@
 // console.log(PI); //ReferenceError: Cannot access 'PI' before initialization
 // const PI = 3.14;
 
-
 //functions hoistng
 console.log(greet()); // Hello!!
 function greet() {
   return "Hello!!";
 }
 
-function sayHelloToAjay() {
-//   console.log(who); 
-  who = "Hello" + AJAY;
-  console.log(AJAY);
-  const AJAY = "AJAY";
-}
-sayHelloToAjay(); //ReferenceError: who is not defined
+// function sayHelloToAjay() {
+//   //   console.log(who);
+//   who = "Hello" + AJAY;
+//   console.log(AJAY);
+//   const AJAY = "AJAY";
+// }
+// sayHelloToAjay(); //ReferenceError: who is not defined
+
+
+sayHelloToAjayTwo(); // ReferenceError: Cannot access 'sayHelloToAjayTwo' before initialization
+let sayHelloToAjayTwo = function () {
+  console.log("Hello AJAY");
+};
