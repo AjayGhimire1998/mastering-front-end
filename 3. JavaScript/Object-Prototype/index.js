@@ -16,14 +16,14 @@ class Dog {
   constructor(name, breed) {
     this.name = name;
     this.breed = breed;
-    this.bark = function() {
-        console.log("woof woof");
-    }
+    // this.bark = function() {
+    //     console.log("woof woof");
+    // }
   }
 }
-// Dog.prototype.bark = function (sound) {
-//   console.log(`${this.name} says ${sound}`);
-// };
+Dog.prototype.bark = function () {
+  console.log(`${this.name} says woff woof`);
+};
 const dog = new Dog("Tommy", "Labrador");
 const dog2 = new Dog("Kutta", "Husky");
 console.log(dog);
