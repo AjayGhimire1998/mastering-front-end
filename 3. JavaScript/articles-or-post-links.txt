@@ -1,3 +1,5 @@
 ✅ The Importance of Client-Side Form Validation ✅ : https://www.linkedin.com/posts/ajayghimire_clientsidevalidation-userexperience-dataintegrity-activity-7109104853024460800-ithL?utm_source=share&utm_medium=member_desktop
 ✅ var, let and const in JavaScript ✅:  https://www.linkedin.com/posts/ajayghimire_var-let-and-const-in-javascript-activity-7111658601106046976-fTNa?utm_source=share&utm_medium=member_desktop
 ✅ Ever heard of "hoisting" in JavaScript? 🤔 ✅: https://www.linkedin.com/posts/ajayghimire_javascript-js-coding-activity-7112312992217628672-wyJY?utm_source=share&utm_medium=member_desktop
+✅**𝐏𝐫𝐨𝐭𝐨𝐭𝐲𝐩𝐚𝐥 𝐈𝐧𝐡𝐞𝐫𝐢𝐭𝐚𝐧𝐜𝐞 𝐚𝐧𝐝 𝐎𝐛𝐣𝐞𝐜𝐭 𝐏𝐫𝐨𝐭𝐨𝐭𝐲𝐩𝐞 𝐢𝐧 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭**✅: https://www.linkedin.com/posts/ajayghimire_javascript-oop-prototypes-activity-7112653437409869824-2y9z?utm_source=share&utm_medium=member_desktop 
+✅**𝐓𝐲𝐩𝐞 𝐂𝐨𝐧𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐢𝐧 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭 🤖**✅: https://www.linkedin.com/posts/ajayghimire_javascript-javascripttips-typeconversion-activity-7112742800206544896-VFKU?utm_source=share&utm_medium=member_desktop
