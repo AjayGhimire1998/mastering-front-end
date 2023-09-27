@@ -32,3 +32,4 @@ console.log(dog.bark === dog2.bark); //false because they are two diffrenet prop
 dog.bark();
 dog2.bark();
 // console.log(Dog.prototype);
+
