@@ -11,4 +11,7 @@ const whatever = [
   { name: "ajay", age: 24 },
   true,
 ]; //dynamic and can hold mixed types
+whatever[10] = "I am imposter"
 console.log(whatever);
+
+
