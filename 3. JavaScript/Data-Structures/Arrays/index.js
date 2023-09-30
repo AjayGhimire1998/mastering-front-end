@@ -15,3 +15,4 @@ whatever[10] = "I am imposter"
 console.log(whatever);
 
 
+console.log("Wake up, Billy. September is almost over.");
