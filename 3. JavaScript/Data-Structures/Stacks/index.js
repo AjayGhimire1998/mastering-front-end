@@ -30,7 +30,8 @@ class Stack {
     this.size = 0;
   }
 
-  // The push method receives a value and adds it to the "top" of the stack
+  /* The push method receives a value and adds it to the "top" of the stack,
+  and returns the stack size  */
   push(val) {
     let newNode = new StackNode(val);
     if (!this.first) {
@@ -41,7 +42,20 @@ class Stack {
       this.first = newNode;
       this.first.next = tempNode;
     }
-    return this.size++;
+    this.size++;
+    return this.size;
+  }
+
+  // The pop method eliminates the element at the "top" of the stack and returns its value
+  pop() {
+    if (!this.first) return null;
+    let tempNode = this.first;
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    this.size--;
+    return tempNode.value;
   }
 }
 
@@ -49,5 +63,5 @@ let stack = new Stack();
 stack.push(1);
 stack.push(2);
 stack.push(3);
-stack.push(4);
-console.log(stack.first);
+console.log(stack.push(4));
+
