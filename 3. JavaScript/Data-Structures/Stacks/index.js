@@ -66,3 +66,10 @@ stack.push(3);
 console.log(stack.push(4)); // size becomes 4
 console.log(stack.pop()); //4 is removed
 console.log(stack.pop()); //3 is removed
+
+
+/* The big O of stack methods is the following:
+Insertion - O(1)
+Removal - O(1)
+Searching - O(n)
+Access - O(n) */
