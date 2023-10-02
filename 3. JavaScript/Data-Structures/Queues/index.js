@@ -82,3 +82,11 @@ queue.enqueue(30);
 // queue.dequeue();
 
 console.log(queue.toString());
+
+/* 
+The big O of queue methods is the following:
+
+Insertion - O(1)
+Removal - O(1)
+Searching - O(n)
+Access - O(n) */
