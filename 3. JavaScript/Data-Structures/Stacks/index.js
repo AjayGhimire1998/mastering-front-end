@@ -63,5 +63,6 @@ let stack = new Stack();
 stack.push(1);
 stack.push(2);
 stack.push(3);
-console.log(stack.push(4));
-
+console.log(stack.push(4)); // size becomes 4
+console.log(stack.pop()); //4 is removed
+console.log(stack.pop()); //3 is removed
