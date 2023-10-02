@@ -7,3 +7,24 @@ imagine a stack of papers on top of your desk.
 You can only add more papers to the stack by placing them on top of all the others. 
 And you can remove a paper from the stack only by taking the one that is on top of all the others. 
 Last in, first out. LIFO. 😉 */
+
+//Easy and Simple: USING PUSH AND POP METHODS FOR ARRAYS
+
+//Custom:
+
+// We create a class for each node within the stack
+class Node {
+  // Each node has two properties, its value and a pointer that indicates the node that follows
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+// We create a class for the stack
+class Stack {
+  // The stack has three properties, the first node, the last node and the stack size
+  constructor() {
+    
+  }
+}
