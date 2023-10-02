@@ -22,4 +22,16 @@ class QueueNode {
   }
 }
 
-class Queue {}
+// We create a class for the queue
+class Queue {
+    // The queue has three properties, the first node, the last node and the queue size
+    constructor(){
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+
+    enqueue(val){
+
+    }
+}
