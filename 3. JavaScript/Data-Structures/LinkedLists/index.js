@@ -25,34 +25,52 @@ class SinglyLinkedListNode {
   }
 }
 // We create a class for the list
-class SinglyLinkedList{
-    // The list has three properties, the head, the tail and the list size
-    constructor(){
+class SinglyLinkedList {
+  // The list has three properties, the head, the tail and the list size
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  // The insertLast method takes a value as parameter and assigns it as the tail of the list
+  insertLast(value) {
+    const newNode = new SinglyLinkedListNode(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+// The removeLast method removes the tail of the list
+  removeLast() {
+    if (!this.head) return undefined;
+    const current = this.head;
+    const newTail = current;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if(this.length === 0){
         this.head = null;
         this.tail = null;
-        this.length = 0;
     }
 
-    // The insertLast method takes a value as parameter and assigns it as the tail of the list
-    insertLast(value){
-        const newNode = new SinglyLinkedListNode(value);
-        if(!this.head){
-            this.head = newNode;
-            this.tail = this.head;
-        } else {
-            this.tail.next = newNode;
-            this.tail = newNode;
-        }
-        this.length++;
-        return this;
-    }
-
-    removeLast(){
-    
-    }
+    return current;
+  }
 }
 
 const list = new SinglyLinkedList();
 list.insertLast(1);
+list.removeLast();
 console.log(list);
-
