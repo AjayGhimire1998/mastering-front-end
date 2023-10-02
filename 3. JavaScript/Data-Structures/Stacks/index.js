@@ -61,15 +61,15 @@ class Stack {
   // The toString method represents the elements of the stack in an array form
   toString() {
     let result = [];
-    if(this.size === 0) return null;
-    if(this.size === 1) return [this.first];
+    if (this.size === 0) return null;
+    if (this.size === 1) return [this.first];
     let head = this.first;
-    for(let i = 0; i < this.size; i++){
+    for (let i = 0; i < this.size; i++) {
       result[i] = head;
       head = head.next;
     }
 
-    console.log(result);
+    return result;
   }
 }
 
@@ -81,7 +81,7 @@ console.log(stack.push(4)); // size becomes 4
 console.log(stack.pop()); //4 is removed
 console.log(stack.pop()); //3 is removed
 
-stack.toString();
+console.log(stack.toString());
 
 /* The big O of stack methods is the following:
 Insertion - O(1)

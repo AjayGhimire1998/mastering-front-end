@@ -24,14 +24,61 @@ class QueueNode {
 
 // We create a class for the queue
 class Queue {
-    // The queue has three properties, the first node, the last node and the queue size
-    constructor(){
-        this.first = null;
-        this.last = null;
-        this.size = 0;
+  // The queue has three properties, the first node, the last node and the queue size
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+
+  // The enqueue method receives a value and adds it to the "end" of the queue
+  enqueue(val) {
+    let newQueueNode = new QueueNode(val);
+    if (!this.first) {
+      this.first = newQueueNode;
+      this.last = newQueueNode;
+    } else {
+      this.last.next = newQueueNode;
+      this.last = newQueueNode;
     }
 
-    enqueue(val){
+    this.size++;
+    return this.size;
+  }
 
+  // The dequeue method eliminates the element at the "beginning" of the queue and returns its value
+  dequeue() {
+    if (!this.first) return null;
+    let tempQueueNode = this.first;
+    if (this.first === this.last) {
+      this.last = null;
     }
+    this.first = this.first.next;
+    this.size--;
+    return tempQueueNode.value;
+  }
+
+  toString() {
+    let result = [];
+
+    if (this.size === 0) return null;
+    if (this.size === 1) return [this.first];
+
+    let head = this.first;
+
+    for (let i = 0; i < this.size; i++) {
+      result[i] = head;
+      head = head.next;
+    }
+    return result;
+  }
 }
+
+const queue = new Queue();
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+
+// queue.dequeue();
+
+console.log(queue.toString());
