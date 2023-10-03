@@ -148,26 +148,30 @@ class SinglyLinkedList {
     let index = 0;
 
     while (index < this.length) {
-        if(current.value === val){
-            return index;
-        }
-        current = current.next;
-        index++;
+      if (current.value === val) {
+        return index;
+      }
+      current = current.next;
+      index++;
     }
     return -1;
   }
 
   // The reverse method reverses the list and all pointers so that the head becomes the tail and the tail becomes the head
   reverse() {
-    // let current = this.head;
-    // this.head = this.tail;
-    // this.tail = current;
-    // let next;
-    // let prev = null;
-
-    let current = this.tail;
-
-    while (current !== this.head) {}
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    let index = 0;
+    while (index < this.length) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+      index++;
+    }
   }
 }
 
@@ -193,6 +197,7 @@ list.insert(1, 200);
 list.insert(1, 300);
 list.insert(1, 400);
 console.log(list);
-console.log(list.length);
+list.reverse();
+console.log(list);
 
 console.log(list.getIndex(300));
