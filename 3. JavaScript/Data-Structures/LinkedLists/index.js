@@ -33,7 +33,7 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
-  // The insertLast method takes a value as parameter and assigns it as the tail of the list
+  // The insertLast method takes a value as parameter and assigns it as the tail of the list and returns the list
   insertLast(value) {
     const newNode = new SinglyLinkedListNode(value);
     if (!this.head) {
@@ -46,7 +46,7 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-// The removeLast method removes the tail of the list
+  // The removeLast method removes the tail of the list and returns the removed tail
   removeLast() {
     if (!this.head) return undefined;
     let current = this.head;
@@ -61,29 +61,39 @@ class SinglyLinkedList {
     this.tail.next = null;
     this.length--;
 
-    if(this.length === 0){
-        this.head = null;
-        this.tail = null;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
     }
     return current;
   }
 
-  insertFirst(value){
+  // The insertFirst method takes a value as parameter and assigns it as the head of the list, and returns the list
+  insertFirst(value) {
     const newNode = new SinglyLinkedListNode(value);
-    if(!this.head){
-        this.head = newNode;
-        this.tail = this.head;
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
     }
 
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
-    return this
+    return this;
+  }
+ // The removeFirst method removes the head of the list and returns the removed head;
+  removeFirst() {
+    if (!this.head) return undefined;
+    let current = this.head;
+    this.head = current.next;
+    this.length--;
 
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return current;
   }
 }
-
-
 
 const list = new SinglyLinkedList();
 list.insertLast(1);
@@ -94,4 +104,6 @@ list.insertLast(10);
 
 list.removeLast();
 list.insertFirst(0);
+list.insertFirst(-1);
+list.removeFirst();
 console.log(list);
