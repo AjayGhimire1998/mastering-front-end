@@ -343,3 +343,8 @@ class DoublyLinkedList {
     return true;
   }
 }
+/* The big O of doubly linked lists methods is the following:
+Insertion - O(1)
+Removal - O(1)
+Search - O(n)
+Access - O(n) */
