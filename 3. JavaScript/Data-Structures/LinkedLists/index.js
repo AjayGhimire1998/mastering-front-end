@@ -14,8 +14,6 @@ singly linked lists and doubly linked lists.
  one pointing to the next node and another pointing to the previous node.
  */
 
-const { count } = require("console");
-
 //Singly LinkedList
 // We create a class for each node within the list
 class SinglyLinkedListNode {
@@ -110,11 +108,25 @@ class SinglyLinkedList {
   // The set method takes an index number and a value as parameters, and modifies the node value at the given index in the list
   set(index, value) {
     let nodeToSet = this.get(index);
-    if(nodeToSet){
-        nodeToSet.value = value;
-        return true;
+    if (nodeToSet) {
+      nodeToSet.value = value;
+      return true;
     }
     return false;
+  }
+  // The insert method takes an index number and a value as parameters, and inserts the value at the given index in the list
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.insertLast(value);
+    if (index === 0) return !!this.insertFirst(value);
+
+    let newNode = new SinglyLinkedListNode(value);
+    let prev = this.get(index - 1);
+    const tempNode = prev.next;
+    prev.next = newNode;
+    newNode.next = tempNode;
+    this.length++;
+    return true;
   }
 }
 
@@ -132,4 +144,5 @@ list.removeFirst();
 console.log(list.get(2));
 list.set(2, 100);
 console.log(list.get(2));
+console.log(list.insert(4, 200)); // false because the length is only 3
 console.log(list);
