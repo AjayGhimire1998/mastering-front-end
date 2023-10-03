@@ -14,6 +14,8 @@ singly linked lists and doubly linked lists.
  one pointing to the next node and another pointing to the previous node.
  */
 
+const { count } = require("console");
+
 //Singly LinkedList
 // We create a class for each node within the list
 class SinglyLinkedListNode {
@@ -21,7 +23,6 @@ class SinglyLinkedListNode {
   constructor(value) {
     this.value = value;
     this.next = null;
-    this.prev = null;
   }
 }
 // We create a class for the list
@@ -81,7 +82,7 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
- // The removeFirst method removes the head of the list and returns the removed head;
+  // The removeFirst method removes the head of the list and returns the removed head;
   removeFirst() {
     if (!this.head) return undefined;
     let current = this.head;
@@ -90,6 +91,18 @@ class SinglyLinkedList {
 
     if (this.length === 0) {
       this.tail = null;
+    }
+    return current;
+  }
+
+  // The get method takes an index number as parameter and returns the value of the node at that index
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
     }
     return current;
   }
@@ -106,4 +119,5 @@ list.removeLast();
 list.insertFirst(0);
 list.insertFirst(-1);
 list.removeFirst();
+console.log(list.get(2));
 console.log(list);
