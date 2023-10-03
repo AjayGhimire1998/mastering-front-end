@@ -106,6 +106,16 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  // The set method takes an index number and a value as parameters, and modifies the node value at the given index in the list
+  set(index, value) {
+    let nodeToSet = this.get(index);
+    if(nodeToSet){
+        nodeToSet.value = value;
+        return true;
+    }
+    return false;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -119,5 +129,7 @@ list.removeLast();
 list.insertFirst(0);
 list.insertFirst(-1);
 list.removeFirst();
+console.log(list.get(2));
+list.set(2, 100);
 console.log(list.get(2));
 console.log(list);
