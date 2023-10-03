@@ -128,6 +128,19 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  // The remove method takes an index number as parameter and removes the node at the given index in the list, and returns the removed node
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.removeFirst();
+    if (index === this.length - 1) return this.removeLast();
+
+    let prevNode = this.get(index - 1);
+    const removed = prevNode.next;
+    prevNode.next = removed.next;
+    this.length--;
+    return removed;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -145,4 +158,5 @@ console.log(list.get(2));
 list.set(2, 100);
 console.log(list.get(2));
 console.log(list.insert(4, 200)); // false because the length is only 3
+list.remove(1);
 console.log(list);
