@@ -49,8 +49,8 @@ class SinglyLinkedList {
 // The removeLast method removes the tail of the list
   removeLast() {
     if (!this.head) return undefined;
-    const current = this.head;
-    const newTail = current;
+    let current = this.head;
+    let newTail = current;
 
     while (current.next) {
       newTail = current;
@@ -65,12 +65,33 @@ class SinglyLinkedList {
         this.head = null;
         this.tail = null;
     }
-
     return current;
   }
+
+  insertFirst(value){
+    const newNode = new SinglyLinkedListNode(value);
+    if(!this.head){
+        this.head = newNode;
+        this.tail = this.head;
+    }
+
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this
+
+  }
 }
+
+
 
 const list = new SinglyLinkedList();
 list.insertLast(1);
 list.removeLast();
+list.insertLast(2);
+list.insertLast(4);
+list.insertLast(10);
+
+list.removeLast();
+list.insertFirst(0);
 console.log(list);
