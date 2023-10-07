@@ -17,3 +17,16 @@ and offers no mechanism for accessing its contents.
 In order to access the memory contained in a buffer, 
 you need to use a view. A view provides a context — 
 that is, a data type, starting offset, and number of elements.*/
+
+
+
+//typed arrays by themselves
+let typedArray1 = new Int8Array(8);
+typedArray1[0] = 32;
+console.log(typedArray1);
+
+let typedArray2 = new Uint16Array(typedArray1);
+console.log(typedArray2);
+
+
+//type arrays on top of buffer
