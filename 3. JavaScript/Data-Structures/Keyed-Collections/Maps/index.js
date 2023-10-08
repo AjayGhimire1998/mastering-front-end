@@ -126,3 +126,5 @@ quantities.set("tea", 300);
 quantities.set("coffee", 500);
 const quantitiesArray = Array.from(quantities); //returns an array of arrays of key and value as the first and the second element.
 console.log(quantitiesArray);
+
+console.log([...quantities]); //returns an array of arrays of key and value as the first and the second element.
