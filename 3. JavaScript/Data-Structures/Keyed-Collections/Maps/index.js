@@ -92,10 +92,37 @@ console.log(ageMap.entries());
 You can use either the forEach or for-of loop to iterate over a Map: */
 //with forEach
 ageMap.forEach((value, key) => {
-    console.log(`${key} is ${value} years old.`);
-})
+  console.log(`${key} is ${value} years old.`);
+});
 
 //with for-of
-for(const [key, value] of ageMap){
-    console.log(`${key} is ${value} years old.`);
+for (const [key, value] of ageMap) {
+  console.log(`${key} is ${value} years old.`);
 }
+
+/* How to Convert an Object into a Map in JavaScript */
+//You can use the method entries of Object to do that:
+const address = {
+  Tapas: "Bangalore",
+  James: "Huston",
+  Selva: "Srilanka",
+};
+const addressMap = new Map(Object.entries(address));
+console.log(addressMap);
+
+/* How to Convert a Map into an Object in JavaScript
+If you want to do the reverse, you can use the fromEntries method: */
+const addressBackToObj = Object.fromEntries(addressMap);
+console.log(addressBackToObj);
+
+/* How to Convert a Map into an Array in JavaScript
+There are a couple of ways to convert a map into an array:
+Using Array.from(map):
+Using the spread operator: */
+
+const quantities = new Map();
+quantities.set("milk", 200);
+quantities.set("tea", 300);
+quantities.set("coffee", 500);
+const quantitiesArray = Array.from(quantities); //returns an array of arrays of key and value as the first and the second element.
+console.log(quantitiesArray);
