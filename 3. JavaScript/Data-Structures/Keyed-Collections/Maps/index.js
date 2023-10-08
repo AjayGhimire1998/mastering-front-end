@@ -18,3 +18,11 @@ const infoMap = new Map([
   ["type", "Person"],
 ]);
 console.log(infoMap);
+
+//adding values to a map
+const newMap = new Map();
+newMap.set("name", "Ajay");
+newMap.set("age", 16);
+newMap.set("type", "Person");
+newMap.set("age", 25); // duplicate key replaces the previous value
+console.log(newMap);
