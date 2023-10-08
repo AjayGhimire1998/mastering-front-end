@@ -51,4 +51,16 @@ That's why we find two of the same methods as Map, keys() and entries().
 As Set doesn't have keys,
 the keys() method returns a SetIterator to retrieve its values: */
 
+console.log(set.entries()); //returns a entries iterator with values in arrays 
 console.log(set.keys()); //same as set.values()
+
+//We can enumerate over a Set using forEach and for-of loops:
+//with forEach
+set.forEach(value => {
+    console.log(value);
+})
+
+//with for-of
+for(const value of set){
+    console.log(value);
+}
