@@ -24,3 +24,4 @@ weakMap.set(key, value)
 weakMap.get(key)
 weakMap.delete(key)
 weakMap.has(key) */
+
