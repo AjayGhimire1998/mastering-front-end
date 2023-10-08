@@ -86,7 +86,8 @@ console.log(ageMap.keys());
 //getting all the values:
 console.log(ageMap.values());
 //getting all the entries (key-value pairs):
-console.log(ageMap.entries());
+let ageMapIterator = ageMap.entries();
+console.log("ageMapIterator:", ageMapIterator);
 
 /* How to Iterate Over a Map in JavaScript:
 You can use either the forEach or for-of loop to iterate over a Map: */
