@@ -13,3 +13,14 @@ console.log(weakMap.get(obj)); //ok
 
 obj = null;
 console.log(weakMap.get(obj)); //undefined
+
+/* WeakMap does not support iteration and 
+methods keys(), values(), entries(), 
+so there’s no way to get all keys or values from it.
+
+WeakMap has only the following methods:
+
+weakMap.set(key, value)
+weakMap.get(key)
+weakMap.delete(key)
+weakMap.has(key) */
