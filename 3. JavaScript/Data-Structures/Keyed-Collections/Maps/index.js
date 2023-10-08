@@ -41,7 +41,32 @@ console.log(newMap);
 Even when you pass it a primitive or object, 
 it internally converts the key into a string: */
 const funObj = {};
-funObj[360] = "Angle of a circle"
+funObj[360] = "Angle of a circle";
 console.log(funObj); //{ '360': 'Angle of a circle' }
-console.log(funObj[360] === funObj['360']); //true
-console.log(typeof funObj[360]) //string
+console.log(funObj[360] === funObj["360"]); //true
+console.log(typeof funObj[360]); //string
+
+/* 
+Map Properties and Methods in JavaScript
+JavaScript's Map has in-built properties and methods that make it easy to use. 
+Here are some of the common ones:
+
+Use the size property to know how many elements are in a Map:
+Search an element with the has(key) method:
+Remove an element with the delete(key) method:
+Use the clear() method to remove all the elements from the Map at once: */
+
+const newMapCopy = newMap; //from line 23
+console.log(newMapCopy.size); //6
+
+// has() method returns true, if map has an element with the key given as argument
+console.log(newMapCopy.has(99)); //true
+console.log(newMapCopy.has("education")); //false
+
+//deleting a key-value pair, passing the key as the arugument of delete() method
+newMapCopy.delete(99); //deletes the element with key 99
+console.log(newMapCopy);
+
+//removing all elements
+newMapCopy.clear();
+console.log(newMapCopy); // Map(0) {}
