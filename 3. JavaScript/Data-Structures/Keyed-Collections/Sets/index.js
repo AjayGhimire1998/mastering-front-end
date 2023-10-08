@@ -14,13 +14,18 @@ the values are stored in no particular order,
 so you can just call them by their name.
 */
 
-//initialisation 
+//initialisation
 const set = new Set();
 
 //adding elements
 set.add("Ajay"); //adds "Ajay"
 set.add(23); //adds 23
 set.add(false); //adds false
+set.add("Ghimire");
+set.add(100.1);
+
+let obj = { type: "Person" };
+set.add(obj);
 console.log(set);
 
 //checking size
@@ -32,3 +37,18 @@ console.log(set.has(23)); //true
 //removing an element
 set.delete(false); //removes falses from the set
 console.log(set);
+
+/* How to Iterate Over a Set in JavaScript
+Set has a method called values() 
+which returns a SetIterator to get all its values: */
+
+console.log(set.values());
+
+/* We can use a forEach or for-of loop on this to retrieve the values.
+Interestingly, JavaScript tries to make Set compatible with Map. 
+That's why we find two of the same methods as Map, keys() and entries().
+
+As Set doesn't have keys,
+the keys() method returns a SetIterator to retrieve its values: */
+
+console.log(set.keys()); //same as set.values()
