@@ -70,3 +70,32 @@ console.log(newMapCopy);
 //removing all elements
 newMapCopy.clear();
 console.log(newMapCopy); // Map(0) {}
+
+/* MapIterator: keys(), values(), and entries() in JavaScript:
+The methods keys(), values() and entries() methods return a MapIterator, 
+which is excellent because you can use a for-of or forEach loop directly on it. */
+const ageMap = new Map([
+  ["Jack", 20],
+  ["Alan", 34],
+  ["Bill", 10],
+  ["Sam", 9],
+]);
+
+//getting all the keys:
+console.log(ageMap.keys());
+//getting all the values:
+console.log(ageMap.values());
+//getting all the entries (key-value pairs):
+console.log(ageMap.entries());
+
+/* How to Iterate Over a Map in JavaScript:
+You can use either the forEach or for-of loop to iterate over a Map: */
+//with forEach
+ageMap.forEach((value, key) => {
+    console.log(`${key} is ${value} years old.`);
+})
+
+//with for-of
+for(const [key, value] of ageMap){
+    console.log(`${key} is ${value} years old.`);
+}
