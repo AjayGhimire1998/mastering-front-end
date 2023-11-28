@@ -17,3 +17,12 @@ console.log( null === null); //true'
 console.log( typeof console); //obj
 console.log(typeof alert); //undefined
 console.log(typeof log); //undefined
+console.log(typeof(2 + "a")); //string
+
+
+//type casting/conversions/coercions
+
+//implicit 
+let isTrue = {} // {}, [], all other with values gives true, while 0, "", null, undefined gives false
+
+console.log(isTrue ? "It is true" : "It is false");
