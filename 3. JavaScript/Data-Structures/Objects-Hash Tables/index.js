@@ -16,10 +16,16 @@ animal.walk(); //Animal walks
 
 let cat = {
     jumps: true,
+
 }
 
 cat.__proto__ = animal;
 
+cat.walk()
+
+cat.walk = () => {
+    console.log("meowyy walks");
+}
 cat.walk()
 let longTail = {
     tailLength: 10,
