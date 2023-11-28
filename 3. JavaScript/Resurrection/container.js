@@ -13,4 +13,7 @@ console.log(typeof undefined); //undefined
 console.log(typeof null); //obj
 console.log(typeof 5861658179587126578218756596859236568n); 
 
-console.log( null === null); //true
+console.log( null === null); //true'
+console.log( typeof console); //obj
+console.log(typeof alert); //undefined
+console.log(typeof log); //undefined
