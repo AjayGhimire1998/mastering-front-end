@@ -2,6 +2,8 @@
 
 // prototypical inheritance
 
+const { prototype } = require("events");
+
 let animal = {
     eats: true,
     walk(){
@@ -15,6 +17,11 @@ let cat = {
     jumps: true,
 }
 
+cat.__proto__ = animal;
+
+cat.walk()
 let longTail = {
-    tailLength: 10
+    tailLength: 10,
+    __proto__: cat
 }
+console.log(longTail.jumps);
