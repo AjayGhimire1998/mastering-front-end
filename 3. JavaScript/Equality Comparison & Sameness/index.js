@@ -15,6 +15,8 @@ console.log(name1 === name2); //false
 
 console.log(null === null); //true
 console.log(NaN === NaN); //false
+console.log(10 === 10);
+console.log(0 === -0); //true
 
 
 // equality algorithms
