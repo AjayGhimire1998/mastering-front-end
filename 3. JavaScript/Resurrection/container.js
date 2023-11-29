@@ -33,9 +33,15 @@
 // console.log( Number("Sup")); //Nan
 // console.log(typeof Number("Sup")); //number
 
-console.log(Number(undefined)); //Nan
-console.log(Number(null)); //0
-console.log(Number(true)); //1
+// console.log(Number(undefined)); //Nan
+// console.log(Number(null)); //0
+// console.log(Number(true)); //1
+
+//Boolean implicit
+// console.log(Boolean("")); //false
+// console.log(Boolean(" ")); //true
+// console.log(Boolean("0")); //true
+// console.log(Boolean(undefined)); //fasle
 
 
 
@@ -47,4 +53,7 @@ console.log(Number(true)); //1
 
 // console.log(String(false)); //false
 // console.log(String(undefined)); //undefined
+
+
+
 
