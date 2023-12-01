@@ -9,11 +9,17 @@
 // }
 // console.log("count outside: " + count); //5
 
-let child = `<button class="button">Hello</button>`
-let counter = 0; 
-for(counter = 0; counter < 5; counter++){
-    document.body.innerHTML += child;
-    let button = document.body.getElementsByClassName("button");
-    
-}
+// let child = `<button class="button">Hello</button>`
+// let counter = 0; 
+// for(counter = 0; counter < 5; counter++){
+//     document.body.innerHTML += child;
+//     let button = document.querySelector("button");
+// }
 
+
+
+//do...while-loop
+let i = 0; 
+do {
+    console.log(i);
+} while(i < 5)
