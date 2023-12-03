@@ -10,16 +10,32 @@
 // console.log("count outside: " + count); //5
 
 // let child = `<button class="button">Hello</button>`
-// let counter = 0; 
+// let counter = 0;
 // for(counter = 0; counter < 5; counter++){
 //     document.body.innerHTML += child;
 //     let button = document.querySelector("button");
 // }
 
-
-
 //do...while-loop
-let i = 0; 
-do {
+// let i = 0;
+// do {
+
+//   console.log(i);
+//   i += 1;
+// } while (i < 5);
+
+
+//while-loop
+
+// let j = 0 
+// while (j < 10) {
+//     console.log(j);
+//     j++;
+// }
+
+
+// /label statement
+
+tenItr: for (let i = 0; i< 10; i++){
     console.log(i);
-} while(i < 5)
+}
