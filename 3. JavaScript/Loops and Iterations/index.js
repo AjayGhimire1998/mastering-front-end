@@ -36,6 +36,29 @@
 
 // /label statement
 
-tenItr: for (let i = 0; i< 10; i++){
-    console.log(i);
-}
+// tenItr: for (let i = 0; i< 10; i++){
+//     console.log(i);
+// }
+
+// let x = 0; 
+// let z = 0;
+
+// labeledLoop: while(true){
+//     console.log(" Outer Loops: ", x);
+//     x++;
+//     z = 1;
+//     while (true) {
+//         console.log("Inner loops: ", z);
+//         z++;
+
+//         if (z === 10 && x === 10){
+//             break labeledLoop;
+//         } else if (z === 10) {
+//             break;
+//         }
+//     }
+// }
+
+
+
+
