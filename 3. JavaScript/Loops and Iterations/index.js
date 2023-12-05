@@ -57,7 +57,27 @@
 //             break;
 //         }
 //     }
-// }
+// } 
+
+
+//for..in 
+
+
+const person = new Object();
+person.name = "Ajay";
+person.age = 25;
+console.log(person);
+// Object.defineProperty(person, "age", {enumerable: false})
+
+for(const key in person){
+    console.log(key + ": ", person[key]);
+}
+
+console.log(person.propertyIsEnumerable("name"));
+
+
+
+
 
 
 
