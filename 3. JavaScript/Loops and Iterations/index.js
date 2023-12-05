@@ -88,19 +88,69 @@
 
 //for...of 
 
-const arr = [3,5,7];
-arr.foo = "bar"
+// const arr = [3,5,7];
+// arr.foo = "bar"
 
- for (const i of arr){
-    console.log(i);
- }
+//  for (const i of arr){
+//     console.log(i);
+//  }
 
-const arr2 = new Object(arr);
-console.log(arr2);
+// const arr2 = new Object(arr);
+// console.log(arr2);
 
-for (const i in arr2) {
-    console.log(i, arr2[i]);
-}
+// for (const i in arr2) {
+//     console.log(i, arr2[i]);
+// }
+
+
+//for in and for of for desstructuring 
+// const obj = {foo: 1,bar: 2};
+
+// const entr = Object.entries(obj);
+
+// for(const i in entr){
+//     // console.log(i, entr[i]);
+
+//     for (const j in entr[i]){
+//         console.log(j, entr[i][j]);
+//     }
+// }
+
+// for (const [key,value] of Object.entries(obj)){
+//     console.log(key, value);
+// }
+
+
+//switch-statement
+
+
+
+const readline = require ('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+rl.question('Give a number: ', (a) => {
+    switch (+a) {
+        case 1:
+            console.log("Too small");
+            break;
+        case 2:
+            console.log("Still too small");
+            break;
+        case 4:
+            console.log("Right");
+            rl.close();
+            break;
+        default:
+            console.log("Invalid input");
+            break;
+    }
+
+    rl.close();
+});
+
 
 
 
