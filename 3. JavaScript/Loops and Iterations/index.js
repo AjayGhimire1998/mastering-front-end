@@ -75,18 +75,32 @@
 
 // console.log(person.propertyIsEnumerable("name"));
 
-let names = new Array();
-names[0] = "Ajay";
-names[1] = "Sia"; 
-names[2] = "Mama";
+// let names = new Array();
+// names[0] = "Ajay";
+// names[1] = "Sia"; 
+// names[2] = "Mama";
 
-console.log(names);
+// console.log(names);
 
-for (let value in names) {
-    console.log(value); // logs the indices
-}
+// for (let value in names) {
+//     console.log(value); // logs the indices
+// }
 
 //for...of 
+
+const arr = [3,5,7];
+arr.foo = "bar"
+
+ for (const i of arr){
+    console.log(i);
+ }
+
+const arr2 = new Object(arr);
+console.log(arr2);
+
+for (const i in arr2) {
+    console.log(i, arr2[i]);
+}
 
 
 
