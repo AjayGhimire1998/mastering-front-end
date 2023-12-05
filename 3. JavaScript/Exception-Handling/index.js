@@ -28,3 +28,20 @@
 
 // const customError = new CustomException("Custom exception test");
 // console.log(customError.message);
+
+
+//try catch finally
+
+// try {
+//     let i = ""
+//     if (!!i)
+//     console.log("Try");
+// } catch (err) {
+//     console.log(err);
+// } finally {
+//     console.log("I run anyway");
+}
+
+
+
+
