@@ -125,6 +125,8 @@
 
 
 
+const { assert } = require('console');
+const { describe } = require('node:test');
 const readline = require ('readline');
 
 const rl = readline.createInterface({
@@ -150,6 +152,10 @@ rl.question('Give a number: ', (a) => {
 
     rl.close();
 });
+
+
+
+
 
 
 
