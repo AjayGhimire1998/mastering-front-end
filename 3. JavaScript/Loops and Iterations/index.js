@@ -63,17 +63,31 @@
 //for..in 
 
 
-const person = new Object();
-person.name = "Ajay";
-person.age = 25;
-console.log(person);
-// Object.defineProperty(person, "age", {enumerable: false})
+// const person = new Object();
+// person.name = "Ajay";
+// person.age = 25;
+// console.log(person);
+// // Object.defineProperty(person, "age", {enumerable: false})
 
-for(const key in person){
-    console.log(key + ": ", person[key]);
+// for(const key in person){
+//     console.log(key + ": ", person[key]);
+// }
+
+// console.log(person.propertyIsEnumerable("name"));
+
+let names = new Array();
+names[0] = "Ajay";
+names[1] = "Sia"; 
+names[2] = "Mama";
+
+console.log(names);
+
+for (let value in names) {
+    console.log(value); // logs the indices
 }
 
-console.log(person.propertyIsEnumerable("name"));
+//for...of 
+
 
 
 
