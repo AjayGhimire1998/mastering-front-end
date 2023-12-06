@@ -11,4 +11,11 @@
 // console.log(5 | 3);
 
 
-//bigint operators
+//bigint operator
+
+
+const bigIntRightShift = 400_000n >> 2n 
+
+console.log((400_000n).toString(2));
+console.log((2n).toString(2));
+console.log(bigIntRightShift);
