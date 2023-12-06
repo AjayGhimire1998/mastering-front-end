@@ -44,3 +44,62 @@
 
 // let logger = getLogger();
 // logger("AJay")
+
+
+
+//IIFE can be anonymous
+// (function(a,b){
+//     console.log(a+b);
+//     return a+b;
+// })(1,4);
+
+
+//named func expression for recursion
+// const nums = [1,2,3,4,5,6];
+
+// const fibs = nums.map(function fib(n){
+//     if (n === 1) return 0;
+//     if (n===2) return 1;
+//     return fib(n-1) + fib (n-2);
+// })
+
+// console.log(fibs);
+// console.log(fib); //reference err
+
+// function repeatStringNumTimes(str, num) {
+//     let temp = str;
+
+//     for(let i = 0; i < num-1; i++){
+//         temp += str;
+//     }
+
+//     return temp;
+//   }
+  
+//   console.log(repeatStringNumTimes("abc", 3));
+
+// function truncateString(str, num) {
+//    if (num < str.length){
+//     return str.slice(0,num) + "...";
+//    }
+
+//    return str
+//   }
+  
+//   console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length))
+
+
+//this 
+
+// function fn(){
+//     console.log(this.x);
+    
+// }
+// var x = 10;
+// fn();
+
+
+// console.log(this);
+
+
+
