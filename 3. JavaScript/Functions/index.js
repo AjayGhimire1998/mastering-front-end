@@ -102,4 +102,25 @@
 // console.log(this);
 
 
+//func scope and stack
+
+//recursion
+
+// let x = 0; 
+// while (x < 10) {
+//     console.log(x);
+//     x++;
+// }
+
+// function loop(x) {
+//     //break point 
+//     if (x >= 10){
+//         return;
+//     }
+//     // console.log(`begin: ${x}`);
+//     loop(x + 1);
+//     console.log(`end: ${x}`);
+// }
+// loop(0)
+
 
