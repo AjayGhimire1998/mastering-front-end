@@ -14,16 +14,33 @@
 
 // function decalaration 
 
-function add(a,b){
-    return a+b;
-}
+// function add(a,b){
+//     return a+b;
+// }
 
-console.log(add(2,5));
+// console.log(add(2,5));
 
 
-//anonymous function expression
-const sum = function (a,b) {
-    return a+b
-}
-console.log(sum(3,5));
+// //anonymous function expression
+// const sum = function (a,b) {
+//     return a+b
+// }
+// console.log(sum(3,5));
 
+
+//callback fn 
+
+// function executeMe(fn) {
+//     fn();
+// }
+
+// executeMe(() => console.log("Executing right now,"))
+
+// function getLogger() {
+//     return function(val) {
+//         console.log("The value: ", val);
+//     }
+// }
+
+// let logger = getLogger();
+// logger("AJay")
