@@ -123,4 +123,25 @@
 // }
 // loop(0)
 
+//nested and closures
+
+// function multiplySums(a,b){
+//     function sum(x,y){
+//         return x+y;
+//     }
+//     return sum(a,b) * sum(a,b)
+// }
+
+// console.log(multiplySums(2,4));
+
+
+// function outside(x){
+//     function inside(y){
+//         return x+y;
+//     }
+//     return inside;
+// }
+
+// console.log(outside(2)(3));
+
 
