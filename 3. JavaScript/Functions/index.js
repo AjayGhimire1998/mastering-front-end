@@ -215,3 +215,35 @@
 // }
 
 // checkRecurLimit();
+
+
+//lexical scope 
+
+// const fullName = "AJay G";
+
+// function profile(){
+//     const fullName = "Mr. AJ"
+//     function sayMyName(){
+//         const fullName = "Heisenberg"
+//         function writeName() {
+//             return fullName;
+//         }
+//         return writeName();
+//     }
+//     return sayMyName();
+// }
+// console.log( profile());
+
+
+var a = 'static';
+
+function f1() {
+   console.log(a);
+}
+
+function f2() {
+   var a = 'dynamic';
+   f1();
+}
+
+f2();
