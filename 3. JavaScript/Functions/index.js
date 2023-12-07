@@ -235,15 +235,31 @@
 // console.log( profile());
 
 
-var a = 'static';
+// var a = 'static';
 
-function f1() {
-   console.log(a);
-}
+// function f1() {
+//    console.log(a);
+// }
 
-function f2() {
-   var a = 'dynamic';
-   f1();
-}
+// function f2() {
+//    var a = 'dynamic';
+//    f1();
+// }
 
-f2();
+// f2();
+
+
+var largestOddNumber = function(num) {
+    if (num.length === 0)  return "";
+
+    if (+num % 2 !== 0) return num;
+    let answer = ""
+    for(let i = 0; i < num.length; i++){
+        if(+num[i] % 2 !== 0) {
+            answer += num[i]
+        }
+    }
+    return answer
+};
+
+console.log(largestOddNumber("53274"));
