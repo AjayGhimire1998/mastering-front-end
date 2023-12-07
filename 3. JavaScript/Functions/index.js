@@ -1,6 +1,6 @@
 // const { describe } = require("node:test");
 
-const res = require("express/lib/response");
+
 
 // function sum(a, b){
 //     return a+b;
@@ -163,10 +163,55 @@ const res = require("express/lib/response");
 
 //params
 
-function multiply(a,b = 2){
-    return a* b;
-}
+// function multiply(a,b = 2){
+//     return a* b;
+// }
 
-console.log(multiply(5, 6));
+// console.log(multiply(5, 6));
+
+//rest params 
+// function add(adder, ...otherArgs){
+//     return otherArgs.map((x) => adder+x);
+// }
+
+// console.log( add(2,3,4,5))
 
 
+//arrow functions
+
+// const arr = ["H", "He", "Li", "Be"];
+
+// const arr2 = arr.map(function(e) {
+//     return e.length
+// })
+
+// console.log(arr2);
+
+// const arr3 = arr.map((e) => e.length)
+// console.log(arr3);
+
+//this binding
+
+// function Person(){
+//     const that = this;
+//     that.age = 0;
+
+//    setInterval(function growUp(){
+//     that.age++;
+//     // console.log(that.age);
+//    }, 1000)
+    
+// }
+
+// const p = new Person();
+
+// console.log(p);
+
+// let limit = 0;
+// function checkRecurLimit(){
+// limit++;
+// console.log(limit);
+// checkRecurLimit();
+// }
+
+// checkRecurLimit();
