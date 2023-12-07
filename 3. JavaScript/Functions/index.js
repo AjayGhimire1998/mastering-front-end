@@ -249,17 +249,36 @@
 // f2();
 
 
-var largestOddNumber = function(num) {
-    if (num.length === 0)  return "";
+// var largestOddNumber = function(num) {
+//     if (num.length === 0)  return "";
 
-    if (+num % 2 !== 0) return num;
-    let answer = ""
-    for(let i = 0; i < num.length; i++){
-        if(+num[i] % 2 !== 0) {
-            answer += num[i]
+//     if (+num % 2 === 1) return num;
+
+//     for(let i = num.length-1; i >= 0; i--){
+//         if (+num[i] % 2 === 1) {
+            
+//             return num.slice(0, i+1)
+//         }
+//     }
+//     return "";
+
+// };
+
+// console.log(largestOddNumber());
+
+var twoSum = function(nums, target) {
+    
+
+
+    for(let i = 0 ; i < nums.length-1; i++){
+        for (let j = 1; j < nums.length; j++){
+            if (nums[i] + nums[j] === target && i !== j) {
+                return [i,j];
+            }
         }
     }
-    return answer
+    return null;
 };
 
-console.log(largestOddNumber("53274"));
+console.log(twoSum([2,5,5,11], 10));
+
