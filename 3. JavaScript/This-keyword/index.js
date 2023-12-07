@@ -49,13 +49,19 @@
 
 //tthis binding
 
-function func () {
-    return this;
-}
-const obj1 = {name: "obj1"}
+// function func () {
+//     return this;
+// }
+// const obj1 = {name: "obj1"}
 
-obj1.func = func;
+// obj1.func = func;
 
-console.log(obj1.func());
+// console.log(obj1.func());
 
+// const obj2 = {
+//     __proto__:obj1,
+//     name: "ob2"
+// }
+
+// console.log(obj2.func());
 // console.log(func());
