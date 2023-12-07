@@ -1,5 +1,7 @@
 // const { describe } = require("node:test");
 
+const res = require("express/lib/response");
+
 // function sum(a, b){
 //     return a+b;
 // }
@@ -143,5 +145,19 @@
 // }
 
 // console.log(outside(2)(3));
+
+//argument object 
+
+
+function myConcat(separator) {
+    let result = "";
+
+    for(let arg of arguments) {
+        result += arg + separator
+    }
+    return result;
+}
+
+console.log(myConcat("+", "red", "green", "blue"));
 
 
