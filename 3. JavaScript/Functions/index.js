@@ -149,15 +149,24 @@ const res = require("express/lib/response");
 //argument object 
 
 
-function myConcat(separator) {
-    let result = "";
+// function myConcat(separator) {
+//     let result = "";
 
-    for(let arg of arguments) {
-        result += arg + separator
-    }
-    return result;
+//     for(let arg of arguments) {
+//         result += arg + separator
+//     }
+//     return result;
+// }
+
+// console.log(myConcat("+", "red", "green", "blue"));
+
+
+//params
+
+function multiply(a,b = 2){
+    return a* b;
 }
 
-console.log(myConcat("+", "red", "green", "blue"));
+console.log(multiply(5, 6));
 
 
