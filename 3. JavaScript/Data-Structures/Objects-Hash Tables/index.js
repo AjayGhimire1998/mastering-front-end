@@ -73,7 +73,7 @@
 
 //object refeence and copying
 
-let a = {};
-let b = {}; // two independent objects
+// let a = {};
+// let b = {}; // two independent objects
 
-console.log( a === b ); // false
+// console.log( a === b ); // false
