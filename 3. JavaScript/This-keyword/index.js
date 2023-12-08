@@ -180,3 +180,59 @@
 // };
 
 // console.log(isPalindrome(11121))
+
+
+//bind()
+
+// const mod = {
+//     x: 42,
+//     getX: function(){
+//         return this.x;
+//     }
+// }
+
+// const unboundGetX = mod.getX;
+// console.log(unboundGetX()); //undefined
+
+// const boundGetX = unboundGetX.bind(mod)
+// console.log(boundGetX); // 42
+
+
+//function burrowing
+class Dog {
+    constructor(name, age, breed) {
+      this.name = name
+      this.age = age
+      this.breed = breed
+    }
+    tellUsAboutYourSelf() {
+      return `My name is ${this.name}. I am a ${this.breed} and I am ${this.age} years old.`
+    }
+  
+    woof() {
+      return "WOOF!!!"
+    }
+  }
+
+let fido = new Dog("Fido", 3, "dachshund")
+console.log(fido.tellUsAboutYourSelf());
+
+class Cat {
+    constructor(name, age, breed) {
+      this.name = name
+      this.age = age
+      this.breed = breed
+    }
+  
+    meow() {
+      return "MEOW!!!"
+    }
+  }
+  
+  let sparkles = new Cat("Sparkles", 5, "Siamese")
+//   console.log(sparkles.tellUsAboutYourSelf()); // not the cat's func
+
+console.log(fido.tellUsAboutYourSelf.call(sparkles)); //My name is Sparkles. I am a Siamese and I am 5 years old.
+console.log(fido.tellUsAboutYourSelf.apply(sparkles)); //My name is Sparkles. I am a Siamese and I am 5 years old.
+const describeSparkles = fido.tellUsAboutYourSelf.bind(sparkles);
+console.log(describeSparkles()) //My name is Sparkles. I am a Siamese and I am 5 years old.
