@@ -144,3 +144,14 @@
 // const max = Math.max.apply(null, nums) 
 // console.log(max); //7
 
+//Using apply() to append an array to another 
+
+const arr1 = [1,2,3,4,5];
+const arr2 = [6,7,8,9,10];
+
+// console.log(arr1.push(arr2)); //6 
+console.log(arr1.concat(arr2)); //return new array
+
+arr1.push.apply(arr1, arr2)
+console.log(arr1); // append arr2 to arr1
+
