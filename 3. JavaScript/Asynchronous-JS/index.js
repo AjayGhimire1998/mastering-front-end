@@ -25,4 +25,9 @@ function generatePrimeInrange(start, end){
 }
 
 console.log(isPrime(119));
-console.log(generatePrimeInrange(1,100));
+console.time();
+console.log(generatePrimeInrange(10,MAX_PRIME));
+console.timeEnd();
+
+
+console.log(Math.max(2,100));
