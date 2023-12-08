@@ -78,13 +78,29 @@
 //   console.log(typeof (1).getThisStrict()); //object
 //   console.log(getThisStrict() === globalThis) //true
 
-const obj = {
-    getThis(){
-        const getter = () => this;
+// const obj = {
+//     getThis(){
+//         const getter = () => this;
         
-        return getter;
-    }
-}
-const fn = obj.getThis();
-console.log(fn());
+//         return getter;
+//     }
+// }
+// const fn = obj.getThis();
+// console.log(fn());
 
+
+//explicit binding
+
+// function expBind(){
+//     console.log("Explciit Binding");
+//     return this;
+// }
+
+// const obj = {
+//     a: 2,
+// }
+// console.log(expBind.call(obj)); // obj as obj referes to this in this case
+// console.log(expBind());
+
+
+//call
