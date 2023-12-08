@@ -146,12 +146,20 @@
 
 //Using apply() to append an array to another 
 
-const arr1 = [1,2,3,4,5];
-const arr2 = [6,7,8,9,10];
+// const arr1 = [1,2,3,4,5];
+// const arr2 = [6,7,8,9,10];
 
-// console.log(arr1.push(arr2)); //6 
-console.log(arr1.concat(arr2)); //return new array
+// // console.log(arr1.push(arr2)); //6 
+// console.log(arr1.concat(arr2)); //return new array
 
-arr1.push.apply(arr1, arr2)
-console.log(arr1); // append arr2 to arr1
+// arr1.push.apply(arr1, arr2)
+// console.log(arr1); // append arr2 to arr1
 
+
+// var mergeTwoLists = function(list1, list2) {
+//     let list = Array.prototype.concat(list1, list2)
+
+//     return list.sort()[0];
+// };
+
+// console.log(mergeTwoLists([1,2,4], [1,3,4]));
