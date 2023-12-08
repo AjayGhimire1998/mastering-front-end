@@ -105,14 +105,25 @@
 
 //call
 
-function Product(name, price){
-    this.name = name;
-    this.price = price
+// function Product(name, price){
+//     this.name = name;
+//     this.price = price
+// }
+
+// function Food (name, price){
+//     Product.call(this, name, price);
+//     this.category = 'food';
+// }
+// console.log(new Food('cheese',5)); // Food {name: "cheese", price: 5, category: "food"}
+
+//Using call() to invoke a function and specifying the this value
+
+function greet() {
+    console.log(this.animal, "does meow");
 }
 
-function Food (name, price){
-    Product.call(this, name, price);
-    this.category = 'food';
+const obj = {
+    animal: "cats"
 }
-console.log(new Food('cheese',5)); // Food {name: "cheese", price: 5, category: "food"}
 
+greet.call(obj)
