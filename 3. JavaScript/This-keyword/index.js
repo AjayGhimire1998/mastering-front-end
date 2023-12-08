@@ -165,18 +165,18 @@
 // console.log(mergeTwoLists([1,2,4], [1,3,4]));
 
 
-var isPalindrome = function(x) {
-    let numStr = String(x);
-    console.log(numStr);
+// var isPalindrome = function(x) {
+//     let numStr = String(x);
+//     console.log(numStr);
 
-    for(let i = 0; i <= numStr.length; i++){
-    if (numStr[i] !== numStr[numStr.length - 1 - i]){
-        console.log(numStr[i]);
-        console.log(numStr[numStr.length - 1-i]);
-        return false
-    }
-    }
-    return true;
-};
+//     for(let i = 0; i <= numStr.length; i++){
+//     if (numStr[i] !== numStr[numStr.length - 1 - i]){
+//         console.log(numStr[i]);
+//         console.log(numStr[numStr.length - 1-i]);
+//         return false
+//     }
+//     }
+//     return true;
+// };
 
-console.log(isPalindrome(11121))
+// console.log(isPalindrome(11121))
