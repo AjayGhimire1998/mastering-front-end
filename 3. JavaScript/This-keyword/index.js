@@ -118,12 +118,29 @@
 
 //Using call() to invoke a function and specifying the this value
 
-function greet() {
-    console.log(this.animal, "does meow");
-}
+// function greet() {
+//     console.log(this.animal, "does meow");
+// }
 
-const obj = {
-    animal: "cats"
-}
+// const obj = {
+//     animal: "cats"
+// }
 
-greet.call(obj)
+// greet.call(obj)
+
+
+//Using call() to invoke a function without specifying the first argument
+
+// function display () {
+//     console.log(`value of this in this func: ${this}`); //globalThis
+// }
+
+// display.call();
+
+
+//apply()
+
+// const nums = [5,6,2,3,7];
+// const max = Math.max.apply(null, nums) 
+// console.log(max); //7
+
