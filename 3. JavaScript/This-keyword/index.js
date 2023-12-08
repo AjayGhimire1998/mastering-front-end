@@ -64,4 +64,16 @@
 // }
 
 // console.log(obj2.func());
-// console.log(func());
+// console.log(func());\
+
+
+//strict function context
+
+function getThisStrict() {
+    // "use strict"; // Enter strict mode
+    return this;
+  }
+
+  Number.prototype.getThisStrict = getThisStrict;
+  console.log(typeof (1).getThisStrict()); //object
+  console.log(getThisStrict() === globalThis) //true
