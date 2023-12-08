@@ -199,40 +199,53 @@
 
 
 //function burrowing
-class Dog {
-    constructor(name, age, breed) {
-      this.name = name
-      this.age = age
-      this.breed = breed
-    }
-    tellUsAboutYourSelf() {
-      return `My name is ${this.name}. I am a ${this.breed} and I am ${this.age} years old.`
-    }
+// class Dog {
+//     constructor(name, age, breed) {
+//       this.name = name
+//       this.age = age
+//       this.breed = breed
+//     }
+//     tellUsAboutYourSelf() {
+//       return `My name is ${this.name}. I am a ${this.breed} and I am ${this.age} years old.`
+//     }
   
-    woof() {
-      return "WOOF!!!"
-    }
-  }
+//     woof() {
+//       return "WOOF!!!"
+//     }
+//   }
 
-let fido = new Dog("Fido", 3, "dachshund")
-console.log(fido.tellUsAboutYourSelf());
+// let fido = new Dog("Fido", 3, "dachshund")
+// console.log(fido.tellUsAboutYourSelf());
 
-class Cat {
-    constructor(name, age, breed) {
-      this.name = name
-      this.age = age
-      this.breed = breed
-    }
+// class Cat {
+//     constructor(name, age, breed) {
+//       this.name = name
+//       this.age = age
+//       this.breed = breed
+//     }
   
-    meow() {
-      return "MEOW!!!"
-    }
-  }
+//     meow() {
+//       return "MEOW!!!"
+//     }
+//   }
   
-  let sparkles = new Cat("Sparkles", 5, "Siamese")
-//   console.log(sparkles.tellUsAboutYourSelf()); // not the cat's func
+//   let sparkles = new Cat("Sparkles", 5, "Siamese")
+// //   console.log(sparkles.tellUsAboutYourSelf()); // not the cat's func
 
-console.log(fido.tellUsAboutYourSelf.call(sparkles)); //My name is Sparkles. I am a Siamese and I am 5 years old.
-console.log(fido.tellUsAboutYourSelf.apply(sparkles)); //My name is Sparkles. I am a Siamese and I am 5 years old.
-const describeSparkles = fido.tellUsAboutYourSelf.bind(sparkles);
-console.log(describeSparkles()) //My name is Sparkles. I am a Siamese and I am 5 years old.
+// console.log(fido.tellUsAboutYourSelf.call(sparkles)); //My name is Sparkles. I am a Siamese and I am 5 years old.
+// console.log(fido.tellUsAboutYourSelf.apply(sparkles)); //My name is Sparkles. I am a Siamese and I am 5 years old.
+// const describeSparkles = fido.tellUsAboutYourSelf.bind(sparkles);
+// console.log(describeSparkles()) //My name is Sparkles. I am a Siamese and I am 5 years old.
+
+
+// Array.prototype.slice burrowing
+
+
+// function findO(){
+//     let args = Array.prototype.slice.call(arguments)
+//     return args.filter(a => a.includes('o'))
+// }
+
+// let result = findO("orchid", "tulip", "rose", "lily")
+
+// console.log(result);
