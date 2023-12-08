@@ -13,7 +13,7 @@ function isPrime(n){
    return n > 1;
 }
 
-function generatePrimeInrange(start, end){
+async function  generatePrimeInrange(start, end){
     const primes = [];
 
     for(let num = Math.max(2, start); num <= end; num++){
@@ -21,11 +21,12 @@ function generatePrimeInrange(start, end){
             primes.push(num)
         }
     }
-    return primes;
+    return await primes;
 }
 
 console.log(isPrime(119));
 console.time();
+
 console.log(generatePrimeInrange(10,MAX_PRIME));
 console.timeEnd();
 
