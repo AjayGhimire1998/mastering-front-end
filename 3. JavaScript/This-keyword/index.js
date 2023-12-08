@@ -69,11 +69,22 @@
 
 //strict function context
 
-function getThisStrict() {
-    // "use strict"; // Enter strict mode
-    return this;
-  }
+// function getThisStrict() {
+//     // "use strict"; // Enter strict mode
+//     return this;
+//   }
 
-  Number.prototype.getThisStrict = getThisStrict;
-  console.log(typeof (1).getThisStrict()); //object
-  console.log(getThisStrict() === globalThis) //true
+//   Number.prototype.getThisStrict = getThisStrict;
+//   console.log(typeof (1).getThisStrict()); //object
+//   console.log(getThisStrict() === globalThis) //true
+
+const obj = {
+    getThis(){
+        const getter = () => this;
+        
+        return getter;
+    }
+}
+const fn = obj.getThis();
+console.log(fn());
+
