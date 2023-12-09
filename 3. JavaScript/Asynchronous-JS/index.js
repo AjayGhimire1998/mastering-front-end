@@ -48,3 +48,17 @@ function isPrime(num){
 }
 
 console.log(isPrime(65));
+
+
+function generatePrimes(start, end){
+    const primes = [];
+
+    for(let i = Math.max(2, start); i <= end; i++){
+        if (isPrime(i)){
+            primes.push(i);
+        }
+    } 
+
+    return primes;
+}
+
