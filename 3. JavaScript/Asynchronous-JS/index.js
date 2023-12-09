@@ -62,3 +62,4 @@ function generatePrimes(start, end){
     return primes;
 }
 
+console.log(generatePrimes(1,100));
