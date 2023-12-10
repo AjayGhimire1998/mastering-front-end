@@ -190,10 +190,19 @@ const res = require("express/lib/response");
 // })
 
 //Promise.any()
-const fetchPromise1 = fetch(
-  "https://yashitech-server.onrender.com/api/v1/services"
-);
+// const fetchPromise1 = fetch(
+//   "htt://yashitech-server.onrender.com/api/v1/services"
+// );
 
-const fetchPromise2 = fetch(
-  "https://yashitech-server.onrender.com/api/v1/contacts"
-);
+// const fetchPromise2 = fetch(
+//   "htt://yashitech-server.onrender.com/api/v1/contacts"
+// );
+
+
+// Promise.any([fetchPromise1, fetchPromise2])
+// .then((response) => {
+//     console.log(`${response.url}: ${response.status}`);
+// })
+// .catch((err) => {
+//     console.log(`Failed to fetch: ${err}`);
+// })
