@@ -206,3 +206,25 @@ const res = require("express/lib/response");
 // .catch((err) => {
 //     console.log(`Failed to fetch: ${err}`);
 // })
+
+
+//async/await
+
+async function myFunction () {
+ const res = await generateNums(1, 100);
+ console.log("Aysnc finsided ? ");
+ return res;
+
+}
+
+function generateNums(start, end) {
+    let result = [];
+
+    for(let i = start; i <=end; i++){
+        result.push(i)
+    }
+    return result;
+}
+
+console.log(myFunction())
+// console.log(generateNums(1,100));
