@@ -38,28 +38,28 @@
 //is prime practise 
 
 
-function isPrime(num){
-    for(let i = 2; i <= Math.sqrt(num); i++){
-        if(num % i === 0) {
-            return false
-        }
-    }
-    return num > 1;
-}
+// function isPrime(num){
+//     for(let i = 2; i <= Math.sqrt(num); i++){
+//         if(num % i === 0) {
+//             return false
+//         }
+//     }
+//     return num > 1;
+// }
 
-console.log(isPrime(65));
+// console.log(isPrime(65));
 
 
-function generatePrimes(start, end){
-    const primes = [];
+// function generatePrimes(start, end){
+//     const primes = [];
 
-    for(let i = Math.max(2, start); i <= end; i++){
-        if (isPrime(i)){
-            primes.push(i);
-        }
-    } 
+//     for(let i = Math.max(2, start); i <= end; i++){
+//         if (isPrime(i)){
+//             primes.push(i);
+//         }
+//     } 
 
-    return primes;
-}
+//     return primes;
+// }
 
-console.log(generatePrimes(1,100));
+// console.log(generatePrimes(1,100));
