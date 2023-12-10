@@ -117,7 +117,7 @@ const res = require("express/lib/response");
 //promises in JS, chainign promises
 
 const fetchPromise = fetch(
-  "https://yashitech-server.onrender.com/api/v1/services"
+  "https://yashitech-server.onrender.com/api/v1/service"
 );
 
 // console.log(fetchPromise);
@@ -140,15 +140,32 @@ const fetchPromise = fetch(
 
 //throwing error 
 
-fetchPromise
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data.services);
-  });
+// fetchPromise
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP error: ${response.status}`);
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data.services);
+//   });
+
+
+// handling errors with catch()
+// fetchPromise
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP error: ${response.status}`);
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data.services);
+//   })
+//   .catch((error) => {
+//     console.error(`Could not get products: ${error}`);
+//   });
+
 
 console.log("Started request…");
