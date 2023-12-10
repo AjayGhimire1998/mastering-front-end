@@ -63,3 +63,37 @@
 // }
 
 // console.log(generatePrimes(1,100));
+
+
+//callbacks async 
+ 
+//simple sync
+// function doStep1(init) {
+//     return init + 2;
+//   }
+  
+//   function doStep2(init) {
+//     return init + 3;
+//   }
+  
+//   function doStep3(init) {
+//     return init + 4;
+//   }
+  
+//   function doOperation() {
+//     let result = 0;
+//     result = doStep1(result);
+//     result = doStep2(result);
+//     result = doStep3(result);
+//     console.log(`result: ${result}`);
+//   }
+  
+//   doOperation();
+
+  //callback sync
+
+  function doStep1(init, callback){
+    const result = init + 1;
+    callback(result);
+  }
+
