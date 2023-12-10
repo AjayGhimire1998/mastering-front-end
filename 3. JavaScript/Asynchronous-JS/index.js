@@ -132,8 +132,21 @@ const fetchPromise = fetch(
 
 //can be written as:
 
+// fetchPromise
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data.services);
+//   });
+
+//throwing error 
+
 fetchPromise
-  .then((res) => res.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    return response.json();
+  })
   .then((data) => {
     console.log(data.services);
   });
