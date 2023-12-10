@@ -131,6 +131,10 @@ const fetchPromise = fetch("https://yashitech-server.onrender.com/api/v1/service
 console.log(fetchPromise);
 
 fetchPromise.then((response) => {
+    const jsonPromise = response.json();
+    jsonPromise.then((data) => {
+        console.log(data.services);
+    })
     console.log(`Recievce Response: ${response.status}`);
 })
 
