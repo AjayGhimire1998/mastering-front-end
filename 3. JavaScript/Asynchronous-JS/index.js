@@ -170,6 +170,26 @@ const res = require("express/lib/response");
 
 //Promise.all()
 
+// const fetchPromise1 = fetch(
+//   "https://yashitech-server.onrender.com/api/v1/services"
+// );
+
+// const fetchPromise2 = fetch(
+//   "https://yashitech-server.onrender.com/api/v1/contacts"
+// );
+
+
+// Promise.all([fetchPromise1, fetchPromise2])
+// .then((responses) => {
+//     for(const res of responses) {
+//         console.log(`${res.url}: ${res.status}`);
+//     }
+// })
+// .catch((err) => {
+//     console.log(`Failed to fetch: ${err}`);
+// })
+
+//Promise.any()
 const fetchPromise1 = fetch(
   "https://yashitech-server.onrender.com/api/v1/services"
 );
@@ -177,14 +197,3 @@ const fetchPromise1 = fetch(
 const fetchPromise2 = fetch(
   "https://yashitech-server.onrender.com/api/v1/contacts"
 );
-
-
-Promise.all([fetchPromise1, fetchPromise2])
-.then((responses) => {
-    for(const res of responses) {
-        console.log(`${res.url}: ${res.status}`);
-    }
-})
-.catch((err) => {
-    console.log(`Failed to fetch: ${err}`);
-})
