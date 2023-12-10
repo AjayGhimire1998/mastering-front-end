@@ -1,6 +1,4 @@
-
-
-//synchronous js 
+//synchronous js
 
 const res = require("express/lib/response");
 
@@ -32,13 +30,9 @@ const res = require("express/lib/response");
 // console.log(generatePrimeInrange(10,MAX_PRIME));
 // console.timeEnd();
 
-
 // console.log(Math.max(2,100));
 
-
-
-//is prime practise 
-
+//is prime practise
 
 // function isPrime(num){
 //     for(let i = 2; i <= Math.sqrt(num); i++){
@@ -51,7 +45,6 @@ const res = require("express/lib/response");
 
 // console.log(isPrime(65));
 
-
 // function generatePrimes(start, end){
 //     const primes = [];
 
@@ -59,29 +52,28 @@ const res = require("express/lib/response");
 //         if (isPrime(i)){
 //             primes.push(i);
 //         }
-//     } 
+//     }
 
 //     return primes;
 // }
 
 // console.log(generatePrimes(1,100));
 
+//callbacks async
 
-//callbacks async 
- 
 //simple sync
 // function doStep1(init) {
 //     return init + 2;
 //   }
-  
+
 //   function doStep2(init) {
 //     return init + 3;
 //   }
-  
+
 //   function doStep3(init) {
 //     return init + 4;
 //   }
-  
+
 //   function doOperation() {
 //     let result = 0;
 //     result = doStep1(result);
@@ -89,10 +81,10 @@ const res = require("express/lib/response");
 //     result = doStep3(result);
 //     console.log(`result: ${result}`);
 //   }
-  
+
 //   doOperation();
 
-  //callback sync
+//callback sync
 
 //   function doStep1(init, callback){
 //     const result = init + 1;
@@ -103,12 +95,11 @@ const res = require("express/lib/response");
 //     const result = init + 2;
 //     callback(result);
 //   }
-  
+
 //   function doStep3(init, callback) {
 //     const result = init + 3;
 //     callback(result);
 //   }
-
 
 //   function doOperation()
 // {
@@ -123,19 +114,28 @@ const res = require("express/lib/response");
 
 // doOperation();
 
-
 //promises in JS, chainign promises
 
-const fetchPromise = fetch("https://yashitech-server.onrender.com/api/v1/services")
+const fetchPromise = fetch(
+  "https://yashitech-server.onrender.com/api/v1/services"
+);
 
-console.log(fetchPromise);
+// console.log(fetchPromise);
 
-fetchPromise.then((response) => {
-    const jsonPromise = response.json();
-    jsonPromise.then((data) => {
-        console.log(data.services);
-    })
-    console.log(`Recievce Response: ${response.status}`);
-})
+// fetchPromise.then((response) => {
+//     const jsonPromise = response.json();
+//     jsonPromise.then((data) => {
+//         console.log(data.services);
+//     })
+//     console.log(`Recievce Response: ${response.status}`);
+// })
+
+//can be written as:
+
+fetchPromise
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data.services);
+  });
 
 console.log("Started request…");
