@@ -94,31 +94,42 @@ const res = require("express/lib/response");
 
   //callback sync
 
-  function doStep1(init, callback){
-    const result = init + 1;
-    callback(result);
-  }
+//   function doStep1(init, callback){
+//     const result = init + 1;
+//     callback(result);
+//   }
 
-  function doStep2(init, callback) {
-    const result = init + 2;
-    callback(result);
-  }
+//   function doStep2(init, callback) {
+//     const result = init + 2;
+//     callback(result);
+//   }
   
-  function doStep3(init, callback) {
-    const result = init + 3;
-    callback(result);
-  }
+//   function doStep3(init, callback) {
+//     const result = init + 3;
+//     callback(result);
+//   }
 
 
-  function doOperation()
-{
-    doStep1(0, (result1) => {
-        doStep2(result1, (result2) => {
-            doStep3(result2, (result3) => {
-                console.log(`result: ${result3}`);
-            })
-        })
-    })
-}
+//   function doOperation()
+// {
+//     doStep1(0, (result1) => {
+//         doStep2(result1, (result2) => {
+//             doStep3(result2, (result3) => {
+//                 console.log(`result: ${result3}`);
+//             })
+//         })
+//     })
+// }
 
-doOperation();
+// doOperation();
+
+
+//promises in JS
+
+const fetchPromise = fetch("https://yashitech-server.onrender.com/api/v1/services")
+
+console.log(fetchPromise);
+
+fetchPromise.then((response) => {
+    console.log(`Recievce Response: ${response.status}`);
+})
