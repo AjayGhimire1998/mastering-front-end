@@ -124,7 +124,7 @@ const res = require("express/lib/response");
 // doOperation();
 
 
-//promises in JS
+//promises in JS, chainign promises
 
 const fetchPromise = fetch("https://yashitech-server.onrender.com/api/v1/services")
 
@@ -133,3 +133,5 @@ console.log(fetchPromise);
 fetchPromise.then((response) => {
     console.log(`Recievce Response: ${response.status}`);
 })
+
+console.log("Started request…");
