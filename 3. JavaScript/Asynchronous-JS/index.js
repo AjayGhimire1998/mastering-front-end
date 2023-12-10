@@ -2,6 +2,8 @@
 
 //synchronous js 
 
+const res = require("express/lib/response");
+
 // const MAX_PRIME = 1_000_000;
 
 // function isPrime(n){
@@ -97,3 +99,26 @@
     callback(result);
   }
 
+  function doStep2(init, callback) {
+    const result = init + 2;
+    callback(result);
+  }
+  
+  function doStep3(init, callback) {
+    const result = init + 3;
+    callback(result);
+  }
+
+
+  function doOperation()
+{
+    doStep1(0, (result1) => {
+        doStep2(result1, (result2) => {
+            doStep3(result2, (result3) => {
+                console.log(`result: ${result3}`);
+            })
+        })
+    })
+}
+
+doOperation();
