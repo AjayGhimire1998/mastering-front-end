@@ -229,23 +229,32 @@
 // console.log(generateNums(1,100));
 
 
-async function fetchServices(){
-    try {
-         // after this line, our function will wait for the `fetch()` call to be settled
-    // the `fetch()` call will either return a Response or throw an error
-        const response = await fetch("https://yashitech-server.onrender.com/api/v1/services")
-        if (!response.ok){
-            throw new Error (`HTTP error: ${response.status}`)
-        }
-         // after this line, our function will wait for the `response.json()` call to be settled
-    // the `response.json()` call will either return the parsed JSON object or throw an error
-        const data = await response.json();
-        console.log(data.services);
-    } catch (error) {
+// async function fetchServices(){
+//     try {
+//          // after this line, our function will wait for the `fetch()` call to be settled
+//     // the `fetch()` call will either return a Response or throw an error
+//         const response = await fetch("https://yashitech-server.onrender.com/api/v1/services")
+//         if (!response.ok){
+//             throw new Error (`HTTP error: ${response.status}`)
+//         }
+//          // after this line, our function will wait for the `response.json()` call to be settled
+//     // the `response.json()` call will either return the parsed JSON object or throw an error
+//         const data = await response.json();
+//         console.log(data.services);
+//     } catch (error) {
         
-    }
+//     }
+// }
+// const fetchpromise = fetchServices()
+// console.log("result: ",fetchpromise);
+
+
+//how to implement promise based api
+
+
+function setAlarm(name, delay){
+    setTimeout(() => {
+        console.log(`${name} Woke up in ${delay} seconds`);
+    }, delay)
 }
-const fetchpromise = fetchServices()
-console.log("result: ",fetchpromise);
-
-
+setAlarm("Ajay", 2000)
