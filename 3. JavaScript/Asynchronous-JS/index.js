@@ -1,6 +1,5 @@
 //synchronous js
 
-const res = require("express/lib/response");
 
 // const MAX_PRIME = 1_000_000;
 
@@ -240,10 +239,13 @@ async function fetchServices(){
         }
          // after this line, our function will wait for the `response.json()` call to be settled
     // the `response.json()` call will either return the parsed JSON object or throw an error
-    
+        const data = await response.json();
+        console.log(data.services);
     } catch (error) {
         
     }
 }
+const fetchpromise = fetchServices()
+console.log("result: ",fetchpromise);
 
 
