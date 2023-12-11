@@ -253,8 +253,8 @@
 
 
 function setAlarm(name, delay){
-    setTimeout(() => {
+    return setTimeout(() => {
         console.log(`${name} Woke up in ${delay} seconds`);
     }, delay)
 }
-setAlarm("Ajay", 2000)
+console.log(setAlarm("Ajay", 2000))
