@@ -210,21 +210,40 @@ const res = require("express/lib/response");
 
 //async/await
 
-async function myFunction () {
- const res = await generateNums(1, 100);
- console.log("Aysnc finsided ? ");
- return res;
+// async function myFunction () {
+//  const res = await generateNums(1, 100);
+//  console.log("Aysnc finsided ? ");
+//  return res;
 
-}
+// }
 
-function generateNums(start, end) {
-    let result = [];
+// function generateNums(start, end) {
+//     let result = [];
 
-    for(let i = start; i <=end; i++){
-        result.push(i)
-    }
-    return result;
-}
+//     for(let i = start; i <=end; i++){
+//         result.push(i)
+//     }
+//     return result;
+// }
 
-console.log(myFunction())
+// console.log(myFunction())
 // console.log(generateNums(1,100));
+
+
+async function fetchServices(){
+    try {
+         // after this line, our function will wait for the `fetch()` call to be settled
+    // the `fetch()` call will either return a Response or throw an error
+        const response = await fetch("https://yashitech-server.onrender.com/api/v1/services")
+        if (!response.ok){
+            throw new Error (`HTTP error: ${response.status}`)
+        }
+         // after this line, our function will wait for the `response.json()` call to be settled
+    // the `response.json()` call will either return the parsed JSON object or throw an error
+    
+    } catch (error) {
+        
+    }
+}
+
+
