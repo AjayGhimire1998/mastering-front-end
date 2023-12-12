@@ -98,3 +98,30 @@
 // }
 
 // console.log(isIterable([]));
+
+
+//makeing numbers iterable
+
+
+// Number.prototype[Symbol.iterator] = function() {
+//    return this.toString()[Symbol.iterator]();
+// }
+// let num = 135353;
+
+// for(let n of num){
+//     console.log(n);
+// }
+
+
+//making obj iterable
+
+
+let o = {x: 10, y: 20, z: 30}
+
+Object.prototype[Symbol.iterator] = function () {
+    return Object.values(this)[Symbol.iterator]();
+}
+
+for (let v of o) {
+   console.log(v);
+}
