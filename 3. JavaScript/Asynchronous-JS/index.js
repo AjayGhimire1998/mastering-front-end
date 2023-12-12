@@ -248,13 +248,23 @@
 // const fetchpromise = fetchServices()
 // console.log("result: ",fetchpromise);
 
+// async function exampleAsyncFunction() {
+//     return "Hello, Async!";
+//   }
+  
+//   const resultPromise = exampleAsyncFunction();
+  
+//   resultPromise.then(result => {
+//     console.log(result); // Output: Hello, Async!
+//   });
+
 
 //how to implement promise based api
 
 
-function setAlarm(name, delay){
-    return setTimeout(() => {
-        console.log(`${name} Woke up in ${delay} seconds`);
-    }, delay)
-}
-console.log(setAlarm("Ajay", 2000))
+// function setAlarm(name, delay){
+//     return setTimeout(() => {
+//         console.log(`${name} Woke up in ${delay} seconds`);
+//     }, delay)
+// }
+// console.log(setAlarm("Ajay", 2000))
