@@ -329,16 +329,16 @@
 
 //using async await with alarm 
 
-function alarm(person, delay){
-    return new Promise((resolve, reject) => {
-        if (delay < 1) {
-            throw new Error ("Delay must be positive");
-        }
-        setTimeout(() => {
-            resolve(`Wake up, ${person}`)
-        }, delay)
-    })
-}
+// function alarm(person, delay){
+//     return new Promise((resolve, reject) => {
+//         if (delay < 1) {
+//             throw new Error ("Delay must be positive");
+//         }
+//         setTimeout(() => {
+//             resolve(`Wake up, ${person}`)
+//         }, delay)
+//     })
+// }
 
 // async function setAlarm() {
 //     try{
@@ -351,11 +351,11 @@ function alarm(person, delay){
 
 // setAlarm()
 
-const promise = alarm("Ajay", 2000);
-function setAlarm () {
-    return Promise.all([promise]).then((res) => console.log(res)).catch((err) => console.log(err))
-}
+// const promise = alarm("Ajay", 2000);
+// function setAlarm () {
+//     return Promise.all([promise]).then((res) => console.log(res)).catch((err) => console.log(err))
+// }
 
-console.log(setAlarm());
+// console.log(setAlarm());
 
 
