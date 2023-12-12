@@ -156,12 +156,18 @@
 //ES6 generator
 
 function * sequence() {
+    console.log("Started!");
     yield 1;
     yield 2; 
     yield 10;
 } 
 
 let seq = sequence();
+
+for (var num of seq) {
+    console.log(num);
+ }
+
 console.log(seq.next());
 console.log(seq.next());
 console.log(seq.next());
