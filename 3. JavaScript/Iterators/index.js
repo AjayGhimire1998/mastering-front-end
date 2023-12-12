@@ -242,3 +242,20 @@
 // // console.log(seq.next());
 
 
+//advanced gens
+
+//return() method
+
+function* positiveInts() {
+    for(let i = 1; true; i++){
+        yield i;
+    }
+}
+
+let seq = positiveInts();
+console.log(seq.next()); 
+console.log(seq.next()); 
+console.log(seq.next()); 
+console.log(seq.next()); 
+
+
