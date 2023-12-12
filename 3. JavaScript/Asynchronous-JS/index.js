@@ -261,6 +261,16 @@
 
 //how to implement promise based api
 
+async function exampleAsyncFunction() {
+    return Promise.resolve("Hello, Async!");
+  }
+  
+  const resultPromise = exampleAsyncFunction();
+  
+  resultPromise.then(result => {
+    console.log(result); // Output: Hello, Async!
+  });
+
 
 // function setAlarm(name, delay){
 //     return setTimeout(() => {
