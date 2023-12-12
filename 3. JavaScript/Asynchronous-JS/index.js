@@ -359,3 +359,36 @@
 // console.log(setAlarm());
 
 
+//wrokers
+
+// main code
+
+
+function generatePrimes(quota) {
+
+    function isPrime(n){
+        for (let i = 2; i<= Math.sqrt(n); i++){
+            if (n % i === 0){
+                return false;
+            }
+        }
+        return n > 1
+    }
+
+
+    const primes = new Set();
+    const MAX = 1_000_000;
+
+    while (primes.size < quota){
+        const candidate = Math.floor(Math.random() * (MAX + 1));
+        if (isPrime(candidate)) {
+            primes.add(candidate)
+        }
+    }
+    const primesArray = Array.from(primes);
+    return primesArray;
+}
+
+console.log(generatePrimes(10));
+
+
