@@ -116,12 +116,27 @@
 //making obj iterable
 
 
-let o = {x: 10, y: 20, z: 30}
+// let o = {x: 10, y: 20, z: 30}
 
-Object.prototype[Symbol.iterator] = function () {
-    return Object.values(this)[Symbol.iterator]();
-}
+// Object.prototype[Symbol.iterator] = function () {
+//     return Object.values(this)[Symbol.iterator]();
+// }
 
-for (let v of o) {
-   console.log(v);
+// for (let v of o) {
+//    console.log(v);
+// }
+
+//Generators
+
+//normal geenrator func
+
+function positiveInts(n){
+    let i = 1;
+    let max = (n < 1 || typeof n !== "number") ? 1 : n;
+    return {
+        next: function() {
+            if (i > max) return {value: undefined, done: true}
+            return {value: i++,  done: false};
+        }
+    }
 }
