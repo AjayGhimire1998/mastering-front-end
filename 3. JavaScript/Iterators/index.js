@@ -155,20 +155,78 @@
 
 //ES6 generator
 
-function * sequence() {
-    console.log("Started!");
-    yield 1;
-    yield 2; 
-    yield 10;
-} 
+// function * sequence() {
+//     console.log("Started!");
+//     yield 1;
+//     yield 2; 
+//     yield 10;
+// } 
 
-let seq = sequence();
+// let seq = sequence();
 
-for (var num of seq) {
-    console.log(num);
- }
+// for (var num of seq) {
+//     console.log(num);
+//  }
 
-console.log(seq.next());
-console.log(seq.next());
+// console.log(seq.next());
+// console.log(seq.next());
+// console.log(seq.next());
+// console.log(seq.next());
+
+
+// function* sequence() {
+//     console.log("First!");
+//     yield 1; //pauses exceution after logging line 1 and yeilding value to the first next() method
+ 
+//     console.log("Second!");
+//     yield 3;
+ 
+//     console.log("Third!");
+//     yield 5;
+ 
+//     console.log("Done!");
+//  }
+ 
+//  var seq = sequence();
+//  console.log(seq.next());
+//  console.log(seq.next());
+//  console.log(seq.next());
+//  console.log(seq.next());
+//  console.log(seq.next());
+
+
+//infinte sequences
+
+// function* positiveInts (){
+//     for(let i = Number.MAX_SAFE_INTEGER- 1; true; i++){
+//         console.log("yielding now: ", i);
+//         yield i;
+//     }
+// }
+
+// let seq = positiveInts();
+// console.log(seq.next()); 
+// console.log(seq.next()); 
+// console.log(seq.next()); 
+// console.log(seq.next()); 
+
+//args to next()-yeild
+
+// function* gen(){
+//     yield yield 10;
+// }
+
+// let seq = gen();
+
+// console.log(seq.next());
+// console.log(seq.next(30));
+
+var x;
+
+function* gen() {
+   x = yield 30;
+}
+
+var seq = gen();
 console.log(seq.next());
 console.log(seq.next());
