@@ -221,12 +221,24 @@
 // console.log(seq.next());
 // console.log(seq.next(30));
 
-var x;
+// var x;
 
-function* gen() {
-   x = yield 30;
-}
+// function* gen() {
+//     console.log(x);
+//    x = yield 30;
+   
 
-var seq = gen();
-console.log(seq.next());
-console.log(seq.next());
+// }
+
+// var seq = gen();
+
+// /* `console.log(seq.next());` is calling the `next()` method on the generator object `seq` and logging
+// the result to the console. The `next()` method returns an object with two properties: `value` and
+// `done`. The `value` property contains the value yielded by the generator, and the `done` property
+// indicates whether the generator has finished executing (`true` if it has, `false` otherwise). */
+// // console.log(seq.next());
+
+// console.log(seq.next(10)); // second time'
+// // console.log(seq.next());
+
+
