@@ -368,36 +368,52 @@
 
 
 // Create a new worker, giving it the code in "worker.js"
-const worker = new Worker('./worker.js');
+// const worker = new Worker('./worker.js');
 
-// When the user clicks "Generate primes", send a message to the worker.
-// The message command is "generate", and the message also contains "quota",
-// which is the number of primes to generate.
+// // When the user clicks "Generate primes", send a message to the worker.
+// // The message command is "generate", and the message also contains "quota",
+// // which is the number of primes to generate.
 
-document.querySelector('#generate').addEventListener("click", () => {
-    const quota = document.querySelector('#quota').value;
-    worker.postMessage({
-        command: "generate",
-        quota,
-    })
-})
+// document.querySelector('#generate').addEventListener("click", () => {
+//     const quota = document.querySelector('#quota').value;
+//     worker.postMessage({
+//         command: "generate",
+//         quota,
+//     })
+// })
 
-// When the worker sends a message back to the main thread,
-// update the output box with a message for the user, including the number of
-// primes that were generated, taken from the message data.
+// // When the worker sends a message back to the main thread,
+// // update the output box with a message for the user, including the number of
+// // primes that were generated, taken from the message data.
 
 
-worker.addEventListener("message", (message) => {
+// worker.addEventListener("message", (message) => {
 
-    document.querySelector('#time').textContent = `${Date.now()}`
-    document.querySelector('#output').textContent = `FInsihed geenration ${message.data.length} primes! Here it is: ${message.data.primes}`;
-})
+//     document.querySelector('#time').textContent = `${Date.now()}`
+//     document.querySelector('#output').textContent = `FInsihed geenration ${message.data.length} primes! Here it is: ${message.data.primes}`;
+// })
 
-document.querySelector("#reload").addEventListener("click", () => {
-    document.querySelector("#user-input").value =
-      'Try typing in here immediately after pressing "Generate primes"';
-    document.location.reload();
-  });
+// document.querySelector("#reload").addEventListener("click", () => {
+//     document.querySelector("#user-input").value =
+//       'Try typing in here immediately after pressing "Generate primes"';
+//     document.location.reload();
+//   });
   
+
+
+
+//setInterval()
+let timer = 0;
+const intervalId = setInterval(() => {
+    timer += 1;
+    console.log(timer);
+
+
+if (timer === 3) {
+    console.log('Clearing the interval id after 3 executions'); 
+    clearInterval(intervalId)
+}
+}, 1000);
+
 
 
