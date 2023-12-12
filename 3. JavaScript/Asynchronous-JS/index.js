@@ -386,7 +386,10 @@ document.querySelector('#generate').addEventListener("click", () => {
 // update the output box with a message for the user, including the number of
 // primes that were generated, taken from the message data.
 
+
 worker.addEventListener("message", (message) => {
+
+    document.querySelector('#time').textContent = `${Date.now()}`
     document.querySelector('#output').textContent = `FInsihed geenration ${message.data.length} primes! Here it is: ${message.data.primes}`;
 })
 
