@@ -1,6 +1,7 @@
 //synchronous js
 
 
+
 // const MAX_PRIME = 1_000_000;
 
 // function isPrime(n){
@@ -364,31 +365,36 @@
 // main code
 
 
-function generatePrimes(quota) {
-
-    function isPrime(n){
-        for (let i = 2; i<= Math.sqrt(n); i++){
-            if (n % i === 0){
-                return false;
-            }
-        }
-        return n > 1
-    }
 
 
-    const primes = new Set();
-    const MAX = 1_000_000;
+// Create a new worker, giving it the code in "worker.js"
+const worker = new Worker('./worker.js');
 
-    while (primes.size < quota){
-        const candidate = Math.floor(Math.random() * (MAX + 1));
-        if (isPrime(candidate)) {
-            primes.add(candidate)
-        }
-    }
-    const primesArray = Array.from(primes);
-    return primesArray;
-}
+// When the user clicks "Generate primes", send a message to the worker.
+// The message command is "generate", and the message also contains "quota",
+// which is the number of primes to generate.
 
-console.log(generatePrimes(10));
+document.querySelector('#generate').addEventListener("click", () => {
+    const quota = document.querySelector('#quota').value;
+    worker.postMessage({
+        command: "generate",
+        quota,
+    })
+})
+
+// When the worker sends a message back to the main thread,
+// update the output box with a message for the user, including the number of
+// primes that were generated, taken from the message data.
+
+worker.addEventListener("message", (message) => {
+    document.querySelector('#output').textContent = `FInsihed geenration ${message.data.length} primes! Here it is: ${message.data.primes}`;
+})
+
+document.querySelector("#reload").addEventListener("click", () => {
+    document.querySelector("#user-input").value =
+      'Try typing in here immediately after pressing "Generate primes"';
+    document.location.reload();
+  });
+  
 
 
