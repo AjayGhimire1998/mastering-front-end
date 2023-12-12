@@ -51,20 +51,40 @@
 
 //using symbol.iterator
 
-let str = "Ajay Ghimire";
+// let str = "Ajay Ghimire";
 
-let itr = str[Symbol.iterator]();
+// let itr = str[Symbol.iterator]();
 
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
 
-console.log(itr.next());console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
-console.log(itr.next());
+// console.log(itr.next());console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+
+var nums = [1, 5, 16];
+
+for (
+   // initialisation
+   var iter = nums[Symbol.iterator](),
+   next = iter.next(),
+   num = next.value;
+
+   // iterative check
+   !next.done;
+
+   // iterative expressions
+   next = iter.next(),
+   num = next.value
+)
+
+{
+   console.log(num);
+}
