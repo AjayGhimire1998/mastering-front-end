@@ -312,17 +312,50 @@
 
 //promise constructor
 
+// function alarm(person, delay){
+//     return new Promise((resolve, reject) => {
+//         if(delay < 0){
+//             throw new Error("Alarm delay must be positive integer");
+//         }
+
+//         setTimeout(() => {
+//             resolve(`Wake up, ${person}`)
+//         }, delay )
+//     })
+// }
+
+// const promise = alarm("Ajay", -1000);
+// promise.then((result) => console.log(result)).catch((error) => console.log(error));
+
+//using async await with alarm 
+
 function alarm(person, delay){
     return new Promise((resolve, reject) => {
-        if(delay < 0){
-            throw new Error("Alarm delay must be positive integer");
+        if (delay < 1) {
+            throw new Error ("Delay must be positive");
         }
-
         setTimeout(() => {
             resolve(`Wake up, ${person}`)
-        }, delay )
+        }, delay)
     })
 }
 
-const promise = alarm("Ajay", -1000);
-promise.then((result) => console.log(result)).catch((error) => console.log(error));
+// async function setAlarm() {
+//     try{
+//         const message = await alarm("Ajay", 2000);
+//         console.log(message);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// setAlarm()
+
+const promise = alarm("Ajay", 2000);
+function setAlarm () {
+    return Promise.all([promise]).then((res) => console.log(res)).catch((err) => console.log(err))
+}
+
+console.log(setAlarm());
+
+
