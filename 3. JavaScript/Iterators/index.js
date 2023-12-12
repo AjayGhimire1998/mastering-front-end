@@ -246,16 +246,49 @@
 
 //return() method
 
-function* positiveInts() {
-    for(let i = 1; true; i++){
-        yield i;
-    }
-}
+// function* positiveInts() {
+//     for(let i = 1; true; i++){
+//         yield i;
+//     }
+// }
 
-let seq = positiveInts();
-console.log(seq.next()); 
-console.log(seq.next()); 
-console.log(seq.next()); 
-console.log(seq.next()); 
+// let seq = positiveInts();
+// console.log(seq.next()); 
+// console.log(seq.next()); 
+// console.log(seq.next()); 
+// console.log(seq.next()); 
+// console.log(seq.return("Bye")); 
+
+
+// function* gen(){
+//     try{
+//         yield 10;
+//     } catch(e){
+//         yield "Error found"
+//     }
+// }
+
+// let seq = gen();
+// // console.log(seq.next());
+// console.log(seq.throw()); //error statement
+// console.log(seq.next());
+// console.log(seq.throw()); //undefined error
+
+// function* gen() {
+//     yield 100;
+// }
+
+// var seq = gen();
+
+// try {
+//     seq.throw();
+// }
+// catch (e) {
+//     console.log("Error Caught");
+// }
+
+
+//gen delegation
+
 
 
