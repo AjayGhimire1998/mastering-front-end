@@ -27,37 +27,44 @@
 
 //a simple iterator
 
-let nums = [1,5,167];
+// let nums = [1,5,167];
 
-function makeIterator( nums ) {
-//     let start = 0;
-//     let end = nums.length;
-//     const iterables = [];
-//     while (start <= end){
-//         if (start === end){
-//             iterables.push({value: undefined, done: true})
-//         } else {
-//             iterables.push({value: nums[start], done: false})
+// function makeIterator( nums ) {
+// let count = 0;
+
+// return {
+//     next(){
+//         if(count > nums.length - 1){
+//             return {value: undefined, done: true}
 //         }
-//         start++;
+//         return {value: nums[count++], done: false}
 //     }
-//   return {
-//     next() {
-        
-//     }
-//   }
+// }
+// }
+// let iter = makeIterator(nums);
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
 
-let count = 0;
 
-return {
-    next(){
-        if(count > nums.length - 1){
-            return {value: undefined, done: true}
-        }
-        return {value: nums[count++], done: false}
-    }
-}
-}
-let iter = makeIterator(nums);
-console.log(iter.next());
-console.log(iter.next());
+//using symbol.iterator
+
+let str = "Ajay Ghimire";
+
+let itr = str[Symbol.iterator]();
+
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+
+console.log(itr.next());console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
