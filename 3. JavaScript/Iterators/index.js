@@ -130,13 +130,39 @@
 
 //normal geenrator func
 
-function positiveInts(n){
-    let i = 1;
-    let max = (n < 1 || typeof n !== "number") ? 1 : n;
-    return {
-        next: function() {
-            if (i > max) return {value: undefined, done: true}
-            return {value: i++,  done: false};
-        }
-    }
-}
+// function positiveInts(n){
+//     let i = 1;
+//     let max = (n < 1 || typeof n !== "number") ? 1 : n;
+//     return {
+//         next: function() {
+//             if (i > max) return {value: undefined, done: true}
+//             return {value: i++,  done: false};
+//         }
+//     }
+// }
+
+// let seq = positiveInts(3);
+
+// // for(let num of seq){
+// //     console.log(num);
+// // }
+
+// console.log(seq.next());
+// console.log(seq.next());
+// console.log(seq.next());
+// console.log(seq.next());
+// console.log(seq.next());
+
+//ES6 generator
+
+function * sequence() {
+    yield 1;
+    yield 2; 
+    yield 10;
+} 
+
+let seq = sequence();
+console.log(seq.next());
+console.log(seq.next());
+console.log(seq.next());
+console.log(seq.next());
