@@ -403,17 +403,40 @@
 
 
 //setInterval()
-let timer = 0;
-const intervalId = setInterval(() => {
-    timer += 1;
-    console.log(timer);
+// let timer = 0;
+// const intervalId = setInterval(() => {
+//     timer += 1;
+//     console.log(timer);
 
 
-if (timer === 3) {
-    console.log('Clearing the interval id after 3 executions'); 
-    clearInterval(intervalId)
-}
-}, 1000);
+// if (timer === 3) {
+//     console.log('Clearing the interval id after 3 executions'); 
+//     clearInterval(intervalId)
+// }
+// }, 1000);
+
+
+
+let count = 0; 
+  
+// The arguments passed after the  
+// delay (in milliseconds) will 
+// be received in our function  
+// inside the setInterval() method 
+const intervalId = setInterval( 
+  (a, b) => { 
+    console.log(`The sum of ${a+count} and ${b+count} is ${(a + count) + (b + count)}`); 
+    count++; 
+  
+    if (count === 5) { 
+      console.log("Clearing the interval id after 5 executions"); 
+      clearInterval(intervalId); 
+    } 
+  }, 
+  1000, 
+  5, 
+  10 
+); 
 
 
 
