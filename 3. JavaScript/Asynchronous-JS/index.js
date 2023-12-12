@@ -261,15 +261,17 @@
 
 //how to implement promise based api
 
-async function exampleAsyncFunction() {
-    return Promise.resolve("Hello, Async!");
-  }
+// async function exampleAsyncFunction() {
+//     return Promise.resolve("Hello, Async!");
+//   }
   
-  const resultPromise = exampleAsyncFunction();
-  
-  resultPromise.then(result => {
-    console.log(result); // Output: Hello, Async!
-  });
+
+//   const resultPromise = exampleAsyncFunction();
+//   console.log(resultPromise);
+//   resultPromise.then(result => {
+//     console.log(result); // Output: Hello, Async!
+//   });
+//   console.log(resultPromise);
 
 
 // function setAlarm(name, delay){
@@ -278,3 +280,49 @@ async function exampleAsyncFunction() {
 //     }, delay)
 // }
 // console.log(setAlarm("Ajay", 2000))
+
+
+//normal func returning promise
+// function normalFunction() {
+//     // Creating a Promise
+//     return new Promise((resolve, reject) => {
+//       // Simulating an asynchronous operation
+//       setTimeout(() => {
+//         const randomNumber = Math.random();
+  
+//         if (randomNumber > 0.5) {
+//           // Resolve the Promise with a successful result
+//           resolve(`Success! Random number: ${randomNumber}`);
+//         } else {
+//           // Reject the Promise with an error
+//           reject(`Error! Random number: ${randomNumber}`);
+//         }
+//       }, 1000); // Simulating a delay of 1 second
+//     });
+//   }
+  
+//   // Using the normal function that returns a Promise
+//   normalFunction()
+//     .then(result => {
+//       console.log(result); // Success! Random number: ...
+//     })
+//     .catch(error => {
+//       console.error(error); // Error! Random number: ...
+//     });
+
+//promise constructor
+
+function alarm(person, delay){
+    return new Promise((resolve, reject) => {
+        if(delay < 0){
+            throw new Error("Alarm delay must be positive integer");
+        }
+
+        setTimeout(() => {
+            resolve(`Wake up, ${person}`)
+        }, delay )
+    })
+}
+
+const promise = alarm("Ajay", -1000);
+promise.then((result) => console.log(result)).catch((error) => console.log(error));
