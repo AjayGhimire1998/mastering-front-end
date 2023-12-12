@@ -69,22 +69,32 @@
 // console.log(itr.next());
 // console.log(itr.next());
 
-var nums = [1, 5, 16];
 
-for (
-   // initialisation
-   var iter = nums[Symbol.iterator](),
-   next = iter.next(),
-   num = next.value;
+//working of for...of loop
+// var nums = [1, 5, 16];
 
-   // iterative check
-   !next.done;
+// for (
+//    // initialisation
+//    var iter = nums[Symbol.iterator](),
+//    next = iter.next(),
+//    num = next.value;
 
-   // iterative expressions
-   next = iter.next(),
-   num = next.value
-)
+//    // iterative check
+//    !next.done;
 
-{
-   console.log(num);
-}
+//    // iterative expressions
+//    next = iter.next(),
+//    num = next.value
+// )
+
+// {
+//    console.log(num);
+// }
+
+
+// function isIterable (o) {
+
+//     return Symbol.iterator in Object(o);
+// }
+
+// console.log(isIterable([]));
