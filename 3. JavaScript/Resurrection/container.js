@@ -53,6 +53,11 @@
 
 // console.log(String(false)); //false
 // console.log(String(undefined)); //undefined
+ 
+// age = 3; 
+// console.log(age);
+
+// console.log(typeof(1/0)); // number : Infinity
 
 
 

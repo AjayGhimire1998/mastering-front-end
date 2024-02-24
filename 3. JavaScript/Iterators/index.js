@@ -290,5 +290,110 @@
 
 //gen delegation
 
+// defines the sequence 1, 2, 3, 4, 5
+function* wholeNums() {
+    for (var i = 1; i <= 5; i++) {
+        yield i;
+    }
+}
+
+// defines the sequence 1, 4, 9, 16, 25, 36, 49
+function* squareNums() {
+    for (var i = 1, s = 1; s <= 50; i++, s = i ** 2) {
+        yield s;
+    }
+}
+
+// defines the sequence 1, 8, 27, 64
+function* cubeNums() {
+    for (var i = 1, c = 1; c <= 100; i++, c = i ** 3) {
+        yield c;
+    }
+}
+
+function* gen() {
+    yield* wholeNums();
+    yield* squareNums();
+    yield* cubeNums();
+}
+
+var seq = gen();
+
+// console.log(Array.from(gen()).join(", "));
+// console.log(seq.next());
+// console.log(seq.next());
+
+// console.log(seq.next());
+// console.log(seq.next());
+
+// console.log(seq.next());
+// console.log(seq.next());
+
+// console.log(Infinity - Infinity);
+// console.log(typeof NaN);
+// console.log(0.56.toPrecision(100));
+// console.log(Number(null));
+
+// var a = NaN;
+// console.log(a === NaN);
+
+// console.log(Math.min(3, null, 10, 2));
+// var str = `Hello\n
+// World`;
+// console.log(str);
+
+// var str = "Hello World";
+// var str = new String("Hello World")
+// str[0] = "F";
+// console.log(str[0]);
+
+// var str = "Twice a day";
+// var index = str.indexOf("a");
+// console.log(index);
+// var index2 = str.lastIndexOf("a");
+// console.log(index2);
+// console.log(str.indexOf("a", index + 1));
+// console.log(str.indexOf("a", index + 1) === index2);
+
+// var i = 5;
+// for (i < 5; i++) {
+//    console.log(i);
+// }
+
+// var i = 5;
+// for (; i < 5; i++) {
+//    console.log(i);
+// }
 
 
+// // const arr = [1,5,8];
+// // console.log(arr.indexOf(0));
+
+// console.log(Array(10));
+
+// var arr = [1, 66, 20];
+// arr.length = 0;
+
+// console.log(arr);
+
+// console.log([1, 2] instanceof Array);
+// var nums = [1, 2, 3];
+// console.log(nums.map());
+
+function compare(a, b) {
+    if (a.year < b.year) return -1;
+    if (a.year > b.year) return 1;
+
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+}
+
+var langs = [
+    {name: 'JavaScript', year: 1995},
+    {name: 'Python', year: 1991},
+    {name: 'Java', year: 1995},
+    {name: 'C++', year: 1989}
+];
+
+console.log(langs.sort(compare));
