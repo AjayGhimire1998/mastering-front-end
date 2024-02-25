@@ -113,7 +113,6 @@
 
 // showPrimes(19);
 
-
 // function hello(name){
 //     let phrase = `Hello, ${name}`;
 //     say(phrase);
@@ -125,14 +124,64 @@
 
 // hello("Ajay")
 
-function makeUser(name, age) {
-    return {
-      name: name,
-      age: age,
-      // ...other properties
-    };
-  }
-  
-  let user = makeUser("John", 30);
-  console.log(typeof user)
-  console.log(user.name); // John
+// function makeUser(name, age) {
+//     return {
+//       name: name,
+//       age: age,
+//       // ...other properties
+//     };
+//   }
+
+//   let user = makeUser("John", 30);
+//   console.log(typeof user)
+//   console.log(user.name); // John
+
+// let names = ["Ajay", "Elup", "KP", "Gauri"]
+
+// for(let name of names ){
+//     console.log(name);
+// }
+
+// let user = {
+//     name: "John",
+//     age: 30,
+//     isAdmin: true
+//   };
+
+//   u
+
+//   for(let key in user){
+//     console.log(key + ": " + user[key]);
+//   }
+
+// let codes = {
+//     "49": "Germany",
+//     "41": "Switzerland",
+//     "44": "Great Britain",
+//     // ..,
+//     "1": "USA"
+//   };
+
+//   for (let code in codes) {
+//     console.log(code); // 1, 41, 44, 49
+//   }
+
+// let user = {name: "Peter Griffin"};
+// let admin = user
+// admin.name = "Stewie Griffin";
+// console.log(admin);
+// console.log(user);
+
+// let codes = {
+//   49: "Germany",
+//   41: "Switzerland",
+//   44: "Great Britain",
+//   // ..,
+//   1: "USA",
+// };
+
+// let clone = Object.assign({}, codes);
+// let clone2 = {...clone}
+// console.log(clone);
+// console.log(clone2);
+
