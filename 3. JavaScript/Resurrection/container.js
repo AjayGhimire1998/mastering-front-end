@@ -211,9 +211,21 @@
 // }
 
 // let animal = new Animal("Cat", "Billu");
+
+// console.log(Object.values(animal));
 // console.log(animal);
 
 
 // let symbol = Symbol("ajay");
 // console.log(symbol.toString());
 // console.log(symbol.description);
+
+// let id = Symbol("id");
+// let user = {
+//   name: "John",
+//   age: 30,
+//   [id]: 123
+// };
+
+// let clone = Object.assign({}, user);
+// console.log(clone[id]);
