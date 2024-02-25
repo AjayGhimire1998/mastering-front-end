@@ -263,3 +263,14 @@
 // console.log(user);
 // console.log(+user);
 // console.log(user + 500);
+
+// console.log(1e-3 === 1 / 1000);
+
+// console.log(0b11111111)
+// let num = 0b11111111
+// console.log(num.toString(8));
+// console.log(parseInt(0xfffffff))
+
+let num = 573889235876853;
+console.log(num.toString(36));
+console.log(parseInt(num.toString(36), 36));
