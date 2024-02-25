@@ -1,17 +1,14 @@
-
-
 // // dec var
 // let message;
 // message = "POP!"
 // console.log(message);
-
 
 // //typeof
 // console.log(typeof new String("hello")); //obj
 // console.log(typeof undefined); //undefined
 
 // console.log(typeof null); //obj
-// console.log(typeof 5861658179587126578218756596859236568n); 
+// console.log(typeof 5861658179587126578218756596859236568n);
 
 // console.log( null === null); //true'
 // console.log( typeof console); //obj
@@ -19,10 +16,9 @@
 // console.log(typeof log); //undefined
 // console.log(typeof(2 + "a")); //string
 
-
 //type casting/conversions/coercions
 
-//implicit 
+//implicit
 
 // let isTrue = {} // {}, [], all other with values gives true, while 0, "", null, undefined gives false
 // console.log(isTrue ? "It is true" : "It is false");
@@ -43,8 +39,6 @@
 // console.log(Boolean("0")); //true
 // console.log(Boolean(undefined)); //fasle
 
-
-
 //explicit
 // let val = 2;
 // console.log(val); // 2 (number)
@@ -53,8 +47,8 @@
 
 // console.log(String(false)); //false
 // console.log(String(undefined)); //undefined
- 
-// age = 3; 
+
+// age = 3;
 // console.log(age);
 
 // console.log(typeof(1/0)); // number : Infinity
@@ -62,7 +56,6 @@
 //     return "hello";
 // };
 // console.log(typeof func);
-
 
 // console.log(Number(null));
 
@@ -76,7 +69,6 @@
 // console.log(Number(null));
 
 // console.log(null >= 0);
-
 
 // let message = "100";
 // let code = 99;
@@ -104,3 +96,19 @@
 // }
 
 // console.log(Boolean (undefined));
+
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    return n % i == 0 ? false : true;
+  }
+}
+
+function showPrimes(n) {
+  for (let i = 2; i < n; i++) {
+    if (!isPrime(i)) continue;
+
+    console.log(i); // a prime
+  }
+}
+
+showPrimes(19);
