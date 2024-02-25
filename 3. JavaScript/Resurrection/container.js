@@ -185,7 +185,6 @@
 // console.log(clone);
 // console.log(clone2);
 
-
 // let user = {
 //     name: "John",
 //     sizes: {
@@ -193,20 +192,19 @@
 //       width: 50
 //     }
 //   };
-  
+
 //   let clone = Object.assign({}, user);
-  
+
 //   console.log( user.sizes === clone.sizes ); // true, same object
-  
+
 //   // user and clone share sizes
 //   user.sizes.width = 60;    // change a property from one place
-//   console.log(clone.sizes.width); 
-
+//   console.log(clone.sizes.width);
 
 //constructor func
 
 // function Animal(type, name){
-//     this.type = type; 
+//     this.type = type;
 //     this.name = name
 // }
 
@@ -214,7 +212,6 @@
 
 // console.log(Object.values(animal));
 // console.log(animal);
-
 
 // let symbol = Symbol("ajay");
 // console.log(symbol.toString());
@@ -229,3 +226,40 @@
 
 // let clone = Object.assign({}, user);
 // console.log(clone[id]);
+// console.log(clone.valueOf());
+
+// console.log(Object.getOwnPropertySymbols(clone))
+ 
+
+// let user = {
+//   name: "ajay",
+//   age: 25,
+//   [Symbol.toPrimitive](hint) {
+//     console.log(`hint: ${hint}`);
+//     return hint === "string" ? `name: "${this.name}"` : this.age;
+//   },
+// };
+
+// console.log(user);
+// console.log(+user);
+// console.log(user + 500);
+
+// let user = {
+//     name: "John",
+//     money: 1000,
+  
+//     // for hint="string"
+//     toString() {
+//       return `{name: "${this.name}"}`;
+//     },
+  
+//     // for hint="number" or "default"
+//     valueOf() {
+//       return this.money;
+//     }
+  
+//   };
+  
+// console.log(user);
+// console.log(+user);
+// console.log(user + 500);
