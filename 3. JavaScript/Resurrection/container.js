@@ -201,3 +201,19 @@
 //   // user and clone share sizes
 //   user.sizes.width = 60;    // change a property from one place
 //   console.log(clone.sizes.width); 
+
+
+//constructor func
+
+// function Animal(type, name){
+//     this.type = type; 
+//     this.name = name
+// }
+
+// let animal = new Animal("Cat", "Billu");
+// console.log(animal);
+
+
+// let symbol = Symbol("ajay");
+// console.log(symbol.toString());
+// console.log(symbol.description);
