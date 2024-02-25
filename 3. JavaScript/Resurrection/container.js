@@ -15,7 +15,7 @@
 
 // console.log( null === null); //true'
 // console.log( typeof console); //obj
-// console.log(typeof alert); //undefined
+// console.log(typeof console.log); //undefined
 // console.log(typeof log); //undefined
 // console.log(typeof(2 + "a")); //string
 
@@ -58,7 +58,49 @@
 // console.log(age);
 
 // console.log(typeof(1/0)); // number : Infinity
+// const func = () => {
+//     return "hello";
+// };
+// console.log(typeof func);
 
 
+// console.log(Number(null));
+
+// console.log(9 ** (1/2));
+// console.log(Math.sqrt(9));
+
+// console.log(-(2));
+
+// console.log('a' =='A');
+
+// console.log(Number(null));
+
+// console.log(null >= 0);
 
 
+// let message = "100";
+// let code = 99;
+
+// console.log(message > code);
+// console.log("100" > "99");
+// console.log("2" > "12");
+
+// console.log(null ?? undefined ?? null ?? undefined)
+
+// let a = 9;
+
+// switch (a) {
+//   case 3:
+//     console.log( 'Too small' );
+//     break;
+//   case 4:
+//     console.log( 'Exactly!' );
+//     break;
+//   case 5:
+//     console.log( 'Too big' );
+//     break;
+//   default:
+//     console.log( "I don't know such values" );
+// }
+
+// console.log(Boolean (undefined));
