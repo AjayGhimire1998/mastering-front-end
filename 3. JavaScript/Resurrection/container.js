@@ -97,18 +97,30 @@
 
 // console.log(Boolean (undefined));
 
-function isPrime(n) {
-  for (let i = 2; i < n; i++) {
-    return n % i == 0 ? false : true;
-  }
+// function isPrime(n) {
+//   for (let i = 2; i < n; i++) {
+//     return n % i == 0 ? false : true;
+//   }
+// }
+
+// function showPrimes(n) {
+//   for (let i = 2; i < n; i++) {
+//     if (!isPrime(i)) continue;
+
+//     console.log(i); // a prime
+//   }
+// }
+
+// showPrimes(19);
+
+
+function hello(name){
+    let phrase = `Hello, ${name}`;
+    say(phrase);
 }
 
-function showPrimes(n) {
-  for (let i = 2; i < n; i++) {
-    if (!isPrime(i)) continue;
-
-    console.log(i); // a prime
-  }
+function say(phrase){
+    console.log(phrase)
 }
 
-showPrimes(19);
+hello("Ajay")
