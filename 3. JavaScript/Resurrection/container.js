@@ -114,13 +114,25 @@
 // showPrimes(19);
 
 
-function hello(name){
-    let phrase = `Hello, ${name}`;
-    say(phrase);
-}
+// function hello(name){
+//     let phrase = `Hello, ${name}`;
+//     say(phrase);
+// }
 
-function say(phrase){
-    console.log(phrase)
-}
+// function say(phrase){
+//     console.log(phrase)
+// }
 
-hello("Ajay")
+// hello("Ajay")
+
+function makeUser(name, age) {
+    return {
+      name: name,
+      age: age,
+      // ...other properties
+    };
+  }
+  
+  let user = makeUser("John", 30);
+  console.log(typeof user)
+  console.log(user.name); // John
