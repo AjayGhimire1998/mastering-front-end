@@ -382,6 +382,19 @@ getMaxSubSum([-1, -2, -3]) = 0 */
 //   return maxSum;
 // }
 
+function getMaxSubSum(arr) {
+  let maxSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let fixedSum = 0;
+    for (let j = i; j < arr.length; j++) {
+      fixedSum += arr[j];
+      maxSum = Math.max(maxSum, fixedSum);
+    }
+  }
+  return maxSum;
+}
+
 // console.log(getMaxSubSum([100, -9, 2, -3, 5]));
 
 // function maskify(cc) {
