@@ -536,3 +536,48 @@ P.S. Hint: use split to split the string into an array, transform it and join ba
 // console.log(camelize("-webkit-transition"));
 // console.log(camelize("background-color"));
 
+/* Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
+
+The function should not modify the array. It should return the new array.
+
+For instance:
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (matching values)
+
+alert( arr ); // 5,3,8,1 (not modified) */
+
+// function filterRange(arr, a, b){
+//     return arr.filter((item) => item >=a && item<=b);
+
+// }
+// let arr = [5, 3, 8, 1];
+// let filtered = filterRange(arr, 1, 4);
+// console.log(filtered);
+
+/* Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
+
+The function should only modify the array. It should not return anything.
+
+For instance:
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+alert( arr ); // [3, 1] */
+
+function filterRangeInPlace(arr, a, b) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < a || arr[i] > b) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+}
+
+let arr = [1,2,3];
+console.log(filterRangeInPlace(arr, 1, 4));
