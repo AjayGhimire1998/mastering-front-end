@@ -289,3 +289,31 @@
 
 // let fruits = ["Apple", "Orange", "Plum"];
 // console.log(fruits.at(1));
+
+// console.log([]);
+
+// console.log(null == undefined);
+
+// console.log(1 == "1");
+
+// console.log([] == '');
+
+// let fruits = ["Apple", "Orange", "Plum"];
+
+/* Let’s try 5 array operations.
+Create an array styles with items “Jazz” and “Blues”.
+Append “Rock-n-Roll” to the end.
+Replace the value in the middle with “Classics”. Your code for finding the middle value should work for any arrays with odd length.
+Strip off the first value of the array and show it.
+Prepend Rap and Reggae to the array.
+The array in the process: */
+
+// let styles = [ "Jazz", "Blues"]
+// styles.push("Rock-nRoll");
+// console.log(styles);
+// styles[Math.floor((styles.length - 1) / 2)] = "classics"
+// console.log(styles);
+// styles.shift()
+// console.log(styles);
+// styles.unshift("Rap","Reggae")
+// console.log(styles);
