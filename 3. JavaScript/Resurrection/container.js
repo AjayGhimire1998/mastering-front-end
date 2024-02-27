@@ -3,6 +3,7 @@
 // message = "POP!"
 // console.log(message);
 
+
 // import { log } from "console";
 
 // //typeof
@@ -771,3 +772,43 @@ alert( arr ); // [3, 1] */
 // for(let s of str){
 //     console.log(s);
 // }
+
+// let arrayLike = {
+//   // has indexes and length => array-like
+//   0: "Hello",
+//   1: "World",
+//   length: 2,
+//   [Symbol.iterator]: function () {
+//     let index = 0;
+//     return {
+//       next: () => {
+//         if (index < this.length) {
+//           return { done: false, value: this[index++] };
+//         }
+//         return { done: true, value: undefined };
+//       },
+//     };
+//   },
+// };
+
+// const itr = arrayLike[Symbol.iterator]();
+
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+
+// let arrayLike = {
+//     0: "Hello",
+//     1: "World",
+//     length: 2
+//   };
+
+//   let realArr = Array.from(arrayLike, str => str.toUpperCase());
+//   console.log(realArr);
+
+// let str = "hello";
+// let strArray = str.split("");  // Convert string to array
+// strArray.splice(0, 2, 'c', 'e');  // Use splice to replace the first two elements
+// let modifiedStr = strArray.join("");  // Join the array back into a string
+// console.log(modifiedStr);
+
