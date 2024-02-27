@@ -229,7 +229,6 @@
 // console.log(clone.valueOf());
 
 // console.log(Object.getOwnPropertySymbols(clone))
- 
 
 // let user = {
 //   name: "ajay",
@@ -247,19 +246,19 @@
 // let user = {
 //     name: "John",
 //     money: 1000,
-  
+
 //     // for hint="string"
 //     toString() {
 //       return `{name: "${this.name}"}`;
 //     },
-  
+
 //     // for hint="number" or "default"
 //     valueOf() {
 //       return this.money;
 //     }
-  
+
 //   };
-  
+
 // console.log(user);
 // console.log(+user);
 // console.log(user + 500);
@@ -277,11 +276,9 @@
 
 // console.log(+(0.10 + 0.20).toFixed(2));
 
-
 //strings
 // let str = 'widget with id';
 // console.log(str.indexOf('id'));
-
 
 // let x = 1;
 // console.log(x++);
@@ -317,3 +314,116 @@ The array in the process: */
 // console.log(styles);
 // styles.unshift("Rap","Reggae")
 // console.log(styles);
+
+/* Write the function sumInput() that:
+
+Asks the user for values using prompt and stores the values in the array.
+Finishes asking when the user enters a non-numeric value, an empty string, or presses “Cancel”.
+Calculates and returns the sum of array items.
+P.S. A zero 0 is a valid number, please don’t stop the input on zero. */
+
+// const readline = require("readline");
+
+// function sumInput() {
+//   const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+//   });
+
+//   const numbers = [];
+
+//   function recurrInput() {
+//     rl.question("Enter a number: ", (input) => {
+//       if (input.trim() === "" || isNaN(input)) {
+//         rl.close();
+//         const sum = numbers.reduce((acc, num) => acc + num, 0);
+//         console.log(sum);
+//       } else {
+//         numbers.push(parseInt(input));
+//         recurrInput()
+//       }
+//     });
+//   }
+//   recurrInput();
+// }
+// sumInput();
+/* 
+The input is an array of numbers, e.g. arr = [1, -2, 3, 4, -9, 6].
+
+The task is: find the contiguous subarray of arr with the maximal sum of items.
+
+Write the function getMaxSubSum(arr) that will return that sum.
+
+For instance:
+
+getMaxSubSum([-1, 2, 3, -9]) == 5 (the sum of highlighted items)
+getMaxSubSum([2, -1, 2, 3, -9]) == 6
+getMaxSubSum([-1, 2, 3, -9, 11]) == 11
+getMaxSubSum([-2, -1, 1, 2]) == 3
+getMaxSubSum([100, -9, 2, -3, 5]) == 100
+getMaxSubSum([1, 2, 3]) == 6 (take all)
+If all items are negative, it means that we take none (the subarray is empty), so the sum is zero:
+
+getMaxSubSum([-1, -2, -3]) = 0 */
+
+function getMacSubSum(arr){
+    let maxSum = 0;
+
+    for(let i = 0; i< arr.length; i++){
+
+    }
+}
+
+// function maskify(cc) {
+//   if (cc.length <= 4) {
+//     return cc;
+//   }
+//   let result = "";
+//   for (let i = 0; i < cc.length; i++) {
+//     if (i + 4 >= cc.length) {
+//       result += cc[i];
+//       continue;
+//     }
+//     result += "#";
+//   }
+//   return result;
+// }
+
+// console.log(maskify("faskdfgagsf"));
+/* 
+Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+
+For example (Input --> Output):
+
+39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+4 --> 0 (because 4 is already a one-digit number) */
+
+// function persistence(num) {
+// //   let str = String(num).split("");
+
+// //   if (str.length === 1) {
+// //     return 0;
+// //   }
+// //   let result = 0;
+// //   while (str.length !== 1) {
+// //     let mult = 1;
+// //     for (const num of str) {
+// //       mult *= num;
+// //     }
+// //     str = String(mult).split("");
+// //     result++;
+// //   }
+// //   return result;
+//     let result = 0;
+//     let str = num.toString();
+//     while(str.length > 1){
+//         result++;
+//         str = String(str.split("").reduce((acc, s) => +s * acc, 1));
+        
+//         console.log(str);
+//     }
+//     return result
+// }
+
+// console.log(persistence(999));
