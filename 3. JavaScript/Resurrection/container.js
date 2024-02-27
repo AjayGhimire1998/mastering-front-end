@@ -3,6 +3,8 @@
 // message = "POP!"
 // console.log(message);
 
+// import { log } from "console";
+
 // //typeof
 // console.log(typeof new String("hello")); //obj
 // console.log(typeof undefined); //undefined
@@ -366,13 +368,21 @@ If all items are negative, it means that we take none (the subarray is empty), s
 
 getMaxSubSum([-1, -2, -3]) = 0 */
 
-function getMacSubSum(arr){
-    let maxSum = 0;
+//slow
+// function getMaxSubSum(arr) {
+//   let maxSum = 0;
 
-    for(let i = 0; i< arr.length; i++){
+//   for (let i = 0; i < arr.length; i++) {
+//     let fixedSum = 0;
+//     for (let j = i; j < arr.length; j++) {
+//       fixedSum += arr[j];
+//       maxSum = Math.max(maxSum, fixedSum);
+//     }
+//   }
+//   return maxSum;
+// }
 
-    }
-}
+// console.log(getMaxSubSum([100, -9, 2, -3, 5]));
 
 // function maskify(cc) {
 //   if (cc.length <= 4) {
@@ -420,7 +430,7 @@ For example (Input --> Output):
 //     while(str.length > 1){
 //         result++;
 //         str = String(str.split("").reduce((acc, s) => +s * acc, 1));
-        
+
 //         console.log(str);
 //     }
 //     return result
