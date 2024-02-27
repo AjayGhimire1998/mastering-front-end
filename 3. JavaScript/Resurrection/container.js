@@ -271,6 +271,18 @@
 // console.log(num.toString(8));
 // console.log(parseInt(0xfffffff))
 
-let num = 573889235876853;
-console.log(num.toString(36));
-console.log(parseInt(num.toString(36), 36));
+// let num = 573889235876853;
+// console.log(num.toString(36));
+// console.log(parseInt(num.toString(36), 36));
+
+// console.log(+(0.10 + 0.20).toFixed(2));
+
+
+//strings
+// let str = 'widget with id';
+// console.log(str.indexOf('id'));
+
+
+// let x = 1;
+// console.log(x++);
+// console.log(x);
