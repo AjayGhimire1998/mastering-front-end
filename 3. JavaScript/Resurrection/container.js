@@ -382,18 +382,19 @@ getMaxSubSum([-1, -2, -3]) = 0 */
 //   return maxSum;
 // }
 
-function getMaxSubSum(arr) {
-  let maxSum = 0;
+//fast
+// function getMaxSubSum(arr) {
+//     let maxSum = 0;
+//     let partialSum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    let fixedSum = 0;
-    for (let j = i; j < arr.length; j++) {
-      fixedSum += arr[j];
-      maxSum = Math.max(maxSum, fixedSum);
-    }
-  }
-  return maxSum;
-}
+//     for (let item of arr) { // for each item of arr
+//       partialSum += item; // add it to partialSum
+//       maxSum = Math.max(maxSum, partialSum); // remember the maximum
+//       if (partialSum < 0) partialSum = 0; // zero if negative
+//     }
+
+//     return maxSum;
+// }
 
 // console.log(getMaxSubSum([100, -9, 2, -3, 5]));
 
@@ -450,3 +451,32 @@ For example (Input --> Output):
 // }
 
 // console.log(persistence(999));
+
+//methods
+
+// let arr = ["I", "study", "JavaScript"];
+
+// console.log(arr.splice(0,1));
+
+// let arr = ["I", "study", "JavaScript", "right", "now"];
+
+// let del = arr.splice(0, 3, "Let's", "dance");
+
+// console.log(arr);
+// console.log(del);
+// console.log(arr);
+
+// ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index) => {
+//   console.log(`${index}: ${item}`);
+// });
+
+// console.log("Gandalf".lastIndexOf("a", 0));
+// let users = [
+//     {id: 1, name: "John"},
+//     {id: 2, name: "Pete"},
+//     {id: 3, name: "Mary"}
+//   ];
+  
+//   let user = users.find(item => item.id == 1);
+  
+//   console.log(user.name); // John
