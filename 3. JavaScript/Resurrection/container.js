@@ -480,3 +480,23 @@ For example (Input --> Output):
 //   let user = users.find(item => item.id == 1);
   
 //   console.log(user.name); // John
+
+// function compareNumeric(a, b) {
+//     if (a > b) return 1;
+//     if (a == b) return 0;
+//     if (a < b) return -1;
+//   }
+// let arr = [ 1, 9, 15 ];
+// arr.sort(compareNumeric);
+// console.log(arr);
+
+
+// console.log("Ajay".split(''));
+
+// let names = 'Bilbo, Gandalf, Nazgul';
+// console.log(names.split(','));
+
+// let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+// let arr2 = ['Bilbo', 'Gandalf', 'Nazgul'];
+// let arrr = arr.concat(arr2);
+// console.log(arrr);
