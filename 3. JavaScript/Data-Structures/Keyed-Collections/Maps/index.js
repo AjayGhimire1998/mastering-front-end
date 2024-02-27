@@ -141,9 +141,46 @@
 // console.log(map.delete(false));
 
 
-let john = { name: "John" };
+// let john = { name: "John" };
 
-let visitsCountMap = new Map();
+// let visitsCountMap = new Map();
 
-visitsCountMap.set(john, 123);
-console.log(visitsCountMap.get(john));
+// visitsCountMap.set(john, 123);
+// console.log(visitsCountMap.get(john));
+
+// let john = { name: "John" };
+// let ben = { name: "Ben" };
+
+// let visitsCountObj = {}; // try to use an object
+
+// visitsCountObj[ben] = 234; // try to use ben object as the key
+// visitsCountObj[john] = 123; // try to use john object as the key, ben object will get replaced
+
+// // That's what got written!
+// console.log( visitsCountObj);
+
+// let obj = {
+//   name: "ajay",
+//   age: 25
+// };
+
+// let itr = Object.values(obj);
+// console.log(itr);
+
+// for(let o of itr){
+//   console.log(o);
+// }
+
+let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+]);
+
+console.log(recipeMap);
+// for (let vegetable of recipeMap) {
+//   console.log(vegetable); // cucumber, tomatoes, onion
+// }
+
+let obj = Object.fromEntries(recipeMap);
+console.log(obj);
