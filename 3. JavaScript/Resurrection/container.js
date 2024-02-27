@@ -512,17 +512,27 @@ camelize("list-style-image") == 'listStyleImage';
 camelize("-webkit-transition") == 'WebkitTransition';
 P.S. Hint: use split to split the string into an array, transform it and join back. */
 
-function camelize(str) {
-  let arr = str.split("-");
-  let filtered = arr.filter((val) => val);
-  let result = ""
-  for (let i = 0; i < filtered.length; i++) {
-    if(i === 0 ){
-        result += filtered[i]
-    } else {
-        result+= filtered[i][0].toUpperCase() + filtered[i].slice(1);
-    }
-  }
-  return result;
-}
-console.log(camelize("-webkit-transition"));
+// function camelize(str) {
+//   let arr = str.split("");
+
+//   if(arr[0] === "-"){
+//     arr.shift();
+//     arr[0] = arr[0].toUpperCase()
+//   }
+
+//   let occurInd = arr.indexOf("-")
+
+//   for(let i = occurInd; i < arr.length;i++ ){
+//         if(arr[i] === "-"){
+//             arr.splice(i, 1);
+//             arr[i] = arr[i].toUpperCase()
+//         }
+//   }
+// //   console.log(occurInd);
+// //   console.log(arr);
+// return arr.join("");
+
+// }
+// console.log(camelize("-webkit-transition"));
+// console.log(camelize("background-color"));
+
