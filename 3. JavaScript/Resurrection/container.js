@@ -698,3 +698,76 @@ alert( arr ); // [3, 1] */
 // }
 // let usersById = groupById(users);
 // console.log(usersById);
+
+// let range = {
+//   from: 1,
+//   to: 5,
+// };
+
+// range[Symbol.iterator] = function () {
+//   return {
+//     current: this.from,
+//     last: this.to,
+//     next() {
+//       if (this.current <= this.last) {
+//         return { done: false, value: this.current++ };
+//       } else {
+//         return { done: true, value: undefined };
+//       }
+//     },
+//   };
+// };
+// const itr = range[Symbol.iterator]();
+
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+
+// for(let num of range){
+//     console.log(num);
+// }
+
+// let nums = [1,2,3,4,5]
+// function makeIterator(arr){
+//     let i = 0;
+//     return {
+//         next: () => {
+//             if (i > arr.length - 1){
+//                 return {done: true, value: undefined}
+//             }
+//             return {done: false, value: arr[i++]};
+//         }
+//     }
+// }
+
+// let itr = makeIterator(nums);
+
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+
+//making number iterable
+
+// Number.prototype[Symbol.iterator] = function () {
+//   return this.toString()[Symbol.iterator]();
+// };
+
+// let nums = 12345;
+// for (let n of nums) {
+//   console.log(n);
+// }
+
+// let str = "okok123";
+
+// for(let s of str){
+//     console.log(s);
+// }
