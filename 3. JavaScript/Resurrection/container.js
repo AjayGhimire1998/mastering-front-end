@@ -286,3 +286,6 @@
 // let x = 1;
 // console.log(x++);
 // console.log(x);
+
+// let fruits = ["Apple", "Orange", "Plum"];
+// console.log(fruits.at(1));
