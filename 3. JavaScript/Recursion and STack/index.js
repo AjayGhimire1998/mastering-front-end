@@ -61,11 +61,29 @@
 // }
 // console.log(sumTo(10));
 
-function factorial(n){
-    if (n === 0){
-        return 1;
-    } 
-    return n * factorial(n-1);
-}
+// function factorial(n){
+//     if (n === 0){
+//         return 1;
+//     }
+//     return n * factorial(n-1);
+// }
 
-console.log(factorial(4));
+// console.log(factorial(4));
+
+// function fib(n) {
+//   //   return n <= 1 ? n : fib(n - 1) + fib(n - 2); //slow
+//   let a = 1;
+//   let b = 1;
+
+//   for (let i = 3; i <= n; i++) {
+//     let c = a + b;
+//     a = b;
+//     b = c;
+//   }
+//   return b;
+// }
+
+
+// console.log(fib(3)); // 2
+// console.log(fib(7)); // 13
+// console.log(fib(90));
