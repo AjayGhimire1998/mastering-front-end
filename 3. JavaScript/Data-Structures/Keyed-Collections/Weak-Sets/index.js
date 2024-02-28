@@ -64,3 +64,32 @@ P.S. When a message is removed from messages, it should disappear from your stru
 
 P.P.S. We shouldn’t modify message objects, add our properties to them. As they are managed by someone else’s code, that may lead to bad consequences.
  */
+
+
+// let messages = [
+//     {text: "Hello", from: "John"},
+//     {text: "How goes?", from: "John"},
+//     {text: "See you soon", from: "Alice"}
+//   ];
+  
+//   let readMessages = new WeakSet();
+
+//   readMessages.add(messages[0]);
+//   readMessages.add(messages[1]);
+
+//   readMessages.add(messages[0]);
+
+
+
+//   console.log(readMessages.has(messages[0]));
+//   messages.shift();
+
+//   console.log(messages);
+
+
+
+// let readDateTime = new WeakMap();
+
+// readDateTime.set(messages[0], new Date());
+
+// console.log(readDateTime.get(messages[0]));
