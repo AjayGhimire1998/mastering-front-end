@@ -44,12 +44,40 @@
 // console.log(map);
 
 
-let weakMap = new WeakMap();
+// let weakMap = new WeakMap();
 
-let obj = {name: "ajay"};
+// let obj = {name: "ajay"};
 
-weakMap.set(obj, "ok");
+// weakMap.set(obj, "ok");
 
-obj =null;
-console.log(weakMap.get(obj)); //undefined
+// obj =null;
+// console.log(weakMap.get(obj)); //undefined
  
+// let visitsCountMap = new Map();
+
+// function countUser(user){
+//     let count = visitsCountMap.get(user) || 0;
+//     visitsCountMap.set(user, count + 1);
+// }
+
+// let john = { name: "John" };
+
+// countUser(john); 
+
+// console.log(visitsCountMap);
+
+// 📁 visitsCount.js
+// let visitsCountMap = new WeakMap(); // weakmap: user => visits count
+
+// // increase the visits count
+// function countUser(user) {
+//   let count = visitsCountMap.get(user) || 0;
+//   visitsCountMap.set(user, count + 1);
+// }
+// let john = { name: "John" };
+
+// countUser(john); // count his visits
+
+// // later john leaves us
+// // john = null;
+// console.log(visitsCountMap.has(john));
