@@ -52,8 +52,8 @@
 // console.log(arr === arrCopy);
 
 
-let obj = { a: 1, b: 2, c: 3 };
+// let obj = { a: 1, b: 2, c: 3 };
 
-let objCopy = {...obj, d: 4};
-console.log(objCopy);
+// let objCopy = {...obj, d: 4};
+// console.log(objCopy);
 
