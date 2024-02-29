@@ -60,6 +60,60 @@
 //   },
 // ];
 
-
-
 // console.log(boxes[0].getBox());
+
+// let user = {
+//   name: "ajay",
+//   surname: "gh",
+
+//   set fullName(val) {
+//     [this.name, this.surname] = val.split(" ");
+//   },
+//   get fullName() {
+//     return `${this.name} ${this.surname}`;
+//   },
+// };
+
+// let admin = {
+//   isAdmin: true,
+// };
+
+// Object.setPrototypeOf(admin, user);
+// console.log(admin.fullName);
+// admin.fullName = "Ajay Kumar"
+// console.log(admin.fullName);
+// console.log(user.fullName);
+
+// let animal = {
+//   walk() {
+//     if (!this.isSleeping) {
+//       console.log(`I walk`);
+//     }
+//   },
+//   sleep() {
+//     this.isSleeping = true;
+//   },
+// };
+
+// let rabbit = {
+//   name: "White Rabbit",
+//   __proto__: animal,
+// };
+
+// // modifies rabbit.isSleeping
+// // rabbit.sleep();
+
+// // // animal.sleep();
+
+// // console.log(animal.isSleeping);
+
+// for (let prop in rabbit) {
+//   // console.log(prop);
+//   let isOwn = rabbit.hasOwnProperty(prop);
+
+//   if (isOwn) {
+//     console.log("Pur props: " + prop);
+//   } else {
+//     console.log("Inheited: " + prop);
+//   }
+// }
