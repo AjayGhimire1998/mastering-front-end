@@ -161,12 +161,49 @@
 // let res = Array.prototype.push.apply(arr, obj)
 // console.log(arr);
 
-if (!Function.prototype.defer) {
-  Function.prototype.defer = function (x) {
-    setTimeout(this, x);
-  };
-}
-function f() {
-  console.log("Hello!");
-}
-f.defer(1000);
+// if (!Function.prototype.defer) {
+//   Function.prototype.defer = function (x) {
+//     setTimeout(this, x);
+//   };
+// }
+// function f() {
+//   console.log("Hello!");
+// }
+// f.defer(1000);
+
+
+// let animal = {
+//   eats: true
+// };
+
+
+// let rabbit = Object.create(animal);
+// // console.log(rabbit.eats);
+// console.log(Object.getPrototypeOf(rabbit));
+
+
+// let animal = {
+//   eats: true
+// };
+
+// let rabbit = Object.create(animal, {
+//   jumps: {
+//     value: true
+//   }
+// });
+// for(let prop in rabbit){
+//   console.log(prop);
+// }
+// console.log();
+// console.log(rabbit.jumps);
+// console.log(Object.getOwnPropertyDescriptors(rabbit));
+// rabbit.jumps = false;
+
+
+// let chineseDictionary = Object.create(null);
+// chineseDictionary.hello = "你好";
+// chineseDictionary.bye = "再见";
+
+// console.log(chineseDictionary);
+
+// console.log(Object.keys(chineseDictionary)); // h
