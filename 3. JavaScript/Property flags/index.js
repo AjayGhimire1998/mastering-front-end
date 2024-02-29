@@ -6,7 +6,6 @@
 
 // console.log(JSON.stringify(descriptor, null, 2));
 
-
 // Object.defineProperty(user, "name", {
 //     value: "Ajay"
 // })
@@ -17,7 +16,6 @@
 
 // let user = {};
 
-
 // Object.defineProperty(user, "name", {
 //   value: "John"
 // });
@@ -25,30 +23,30 @@
 // let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
 // console.log(JSON.stringify(descriptor, null, 2));
 
-'use strict'
-let user = {
-     name: "Ajay", 
-     age: 30
-};
+// 'use strict'
+// let user = {
+//      name: "Ajay",
+//      age: 30
+// };
 
-Object.defineProperty(user, "name", {
-    configurable: false
-})
+// Object.defineProperty(user, "name", {
+//     configurable: false
+// })
 
-// console.log(user);
-
-// user.name = "Gh";
-
-let descriptor = Object.getOwnPropertyDescriptors(user, "age")
-console.log(JSON.stringify(descriptor, null ,3));
 // // console.log(user);
 
-Object.defineProperty(user, "name", {
-    configurable: true
-})
+// // user.name = "Gh";
 
-let descriptors = Object.getOwnPropertyDescriptors(user, "age")
-console.log(descriptors);
+// let descriptor = Object.getOwnPropertyDescriptors(user, "age")
+// console.log(JSON.stringify(descriptor, null ,3));
+// // // console.log(user);
+
+// Object.defineProperty(user, "name", {
+//     configurable: true
+// })
+
+// let descriptors = Object.getOwnPropertyDescriptors(user, "age")
+// console.log(descriptors);
 
 // let descriptor = Object.getOwnPropertyDescriptor(Math, 'PI');
 // console.log( descriptor);
@@ -60,3 +58,21 @@ console.log(descriptors);
 // let descriptor2 = Object.getOwnPropertyDescriptor(Math, 'PI');
 // console.log(descriptor);
 
+let user = {
+  name: "John",
+  surname: "Smith",
+
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  },
+};
+
+user.fullName = "Ajay Ghimire"
+
+let descriptor = Object.getOwnPropertyDescriptors(user);
+console.log(descriptor);
+console.log(user);
