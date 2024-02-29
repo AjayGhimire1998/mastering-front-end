@@ -1,7 +1,5 @@
 // const { describe } = require("node:test");
 
-
-
 // function sum(a, b){
 //     return a+b;
 // }
@@ -13,8 +11,7 @@
 //     });
 // });
 
-
-// function decalaration 
+// function decalaration
 
 // function add(a,b){
 //     return a+b;
@@ -22,15 +19,13 @@
 
 // console.log(add(2,5));
 
-
 // //anonymous function expression
 // const sum = function (a,b) {
 //     return a+b
 // }
 // console.log(sum(3,5));
 
-
-//callback fn 
+//callback fn
 
 // function executeMe(fn) {
 //     fn();
@@ -47,14 +42,11 @@
 // let logger = getLogger();
 // logger("AJay")
 
-
-
 //IIFE can be anonymous
 // (function(a,b){
 //     console.log(a+b);
 //     return a+b;
 // })(1,4);
-
 
 //named func expression for recursion
 // const nums = [1,2,3,4,5,6];
@@ -77,7 +69,7 @@
 
 //     return temp;
 //   }
-  
+
 //   console.log(repeatStringNumTimes("abc", 3));
 
 // function truncateString(str, num) {
@@ -87,35 +79,32 @@
 
 //    return str
 //   }
-  
+
 //   console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length))
 
-
-//this 
+//this
 
 // function fn(){
 //     console.log(this.x);
-    
+
 // }
 // var x = 10;
 // fn();
 
-
 // console.log(this);
-
 
 //func scope and stack
 
 //recursion
 
-// let x = 0; 
+// let x = 0;
 // while (x < 10) {
 //     console.log(x);
 //     x++;
 // }
 
 // function loop(x) {
-//     //break point 
+//     //break point
 //     if (x >= 10){
 //         return;
 //     }
@@ -136,7 +125,6 @@
 
 // console.log(multiplySums(2,4));
 
-
 // function outside(x){
 //     function inside(y){
 //         return x+y;
@@ -146,8 +134,7 @@
 
 // console.log(outside(2)(3));
 
-//argument object 
-
+//argument object
 
 // function myConcat(separator) {
 //     let result = "";
@@ -160,7 +147,6 @@
 
 // console.log(myConcat("+", "red", "green", "blue"));
 
-
 //params
 
 // function multiply(a,b = 2){
@@ -169,13 +155,12 @@
 
 // console.log(multiply(5, 6));
 
-//rest params 
+//rest params
 // function add(adder, ...otherArgs){
 //     return otherArgs.map((x) => adder+x);
 // }
 
 // console.log( add(2,3,4,5))
-
 
 //arrow functions
 
@@ -200,7 +185,7 @@
 //     that.age++;
 //     // console.log(that.age);
 //    }, 1000)
-    
+
 // }
 
 // const p = new Person();
@@ -216,8 +201,7 @@
 
 // checkRecurLimit();
 
-
-//lexical scope 
+//lexical scope
 
 // const fullName = "AJay G";
 
@@ -234,7 +218,6 @@
 // }
 // console.log( profile());
 
-
 // var a = 'static';
 
 // function f1() {
@@ -248,7 +231,6 @@
 
 // f2();
 
-
 // var largestOddNumber = function(num) {
 //     if (num.length === 0)  return "";
 
@@ -256,7 +238,7 @@
 
 //     for(let i = num.length-1; i >= 0; i--){
 //         if (+num[i] % 2 === 1) {
-            
+
 //             return num.slice(0, i+1)
 //         }
 //     }
@@ -266,19 +248,120 @@
 
 // console.log(largestOddNumber());
 
-var twoSum = function(nums, target) {
-    
+// var twoSum = function(nums, target) {
+
+//     for(let i = 0 ; i < nums.length-1; i++){
+//         for (let j = 1; j < nums.length; j++){
+//             if (nums[i] + nums[j] === target && i !== j) {
+//                 return [i,j];
+//             }
+//         }
+//     }
+//     return null;
+// };
+
+// // console.log(twoSum([2,5,5,11], 10));
+// console.log(twoSum.name);
+// console.log(twoSum.length);
+
+// function count(){
+//     console.log("Hi");
+//     count.counter++;
+// }
+
+// count.counter = 0;
+
+// count();
+// count();
+// count();
+// console.log(count.counter);
+
+// function makeCounter() {
+//   function counter() {
+//     return counter.count++;
+//   }
+
+//   counter.count = 0;
+
+//   return counter;
+// }
+// let counter = makeCounter();
+// counter.count = 100;
+
+// console.log(counter());
+
+// let sayHi = function func(who) {
+//   if (who) {
+//     console.log(`Hello, ${who}`);
+//   } else {
+//     func("Guest"); // use func to re-call itself
+//   }
+// };
+
+// sayHi("ajay");
+
+// let sayHi = function (who) {
+//   if (who) {
+//     console.log(`Hello, ${who}`);
+//   } else {
+//     sayHi("Guest"); // Error: sayHi is not a function
+//   }
+// };
+
+// let welcome = sayHi;
+// // sayHi = null;
+// // console.log(sayHi);
+// console.log(welcome);
+
+//   welcome();
+
+// function makeCounter() {
+//   let count = 0;
+//   function counter() {
+//     return count++;
+//   }
+
+//   counter.set = (val) => (count = val);
+//   counter.decrease = () => --count;
+
+//   return counter;
+// }
+
+// let fn = makeCounter();
+// console.log(fn());
+// console.log(fn());
+// console.log(fn.set(55));
+
+// console.log(fn.decrease());
+
+// function sum(...args){
+//     let result = 0;
+//     for(let arg of args){
+//         result += arg
+//     }
+
+//     return result;
+// }
+
+// console.log(sum(1,2,3,4));
+
+// function sum(a) {
+//   let currentSum = a;
+
+//   function f(b) {
+//     currentSum += b;
+//     return f;
+//   }
+
+//   f.toString = function () {
+//     return currentSum;
+//   };
+
+//   return f;
+// }
 
 
-    for(let i = 0 ; i < nums.length-1; i++){
-        for (let j = 1; j < nums.length; j++){
-            if (nums[i] + nums[j] === target && i !== j) {
-                return [i,j];
-            }
-        }
-    }
-    return null;
-};
-
-console.log(twoSum([2,5,5,11], 10));
-
+// console.log(sum(1)(2)); // 3
+// console.log( sum(5)(-1)(2) ); // 6
+// console.log( sum(6)(-1)(-2)(-3) ); // 0
+// console.log( sum(0)(1)(2)(3)(4)(5) ); // 15
