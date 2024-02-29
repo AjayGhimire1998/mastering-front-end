@@ -92,10 +92,10 @@
 // console.log(arr1);
 // console.log(arr2);
 
-function hash() {
-    let arr1 = ["ajay", "ghimire"];
-    console.log(Array.prototype.push.apply(arr1,arguments) ); // 1,2
-    console.log(arr1);
-  }
+// function hash() {
+//     let arr1 = ["ajay", "ghimire"];
+//     console.log(Array.prototype.push.apply(arr1,arguments) ); // 1,2
+//     console.log(arr1);
+//   }
 
-  hash(1, 2)
+//   hash(1, 2)
