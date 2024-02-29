@@ -119,7 +119,6 @@
 
 // }
 
-
 // let animal = {
 //   eats: true,
 // }
@@ -140,14 +139,34 @@
 
 // console.log(rabbit.eats);
 
-// 
+//
 
 // if(!String.prototype.reverse){
-//   String.prototype.reverse = function(str){
-//     return [...str].reverse().join("");
+//   String.prototype.reverse = function(){
+//     return [...this].reverse().join("");
 //   }
 // }
 
-
-// let res = String.prototype.reverse("Ajay")
+// let res = "Ajay".reverse()
 // console.log(res);
+
+// let obj = {
+//   0: "Hello",
+//   1: "world!",
+//   length: 2,
+// };
+
+// let arr = ["From", "Australia"];
+
+// let res = Array.prototype.push.apply(arr, obj)
+// console.log(arr);
+
+if (!Function.prototype.defer) {
+  Function.prototype.defer = function (x) {
+    setTimeout(this, x);
+  };
+}
+function f() {
+  console.log("Hello!");
+}
+f.defer(1000);
