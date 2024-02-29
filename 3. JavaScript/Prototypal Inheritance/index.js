@@ -116,4 +116,38 @@
 //   } else {
 //     console.log("Inheited: " + prop);
 //   }
+
 // }
+
+
+// let animal = {
+//   eats: true,
+// }
+
+// function Rabbit(name){
+//   this.name = name;
+// }
+
+// console.log(Rabbit === Rabbit.prototype.constructor);
+
+// Rabbit.prototype = animal;
+
+// let rabbit = new Rabbit("Whityy");
+
+// for(let prop in rabbit){
+//   console.log(prop);
+// }
+
+// console.log(rabbit.eats);
+
+// 
+
+// if(!String.prototype.reverse){
+//   String.prototype.reverse = function(str){
+//     return [...str].reverse().join("");
+//   }
+// }
+
+
+// let res = String.prototype.reverse("Ajay")
+// console.log(res);
