@@ -88,6 +88,9 @@
 // }
 // let user = new User("Ajay", 25);
 // console.log(user.name, user.age); // John
+/* The class Clock defines a clock object that can display and update the current time in hours,
+minutes, and seconds. */
+/* This code defines a class called `Clock` with the following methods: */
 
 // class Clock {
 //   constructor({ template }) {
@@ -125,4 +128,11 @@
 // }
 
 // let clock = new Clock({ template: "h:m:s" });
-// clock.start();
+// // clock.start();
+
+// console.log(clock.hasOwnProperty('stop')); // true
+// console.log(clock.hasOwnProperty('start')); // true
+// console.log(clock.hasOwnProperty('render')); // true
+
+
+//Class Inheritance"
