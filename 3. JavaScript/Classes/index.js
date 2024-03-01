@@ -7,7 +7,6 @@
 //   }
 // }
 
-
 // console.log(typeof User);
 
 // // ...or, more precisely, the constructor method
@@ -175,30 +174,86 @@ minutes, and seconds. */
 //   console.log(prop);
 // }
 
-let arrLike = {
-  0: "1",
-  1: "2",
-  length: 2,
-  [Symbol.iterator]() {
-    let i = 0;
-    return {
-      next: () => {
-        if (i < this.length) {
-          return { value: this[i++], done: false };
-        }
-        return { value: undefined, done: true };
-      },
-    };
-  },
-};
+// let arrLike = {
+//   0: "1",
+//   1: "2",
+//   length: 2,
+//   [Symbol.iterator]() {
+//     let i = 0;
+//     return {
+//       next: () => {
+//         if (i < this.length) {
+//           return { value: this[i++], done: false };
+//         }
+//         return { value: undefined, done: true };
+//       },
+//     };
+//   },
+// };
 
-let itr = arrLike[Symbol.iterator]();
-// console.log(itr);
+// let itr = arrLike[Symbol.iterator]();
+// // console.log(itr);
 
-// console.log(itr.next());
-// console.log(itr.next());
-// console.log(itr.next());
+// // console.log(itr.next());
+// // console.log(itr.next());
+// // console.log(itr.next());
 
 // for (let prop of arrLike) {
 //   console.log(prop);
 // }
+
+// class Animal {
+//   constructor(name) {
+//     this.speed = 0;
+//     this.name = name;
+//   }
+//   // ...
+// }
+
+// class Rabbit extends Animal {
+//   constructor(name, earLength) {
+//     this.speed = 0;
+//     this.name = name;
+//     this.earLength = earLength;
+//   }
+
+//   // ...
+// }
+
+// // Doesn't work!
+// let rabbit = new Rabbit("White Rabbit", 10);
+// console.log(rabbit);
+
+// let animal = {
+//   name: "Animal",
+//   eat() {
+//     // animal.eat.[[HomeObject]] == animal
+//     console.log(`${this.name} eats.`);
+//   },
+// };
+
+// animal.eat();
+
+// class PowerArray extends Array {
+//   isEmpty() {
+//     return this.length === 0;
+//   }
+//   static get [Symbol.species]() {
+//     return Array;
+//   }
+// }
+
+// let arr = new PowerArray(1, 2, 5, 10, 50);
+// let filteredArr = arr.filter(item => item >= 10);
+// console.log(filteredArr); // 10, 50
+// console.log(arr.constructor === PowerArray;
+
+function Rabbit() {}
+let rabbit = new Rabbit();
+
+// console.log(rabbit.__proto__);
+// console.log(rabbit instanceof  Rabbit);
+
+// console.log(Rabbit.prototype.isPrototypeOf(rabbit));
+// changed the prototype
+// Rabbit.prototype = {};
