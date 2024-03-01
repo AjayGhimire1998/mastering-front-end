@@ -117,16 +117,109 @@
 
 // console.log(error.name); // Error
 // console.log(error.message); //
-let json = '{ "age": 30 }'; // incomplete data
+// let json = '{ "age": 30 }'; // incomplete data
 
-try {
-  let user = JSON.parse(json); // <-- no errors
+// try {
+//   let user = JSON.parse(json); // <-- no errors
 
-  if (!user.name) {
-    throw new SyntaxError("Incomplete data: no name"); // (*)
+//   if (!user.name) {
+//     throw new SyntaxError("Incomplete data: no name"); // (*)
+//   }
+
+//   console.log(user.name);
+// } catch (err) {
+//   console.log("JSON Error: " + err.message); // JSON Error: Incomplete data: no name
+// }
+
+// let json = '{ "age": 30 }'; // incomplete data
+// try {
+//   let user = JSON.parse(json);
+
+//   if (!user.name) {
+//     throw new SyntaxError("Incomplete data: no name");
+//   }
+
+//   blabla(); // unexpected error
+
+//   console.log(user.name);
+// } catch (err) {
+//   if (err instanceof SyntaxError) {
+//     console.log("JSON Error: " + err.message);
+//   } else {
+//     throw err; // rethrow (*)
+//   }
+// }
+
+// let json = '{ "age": 30 }';
+// function readData() {
+//   try {
+//     // ...
+//     blabla(); // error!
+//   } catch (err) {
+//     // ...
+//     if (!(err instanceof SyntaxError)) {
+//       throw err; // rethrow (don't know how to deal with it)
+//     }
+//   }
+// }
+
+// try {
+//   readData();
+// } catch (err) {
+//   console.log("External catch got: " + err); // caught it!
+// }
+
+// function fib(x) {
+//   let a = 1;
+//   let b = 1;
+
+//   for (let i = 3; i <= x; i++) {
+//     let temp = a + b;
+//     a = b;
+//     b = temp;
+//   } return b;
+// }
+
+// console.log(fib(10));
+
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+// function test(){
+//     throw new ValidationError("Whoops!")
+// }
+
+function readUser(json) {
+  let user = JSON.parse(json);
+
+  if (!user.age) {
+    throw new ValidationError("No age field");
   }
 
-  console.log(user.name);
+  if (!user.name) {
+    throw new ValidationError("No name field");
+  }
+
+  return user;
+}
+
+try {
+  let user = readUser('{ "age": 25, "name": "ajay" }');
+  console.log(user);
 } catch (err) {
-  console.log("JSON Error: " + err.message); // JSON Error: Incomplete data: no name
+  //   console.log(err.message);
+  //   console.log(err.name);
+  //   console.log(err.stack);
+
+  if (err instanceof ValidationError) {
+    console.log("Invalid data: " + err.message);
+  } else if (err instanceof SyntaxError) {
+    console.log("JSON syntax error: " + err.message);
+  } else {
+    throw err;
+  }
 }
