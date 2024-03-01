@@ -20,3 +20,21 @@
 
 // let user = new User();
 // console.log(user.sayHi === User.prototype.sayHi);
+
+// function User(name) {
+//   this.name = name;
+// }
+
+// User.prototype.sayHi = function () {
+//   return this.name;
+// };
+
+// let user = new User("ajay");
+
+
+// for(let prop in user){
+//     console.log(prop);
+// }
+
+// console.log(user.sayHi == User.prototype.sayHi);
+// console.log(user.sayHi());
