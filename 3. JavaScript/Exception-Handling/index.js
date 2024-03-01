@@ -189,6 +189,14 @@ class ValidationError extends Error {
   }
 }
 
+class PropertyRequiredError extends ValidationError {
+  constructor(property) {
+    super("No property: " + property);
+    this.name = this.constructor.name;
+    this.property = property;
+  }
+}
+
 // function test(){
 //     throw new ValidationError("Whoops!")
 // }
@@ -197,18 +205,20 @@ function readUser(json) {
   let user = JSON.parse(json);
 
   if (!user.age) {
-    throw new ValidationError("No age field");
+    // throw new ValidationError("No age field");
+    throw new PropertyRequiredError("age");
   }
 
   if (!user.name) {
-    throw new ValidationError("No name field");
+    // throw new ValidationError("No name field");
+    throw new PropertyRequiredError("name");
   }
 
   return user;
 }
 
 try {
-  let user = readUser('{ "age": 25, "name": "ajay" }');
+  let user = readUser('{ "age": 25}');
   console.log(user);
 } catch (err) {
   //   console.log(err.message);
@@ -217,6 +227,8 @@ try {
 
   if (err instanceof ValidationError) {
     console.log("Invalid data: " + err.message);
+    console.log(err.name);
+    console.log(err.property);
   } else if (err instanceof SyntaxError) {
     console.log("JSON syntax error: " + err.message);
   } else {
