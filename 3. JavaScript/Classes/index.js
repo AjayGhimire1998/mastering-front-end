@@ -248,8 +248,8 @@ minutes, and seconds. */
 // console.log(filteredArr); // 10, 50
 // console.log(arr.constructor === PowerArray;
 
-function Rabbit() {}
-let rabbit = new Rabbit();
+// function Rabbit() {}
+// let rabbit = new Rabbit();
 
 // console.log(rabbit.__proto__);
 // console.log(rabbit instanceof  Rabbit);
@@ -257,3 +257,53 @@ let rabbit = new Rabbit();
 // console.log(Rabbit.prototype.isPrototypeOf(rabbit));
 // changed the prototype
 // Rabbit.prototype = {};
+
+// let arr = []
+// console.log(arr.toString());
+
+// console.log(typeof []);
+
+// copy toString method into a variable for convenience
+// let objectToString = Object.prototype.toString;
+
+// // what type is this?
+// let arr = [];
+
+// console.log( objectToString.call(123) );
+
+// let user = {
+//   [Symbol.toStringTag]: "User",
+// };
+
+// console.log(Object.prototype.toString.call(user));
+
+// let Mixin1 = (superclass) =>
+//   class extends superclass {
+//     foo() {
+//       console.log("foo from Mixin1");
+//       if (super.foo) super.foo();
+//     }
+//   };
+
+// let Mixin2 = (superclass) =>
+//   class extends superclass {
+//     foo() {
+//       console.log("foo from Mixin2");
+//       if (super.foo) super.foo();
+//     }
+//   };
+
+// class S {
+//   foo() {
+//     console.log("foo from S");
+//   }
+// }
+
+// class C extends Mixin1(Mixin2(S)) {
+//   foo() {
+//     console.log("foo from C");
+//     super.foo();
+//   }
+// }
+
+// new C().foo();
