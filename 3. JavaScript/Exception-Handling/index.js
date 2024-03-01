@@ -79,3 +79,54 @@
 // finally {
 //     console.log("Exiting code.");
 // }
+
+// try {
+//   lalla;
+// } catch (err) {
+//   console.log("The engine can't understand this code, it's invalid");
+// }
+
+// try {
+//     lalala; // error, variable is not defined!
+//   } catch  {
+//     // console.log(err.name); // ReferenceError
+//     // console.log(err.message); // lalala is not defined
+//     // console.log(err.stack); // ReferenceError: lalala is not defined at (...call stack)
+
+//     // // Can also show an error as a whole
+//     // // The error is converted to string as "name: message"
+//     // console.log(err); // ReferenceError: lalala is not defined
+//     console.log("Error");
+//   }
+
+// let json = "{ bad json }";
+
+// try {
+
+//   let user = JSON.parse(json); // <-- when an error occurs...
+//   console.log( user.name ); // doesn't work
+
+// } catch (err) {
+//   // ...the execution jumps here
+//   console.log( "Our apologies, the data has errors, we'll try to request it one more time." );
+//   console.log( err.name );
+//   console.log( err.message );
+// }
+
+// let error = new Error("Things happen o_O");
+
+// console.log(error.name); // Error
+// console.log(error.message); //
+let json = '{ "age": 30 }'; // incomplete data
+
+try {
+  let user = JSON.parse(json); // <-- no errors
+
+  if (!user.name) {
+    throw new SyntaxError("Incomplete data: no name"); // (*)
+  }
+
+  console.log(user.name);
+} catch (err) {
+  console.log("JSON Error: " + err.message); // JSON Error: Incomplete data: no name
+}
