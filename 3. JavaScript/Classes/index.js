@@ -7,6 +7,7 @@
 //   }
 // }
 
+
 // console.log(typeof User);
 
 // // ...or, more precisely, the constructor method
@@ -134,5 +135,70 @@ minutes, and seconds. */
 // console.log(clock.hasOwnProperty('start')); // true
 // console.log(clock.hasOwnProperty('render')); // true
 
-
 //Class Inheritance"
+
+// class Animal {
+//   constructor(name) {
+//     this.speed = 0;
+//     this.name = name;
+//   }
+//   run(speed) {
+//     this.speed = speed;
+//     console.log(`${this.name} runs with speed ${this.speed}.`);
+//   }
+//   stop() {
+//     this.speed = 0;
+//     console.log(`${this.name} stands still.`);
+//   }
+// }
+
+// let animal = new Animal("My animal");
+// animal.run(20);
+
+// class Rabbit extends Animal {
+//   hide() {
+//     console.log(`${this.name} hides!`);
+//   }
+// }
+
+// let rabbit = new Rabbit("White Rabbit");
+
+// rabbit.run(5); // White Rabbit runs with speed 5.
+// rabbit.hide();
+
+// Number.prototype[Symbol.iterator] = function () {
+//   return this.toString()[Symbol.iterator]();
+// };
+
+// let num = 1234;
+// for (let prop of num) {
+//   console.log(prop);
+// }
+
+let arrLike = {
+  0: "1",
+  1: "2",
+  length: 2,
+  [Symbol.iterator]() {
+    let i = 0;
+    return {
+      next: () => {
+        if (i < this.length) {
+          return { value: this[i++], done: false };
+        }
+        return { value: undefined, done: true };
+      },
+    };
+  },
+};
+
+let itr = arrLike[Symbol.iterator]();
+// console.log(itr);
+
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+
+// for (let prop of arrLike) {
+//   console.log(prop);
+// }
