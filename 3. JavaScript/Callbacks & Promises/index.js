@@ -4,6 +4,9 @@
 //   script.onload = () => callback(script);
 //   script.onerror = () => callback(new Error(`Script load error for ${scr}`));
 
+const { log } = require("console");
+const { promisify } = require("util");
+
 //   document.head.append(script);
 // }
 
@@ -181,3 +184,54 @@
 //   console.log(error.errors[0]); // Error: Ouch!
 //   console.log(error.errors[1]); // Error: Error!
 // });
+
+//promisify
+
+const getSumAsync = (num1, num2, callback) => {
+  if (!num1 || !num2) {
+    return callback(new Error("Missing components"), null);
+  }
+  return callback(null, num1 + num2);
+};
+
+// // getSumAsync(1, 2, (err, result) => {
+// //   if (err) {
+// //     console.log(err);
+// //   } else {
+// //     console.log(result);
+// //   }
+// // });
+
+// const getSumPromise = promisify(getSumAsync);
+
+// getSumPromise(1, 5).then((res) => console.log(res));
+
+// const myPromisify = (fn) => {
+//   return (...args) => {
+//     return new Promise((resolve, reject) => {
+//       function customCallback(err, ...results) {
+//         if (err) {
+//           return reject(err);
+//         } else {
+//           return resolve(results.length === 1 ? results[0] : results);
+//         }
+//       }
+
+//       args.push(customCallback);
+//       fn.call(this, ...args);
+//     });
+//   };
+// };
+// const getSumPromise = myPromisify(getSumAsync);
+// getSumPromise(100, 200).then((res) => console.log(res));
+
+// let promise1 = Promise.resolve();
+// let promise2 = Promise.resolve();
+
+// promise1
+// .then(() => console.log(1))
+// .then(() => console.log(2));
+
+// promise2
+// .then(() => console.log(3))
+// .then(() => console.log(4))
