@@ -4,8 +4,7 @@
 //   script.onload = () => callback(script);
 //   script.onerror = () => callback(new Error(`Script load error for ${scr}`));
 
-const { log } = require("console");
-const { promisify } = require("util");
+// const { promisify } = require("util");
 
 //   document.head.append(script);
 // }
@@ -235,3 +234,80 @@ const getSumAsync = (num1, num2, callback) => {
 // promise2
 // .then(() => console.log(3))
 // .then(() => console.log(4))
+
+//async await
+
+// async function hello() {
+//   return "HELLO";
+// }
+
+// hello().then(console.log);
+
+// async function f() {
+//   let promise = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("done!"), 1000);
+//   });
+
+//   let result = promise;
+
+//   console.log(result.then(console.log));
+//   console.log("DONE???");
+// }
+
+// async function f() {
+//   let promise = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("done!"), 1000);
+//   });
+
+//   let result = await promise;
+
+//   console.log(result);
+//   console.log("DONE???");
+// }
+
+// f();
+
+// async function showAvatar(githubName) {
+//   let githubResponse = await fetch(
+//     `https://api.github.com/users/${githubName}`
+//   );
+//   let githubUser = await githubResponse.json();
+
+//   let img = document.createElement("img");
+//   img.src = githubUser.avatar_url;
+//   document.body.append(img);
+
+//   await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+//   img.remove();
+//   return githubUser;
+// }
+
+// showAvatar("AjayGhimire1998")
+
+// (async () => {
+//   let githubResponse = await fetch(
+//     `https://api.github.com/users/AjayGhimire1998`
+//   );
+
+//   console.log("RESPONSE:" +  githubResponse);
+//   let githubUser = await githubResponse.json();
+//   console.log("USER:" + githubUser);
+// })();
+
+// function promisify(fn) {
+//   return function (...args) {
+//     return new Promise((resolve, reject) => {
+//       function customCallback(err, ...results) {
+//         if (err) {
+//           reject(err);
+//         } else {
+//           resolve(results.length === 1 ? results[0] : results);
+//         }
+//       }
+
+//       args.push(customCallback);
+//       fn.call(this, ...args);
+//     });
+//   };
+// }
