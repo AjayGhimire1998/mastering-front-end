@@ -311,3 +311,37 @@ const getSumAsync = (num1, num2, callback) => {
 //     });
 //   };
 // }
+
+// async function f() {
+//   try {
+//     let response = await Promise.reject(new Error("Whoops!"));
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+// async function f() {
+//   await Promise.reject(new Error("SUPPP"));
+// }
+
+// f().catch(console.log);
+
+async function f() {
+  // try {
+  let response = await fetch("/no-user-here");
+  let user = await response.json();
+  // }
+  // } catch (err) {
+  //   // catches errors both in fetch and response.json
+  //   console.log(err);
+  // }
+}
+
+f()
+  .then(() => console.log("success!"))
+  .catch((err) => {
+    console.log(err.message);
+  })
+  .finally(() => {
+    console.log("DONE@");
+  });
