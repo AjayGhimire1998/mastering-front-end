@@ -117,18 +117,67 @@
 
 // Promise.all([
 //   new Promise((resolve) => setTimeout(() => resolve(1), 3000)),
-//   new Promise((resolve) => setTimeout(() => resolve(2), 2000)),
+//   new Promise((resolve, reject) =>
+//     setTimeout(() => reject(new Error("WHOPPYY DODO")), 2000)
+//   ),
 //   new Promise((resolve) => setTimeout(() => resolve(3), 1000)),
 // ]).then(console.log);
 
-let urls = [
-  "https://api.github.com/users/iliakan",
-  "https://api.github.com/users/remy",
-  "https://api.github.com/users/jeresig",
-];
+// let urls = [
+//   "https://api.github.com/users/iliakan",
+//   "https://api.github.com/users/remy",
+//   "https://api.github.com/users/jeresig",
+// ];
 
-let requests = urls.map((url) => fetch(url));
+// let requests = urls.map((url) => fetch(url));
 
-Promise.all(requests).then((res) =>
-  res.forEach((r) => alert(`${r.url}: ${r.status}`))
-);
+// Promise.all(requests).then((res) =>
+//   res.forEach((r) => alert(`${r.url}: ${r.status}`))
+// );
+
+// let urls = [
+//   "https://api.github.com/users/iliakan",
+//   "https://api.github.com/users/remy",
+//   "https://no-such-url",
+// ];
+
+// Promise.allSettled(urls.map((u) => fetch(u))).then((results) => {
+//   results.forEach((res, index) => {
+//     if (res.status === "fulfilled") {
+//       console.log(`${urls[index]}: ${res.value.status}`);
+//     }
+
+//     if (res.status === "rejected") {
+//       console.log(`${urls[index]}: ${res.reason}`);
+//     }
+//   });
+// });
+
+// Promise.race([
+//   new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+//   new Promise((resolve, reject) =>
+//     setTimeout(() => reject(new Error("Whoops!")), 2000)
+//   ),
+//   new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000)),
+// ]).then(console.log); // 1
+
+// Promise.any([
+//   new Promise((resolve, reject) =>
+//     setTimeout(() => reject(new Error("Whoops!")), 1000)
+//   ),
+//   new Promise((resolve, reject) => setTimeout(() => resolve(1), 4000)),
+//   new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000)),
+// ]).then(alert);
+
+// Promise.any([
+//   new Promise((resolve, reject) =>
+//     setTimeout(() => reject(new Error("Ouch!")), 1000)
+//   ),
+//   new Promise((resolve, reject) =>
+//     setTimeout(() => reject(new Error("Error!")), 2000)
+//   ),
+// ]).catch((error) => {
+//   console.log(error.constructor.name); // AggregateError
+//   console.log(error.errors[0]); // Error: Ouch!
+//   console.log(error.errors[1]); // Error: Error!
+// });
