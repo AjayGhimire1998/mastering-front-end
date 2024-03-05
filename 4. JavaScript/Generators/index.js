@@ -137,16 +137,90 @@
 //     yield 2;
 //     yield 3;
 //   }
-  
+
 //   const g = gen();
-  
+
 //   console.log(g.next());
 //   console.log(g.return('foo'))
 //   console.log(g.next());
 
-
 //async iterables and generators
 
+// let range = {
+//   from: 1,
+//   to: 5,
 
+//   [Symbol.asyncIterator]() {
+//     return {
+//       current: this.from,
+//       last: this.to,
 
+//       async next() {
+//         await new Promise((resolve, reject) => {
+//           setTimeout(resolve, 1000);
+//         });
 
+//         if (this.current <= this.last) {
+//           return { done: false, value: this.current++ };
+//         } else {
+//           return { done: true, value: undefined };
+//         }
+//       },
+//     };
+//   },
+// };
+
+// (async () => {
+//   for await (let value of range) {
+//     console.log(value);
+//   }
+// })();
+
+// async function* generateSeq(start, end) {
+//   for (let i = start; i <= end; i++) {
+//     await new Promise((resolve) => setTimeout(resolve, 1000));
+//     yield i;
+//   }
+// }
+
+// (async () => {
+//     let generator = generateSeq(1,5);
+//     for await(let val of generator){
+//         console.log(val);
+//     }
+// })();
+
+async function* fetchCommits(repo) {
+  let url = `https://api.github.com/repos/${repo}/commits`;
+
+  while (url) {
+    const response = await fetch(url, {
+      // (1)
+      headers: { "User-Agent": "Our script" }, // github needs any user-agent header
+    });
+
+    const body = await response.json();
+
+    let nextPage = response.headers.get("Link").match(/<(.*?)>; rel="next"/);
+    nextPage = nextPage?.[1];
+
+    url = nextPage;
+
+    for (let commit of body) {
+      yield commit;
+    }
+  }
+}
+
+(async () => {
+  let count = 0;
+  for await (const commit of fetchCommits(
+    "AjayGhimire1998/mastering-front-end"
+  )) {
+    console.log(commit);
+
+    if (++count == 100) {
+      break;
+    }
+  }
+})();
