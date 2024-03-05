@@ -63,25 +63,52 @@
 
 // promise.catch((err) => console.log(err.message));
 
-function loadScript(src) {
-  return new Promise(function (resolve, reject) {
-    let script = document.createElement("script");
-    script.src = src;
+// function loadScript(src) {
+//   return new Promise(function (resolve, reject) {
+//     let script = document.createElement("script");
+//     script.src = src;
 
-    script.onload = () => resolve(script);
-    script.onerror = () => reject(new Error(`Script load error fro ${src}`));
+//     script.onload = () => resolve(script);
+//     script.onerror = () => reject(new Error(`Script load error fro ${src}`));
 
-    document.head.append(script);
+//     document.head.append(script);
+//   });
+// }
+
+// let promise = loadScript("./load.js");
+
+// promise.then(
+//   (script) => alert(`${script.src} is loaded`),
+//   (error) => alert(`Error: ${error.message}`)
+// );
+
+// promise.finally(() => {
+//   alert("Finally is run!");
+// });
+
+// async function loadJson(url) {
+//   const res = await fetch(url);
+//   return await res.json();
+// }
+
+async function loadGithubUser(name) {
+  const res = await fetch(`https://api.github.com/users/${name}`);
+  return await res.json();
+}
+
+function showAvatar(githubUser) {
+  return new Promise((resolve, reject) => {
+    let img = document.createElement("img");
+    img.src = githubUser.avatar_url;
+    document.body.append(img);
+
+    setTimeout(() => {
+      img.remove();
+      resolve(githubUser);
+    }, 2000);
   });
 }
 
-let promise = loadScript("./load.js");
-
-promise.then(
-  (script) => alert(`${script.src} is loaded`),
-  (error) => alert(`Error: ${error.message}`)
-);
-
-promise.finally(() => {
-  alert("Finally is run!");
-});
+loadGithubUser("AjayGhimire1998")
+  .then(showAvatar)
+  .then((githubUser) => alert(`Finished showing ${githubUser.name}`));
