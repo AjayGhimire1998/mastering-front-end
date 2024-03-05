@@ -91,24 +91,44 @@
 //   return await res.json();
 // }
 
-async function loadGithubUser(name) {
-  const res = await fetch(`https://api.github.com/users/${name}`);
-  return await res.json();
-}
+// async function loadGithubUser(name) {
+//   const res = await fetch(`https://api.github.com/users/${name}`);
+//   return await res.json();
+// }
 
-function showAvatar(githubUser) {
-  return new Promise((resolve, reject) => {
-    let img = document.createElement("img");
-    img.src = githubUser.avatar_url;
-    document.body.append(img);
+// function showAvatar(githubUser) {
+//   return new Promise((resolve, reject) => {
+//     let img = document.createElement("img");
+//     img.src = githubUser.avatar_url;
+//     document.body.append(img);
 
-    setTimeout(() => {
-      img.remove();
-      resolve(githubUser);
-    }, 2000);
-  });
-}
+//     setTimeout(() => {
+//       img.remove();
+//       resolve(githubUser);
+//     }, 2000);
+//   });
+// }
 
-loadGithubUser("AjayGhimire1998")
-  .then(showAvatar)
-  .then((githubUser) => alert(`Finished showing ${githubUser.name}`));
+// loadGithubUser("AjayGhimire1998")
+//   .then(showAvatar)
+//   .then((githubUser) => alert(`Finished showing ${githubUser.name}`));
+
+// let hello = "hello world"
+
+// Promise.all([
+//   new Promise((resolve) => setTimeout(() => resolve(1), 3000)),
+//   new Promise((resolve) => setTimeout(() => resolve(2), 2000)),
+//   new Promise((resolve) => setTimeout(() => resolve(3), 1000)),
+// ]).then(console.log);
+
+let urls = [
+  "https://api.github.com/users/iliakan",
+  "https://api.github.com/users/remy",
+  "https://api.github.com/users/jeresig",
+];
+
+let requests = urls.map((url) => fetch(url));
+
+Promise.all(requests).then((res) =>
+  res.forEach((r) => alert(`${r.url}: ${r.status}`))
+);
