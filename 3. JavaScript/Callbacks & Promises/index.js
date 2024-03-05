@@ -33,11 +33,20 @@
 //   console.log(promise.result);
 // }, 2000);
 
-let promise = new Promise(function (resolve, reject) {
-  // setTimeout(() => resolve("done!"), 1000);
-  reject(new Error("SOmethinfs wron!"));
-});
+// let promise = new Promise(function (resolve, reject) {
+//   setTimeout(() => resolve("done!"), 1000);
+//   // reject(new Error("SOmethinfs wron!"));
+// });
 
+// promise
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   }).finally(() => {
+//     console.log("COMPLETED!");
+//   })
 // promise.then(
 //   (result) => {
 //     console.log(result);
