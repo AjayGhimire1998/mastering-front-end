@@ -219,7 +219,7 @@ async function* fetchCommits(repo) {
   )) {
     console.log(commit);
 
-    if (++count == 100) {
+    if (++count == 10) {
       break;
     }
   }
