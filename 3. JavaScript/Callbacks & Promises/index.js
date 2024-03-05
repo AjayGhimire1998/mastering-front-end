@@ -1,5 +1,3 @@
-// import { loadNow } from "./load";
-
 // function loadScript(scr, callback) {
 //   let script = document.createElement("script");
 //   script.src = scr;
@@ -10,6 +8,9 @@
 // }
 
 // loadScript("./load.js", (script) => {
+//   if (script instanceof Error) {
+//     alert("ERRORRRR!!");
+//   }
 //   alert(`cool, loaded, ${script.src}`);
 // });
 
@@ -61,3 +62,26 @@
 // });
 
 // promise.catch((err) => console.log(err.message));
+
+function loadScript(src) {
+  return new Promise(function (resolve, reject) {
+    let script = document.createElement("script");
+    script.src = src;
+
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error(`Script load error fro ${src}`));
+
+    document.head.append(script);
+  });
+}
+
+let promise = loadScript("./load.js");
+
+promise.then(
+  (script) => alert(`${script.src} is loaded`),
+  (error) => alert(`Error: ${error.message}`)
+);
+
+promise.finally(() => {
+  alert("Finally is run!");
+});
