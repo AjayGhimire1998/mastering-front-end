@@ -333,3 +333,38 @@
 
 // console.log(array[-1]); // 3
 // console.log(array[-2]); // 2
+
+function makeObservable(target) {
+  // 1. Initialize handlers store
+  const handlers = [];
+
+  // Store the handler function in array for future calls
+  function observe(handler) {
+    handlers.push(handler);
+  }
+
+  // 2. Create a proxy to handle changes
+  const proxy = new Proxy(target, {
+    set(target, property, value, receiver) {
+      let success = Reflect.set(...arguments); // forward the operation to object
+      if (success) {
+        // if there were no error while setting the property
+        // call all handlers
+        handlers.forEach((handler) => handler(property, value));
+      }
+      return success;
+    },
+  });
+
+  return [proxy, observe];
+}
+
+const originalUser = {};
+const [user, observe] = makeObservable(originalUser);
+
+observe((key, value) => {
+  console.log(`SET ${key}=${value}`);
+});
+
+user.name = "John";
+
