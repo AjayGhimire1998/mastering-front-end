@@ -152,15 +152,184 @@
 
 //inrange with has trap
 
-let range = {
-  start: 1,
-  end: 10,
-};
+// let range = {
+//   start: 1,
+//   end: 10,
+// };
 
-range = new Proxy(range, {
-  has(target, prop) {
-    return prop >= target.start && prop <= target.end;
-  },
-});
+// range = new Proxy(range, {
+//   has(target, prop) {
+//     return prop >= target.start && prop <= target.end;
+//   },
+// });
 
-console.log(2 in range);
+// console.log(2 in range);
+
+//wrapping func apply()
+
+// function delay(f, ms) {
+//     // return a wrapper that passes the call to f after the timeout
+//     return function() { // (*)
+//       setTimeout(() => f.apply(this, arguments), ms);
+//     };
+//   }
+
+//   function sayHi(user) {
+//     console.log(`Hello, ${user}!`);
+//   }
+
+//   // after this wrapping, calls to sayHi will be delayed for 3 seconds
+//   sayHi = delay(sayHi, 3000);
+
+//   sayHi("John");
+
+//   console.log(delay.length);
+
+// let user = {
+//     name: "John",
+//   };
+
+//   user = new Proxy(user, {
+//     get(target, prop, receiver) {
+//       console.log(`GET ${prop}`);
+//       return Reflect.get(target, prop, receiver); // (1)
+//     },
+//     set(target, prop, val, receiver) {
+//       console.log(`SET ${prop}=${val}`);
+//       return Reflect.set(target, prop, val, receiver); // (2)
+//     }
+//   });
+
+//   let name = user.name; // shows "GET name"
+//   user.name = "Pete";
+//   console.log(user);
+
+//proxying a getter
+
+// let user = {
+//   _name: "Guest",
+//   get name() {
+//     return this._name;
+//   },
+// };
+
+// let userProxy = new Proxy(user, {
+//   get(target, prop, receiver) {
+//     return Reflect.get(target, prop, receiver); // (*) target = user
+//   },
+// });
+
+// let admin = {
+//   __proto__: userProxy,
+//   _name: "Admin",
+// };
+
+// console.log(userProxy.name);
+// console.log(admin.name);
+
+// let map = new Map();
+
+// let proxy = new Proxy(map, {});
+
+// proxy.set('test', 1);
+
+// let map = new Map();
+
+// let proxy = new Proxy(map, {
+//   get(target, prop, receiver) {
+//     let value = Reflect.get(...arguments);
+//     return typeof value == 'function' ? value.bind(target) : value;
+//   }
+// });
+
+// proxy.set('test', 1);
+// console.log(proxy.get('test')); // 1 (works!
+
+// class User {
+//   #name = "Guest";
+
+//   getName() {
+//     return this.#name;
+//   }
+// }
+
+// let user = new User();
+
+// // console.log(user.getName());
+
+// user = new Proxy(user, {});
+// console.log(user.getName());
+
+// class User {
+//   #name = "Guest";
+
+//   getName() {
+//     return this.#name;
+//   }
+// }
+
+// let user = new User();
+
+// user = new Proxy(user, {
+//   get(target, prop, receiver) {
+//     let value = Reflect.get(...arguments);
+//     return typeof value === "function" ? value.bind(target) : value;
+//   },
+// });
+
+// console.log(user.getName());
+
+//revocable proxy
+
+// let object = {
+//   data: "Valuable data",
+// };
+
+// let { proxy, revoke } = Proxy.revocable(object, {});
+
+// console.log(proxy.data);
+
+// revoke();
+
+// console.log(proxy.data);
+
+// let user = {
+//   name: "John",
+// };
+
+// function wrap(target) {
+//   return new Proxy(target, {
+//     get(target, prop, receiver) {
+//       if (prop in target) {
+//         return Reflect.get(...arguments);
+//       } else {
+//         throw new ReferenceError(`Cannot find ${prop} in ${target}`);
+//       }
+//     },
+//   });
+// }
+
+// user = wrap(user);
+
+// console.log(user.name); // John
+// console.log(user.age);
+
+// let array = [1, 2, 3];
+
+// array = new Proxy(array, {
+//   get(target, prop, receiver) {
+//     // if (prop in target) {
+//     //   return Reflect.get(target, prop, receiver);
+//     // } else {
+//     //   return target[target.length - (Math.abs(prop))];
+//     // }
+
+//     if (prop < 0) {
+//       prop = +prop + target.length;
+//     }
+//     return Reflect.get(...arguments);
+//   },
+// });
+
+// console.log(array[-1]); // 3
+// console.log(array[-2]); // 2
