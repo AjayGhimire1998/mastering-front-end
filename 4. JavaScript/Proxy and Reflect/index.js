@@ -150,10 +150,17 @@
 
 // console.log(user.checkPassword("**"));
 
-
 //inrange with has trap
 
 let range = {
-    start: 1,
-    end: 10
-  };
+  start: 1,
+  end: 10,
+};
+
+range = new Proxy(range, {
+  has(target, prop) {
+    return prop >= target.start && prop <= target.end;
+  },
+});
+
+console.log(2 in range);
