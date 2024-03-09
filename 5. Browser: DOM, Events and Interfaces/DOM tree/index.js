@@ -20,7 +20,12 @@
 //   location.href = "https://wikipedia.org"; // redirect the browser to another URL
 // }
 
-document.body.style.background = 'red'; // make the background red
+document.body.style.background = 'yellow'; // make the background red
 
 setTimeout(() => document.body.style.background = '', 3000); // return back
+
+
+// document.body.innerHTML = `<span>SUPP</span>`
+
+alert(document.documentElement)
 
