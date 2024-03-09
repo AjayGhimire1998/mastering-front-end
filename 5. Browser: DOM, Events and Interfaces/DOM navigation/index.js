@@ -53,11 +53,15 @@
 // let div  = document.querySelector('div');
 // console.log(div.outerHTML);
 
+// let div = document.querySelector("div");
+// // div.outerHTML = '<p>A new element</p>';
+// // console.log(div.firstChild.data);
+// // console.log(div);
 
+// let text = div.firstChild;
+// console.log(text.data); // Hello
 
+// let comment = text.nextSibling;
+// console.log(comment.data);
 
-let div = document.querySelector('div');
-div.outerHTML = '<p>A new element</p>';
-console.log(div.firstChild.data);
-console.log(div);
-
+// alert(document.constructor.name)
