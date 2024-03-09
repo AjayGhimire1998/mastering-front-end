@@ -31,7 +31,6 @@
 //   alert(document.body.childNodes[i]);
 // }
 
-
 // for (let node of document.body.childNodes) {
 //     alert(node); // shows all nodes from the collection
 //   }
@@ -40,8 +39,25 @@
 
 // console.dir(document.body.firstChild )
 
-alert( document.body.innerHTML ); // read the current contents
-document.body.innerHTML = 'console.log("hello")'; 
+// alert( document.body.innerHTML ); // read the current contents
+// document.body.innerHTML = 'console.log("hello")';
+// let chatDiv = `<div>Hello<img src='smile.gif'/> !</div>`;
+// document.body.append(chatDiv);
+
+// chatDiv.innerHTML += "How goes?";
+
+// eval(document.body.innerHTML);
+
+// console.log(document.body.outerHTML);
+
+// let div  = document.querySelector('div');
+// console.log(div.outerHTML);
 
 
-eval(document.body.innerHTML)
+
+
+let div = document.querySelector('div');
+div.outerHTML = '<p>A new element</p>';
+console.log(div.firstChild.data);
+console.log(div);
+
