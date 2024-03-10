@@ -28,21 +28,100 @@
     <script>
         // document.write('<b>Hello from JS</b>');
 
-        let ul = document.createElement('ul');
-        document.body.append(ul);
 
-        while (true) {
-            let data = prompt("Enter the text for the list item", "");
+        // adding list to dom
+        // let ul = document.createElement('ul');
+        // document.body.append(ul);
 
-            if (!data) {
-                break;
+        // while (true) {
+        //     let data = prompt("Enter the text for the list item", "");
+
+        //     if (!data) {
+        //         break;
+        //     }
+
+
+        //     let li = document.createElement('li');
+        //     li.textContent = data;
+        //     ul.append(li);
+        // }
+
+
+        //createTree(cont, data);
+
+        let data = {
+            "Fish": {
+                "trout": {},
+                "salmon": {}
+            },
+
+            "Tree": {
+                "Huge": {
+                    "sequoia": {},
+                    "oak": {}
+                },
+                "Flowering": {
+                    "apple tree": {},
+                    "magnolia": {}
+                }
             }
+        };
+
+        // function createTree(container, data) {
+        //     container.innerHTML = createTreeText(data);
+        // }
+
+        // function createTreeText(obj) {
+        //     let li = '';
+        //     let ul;
+
+        //     for (let key in obj) {
+        //         li += '<li>' + key + createTreeText(obj[key]) + '</li>';
+        //     }
+
+        //     if (li) {
+        //         ul = '<ul>' + li + '</ul>'
+        //     }
+
+        //     return ul || '';
+        // }
+        // let container = document.createElement('div');
+
+        // createTree(container, data)
+
+        // document.body.append(container);
 
 
-            let li = document.createElement('li');
-            li.textContent = data;
-            ul.append(li);
-        }
+        //or
+
+        // function createTree(container, data) {
+        //     container.append(createTreeDom(data));
+        // }
+
+        // function createTreeDom(obj) {
+        //     if (!Object.keys(obj)) return;
+
+        //     let ul = document.createElement('ul');
+
+        //     for (let key in obj) {
+        //         let li = document.createElement('li');
+        //         li.innerHTML = key;
+
+        //         let childUl = createTreeDom(obj[key]);
+
+        //         if (childUl) {
+        //             li.append(childUl);
+        //         }
+
+        //         ul.append(li);
+        //     }
+        //     return ul;
+        // }
+        // let container = document.createElement('div');
+
+        // createTree(container, data)
+
+        // document.body.append(container);
     </script>
 </body>
 
