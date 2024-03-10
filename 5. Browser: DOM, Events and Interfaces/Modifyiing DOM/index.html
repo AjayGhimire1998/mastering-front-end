@@ -65,7 +65,7 @@
 
 
     <!-- date calender -->
-    <style>
+    <!-- <style>
         table {
             border-collapse: collapse;
         }
@@ -81,34 +81,37 @@
             font-weight: bold;
             background-color: #E6E6E6;
         }
-    </style>
-    <div id="calendar"></div>
+    </style> -->
+    <!-- <div id="calendar"></div>
     <table>
         <caption>Monthly Expenses</caption>
         <thead>
-          <tr>
-            <th>Category</th>
-            <th>Amount</th>
-          </tr>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Rent</td>
-            <td>$1000</td>
-          </tr>
-          <tr>
-            <td>Utilities</td>
-            <td>$150</td>
-          </tr>
+            <tr>
+                <td>Rent</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td>Utilities</td>
+                <td>$150</td>
+            </tr>
         </tbody>
         <tfoot>
-          <tr>
-            <td>Total</td>
-            <td>$1150</td>
-          </tr>
+            <tr>
+                <td>Total</td>
+                <td>$1150</td>
+            </tr>
         </tfoot>
-      </table>
-      
+    </table> -->
+
+    <!-- shownotification -->
+
+
     <script>
         // document.write('<b>Hello from JS</b>');
 
@@ -221,57 +224,84 @@
         // }
 
 
-        //calender 
+        //calender
 
-        function createCalendar(elem, year, month) {
+        // function createCalendar(elem, year, month) {
 
-            let mon = month - 1; // months in JS are 0..11, not 1..12
-            let d = new Date(year, mon);
+        //     let mon = month - 1; // months in JS are 0..11, not 1..12
+        //     let d = new Date(year, mon);
 
-            let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
+        //     let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
 
-            // spaces for the first row
-            // from Monday till the first day of the month
-            // * * * 1  2  3  4
-            for (let i = 0; i < getDay(d); i++) {
-                table += '<td></td>';
+        //     // spaces for the first row
+        //     // from Monday till the first day of the month
+        //     // * * * 1  2  3  4
+        //     for (let i = 0; i < getDay(d); i++) {
+        //         table += '<td></td>';
+        //     }
+
+        //     // <td> with actual dates
+        //     while (d.getMonth() == mon) {
+        //         table += '<td>' + d.getDate() + '</td>';
+
+        //         if (getDay(d) % 7 == 6) { // sunday, last day of week - newline
+        //             table += '</tr><tr>';
+        //         }
+
+        //         d.setDate(d.getDate() + 1);
+        //     }
+
+        //     // add spaces after last days of month for the last row
+        //     // 29 30 31 * * * *
+        //     if (getDay(d) != 0) {
+        //         for (let i = getDay(d); i < 7; i++) {
+        //             table += '<td></td>';
+        //         }
+        //     }
+
+        //     // close the table
+        //     table += '</tr></table>';
+
+        //     elem.innerHTML = table;
+        // }
+
+        // function getDay(date) { // get day number from 0 (monday) to 6 (sunday)
+        //     let day = date.getDay();
+        //     if (day == 0) day = 7; // make Sunday (0) the last day
+        //     return day - 1;
+        // }
+
+        // createCalendar(calendar, 2012, 9);
+
+
+        //show notification
+        function showNotification({
+            top = 0, right = 0, className, html
+        }) {
+            let notification = document.createElement('div');
+            notification.className = "notification";
+
+            if (className) {
+                notification.classList.add(className);
             }
 
-            // <td> with actual dates
-            while (d.getMonth() == mon) {
-                table += '<td>' + d.getDate() + '</td>';
+            notification.style.top = top + 'px';
+            notification.style.right = right + 'px';
 
-                if (getDay(d) % 7 == 6) { // sunday, last day of week - newline
-                    table += '</tr><tr>';
-                }
+            notification.innerHTML = html;
+            document.body.append(notification);
 
-                d.setDate(d.getDate() + 1);
-            }
-
-            // add spaces after last days of month for the last row
-            // 29 30 31 * * * *
-            if (getDay(d) != 0) {
-                for (let i = getDay(d); i < 7; i++) {
-                    table += '<td></td>';
-                }
-            }
-
-            // close the table
-            table += '</tr></table>';
-
-            elem.innerHTML = table;
+            setTimeout(() => notification.remove(), 1500)
         }
-
-        function getDay(date) { // get day number from 0 (monday) to 6 (sunday)
-            let day = date.getDay();
-            if (day == 0) day = 7; // make Sunday (0) the last day
-            return day - 1;
-        }
-
-        createCalendar(calendar, 2012, 9);
-
-
-        
+        let i = 1;
+        setInterval(() => {
+            showNotification({
+                top: 10,
+                right: 10,
+                html: 'Hello ' + i++,
+                className: "welcome"
+            });
+        }, 2000);
     </script>
 
 </body>
