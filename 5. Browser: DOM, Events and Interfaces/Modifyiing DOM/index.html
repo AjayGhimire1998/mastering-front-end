@@ -16,7 +16,7 @@
     </ol>
     <div id="first">First</div>
     <div id="second">Second</div> -->
-    <style>
+    <!-- <style>
         .alert {
             padding: 15px;
             border: 1px solid #d6e9c6;
@@ -24,7 +24,91 @@
             color: #3c763d;
             background-color: #dff0d8;
         }
+    </style> -->
+    <!-- Showing descendants count -->
+    <!-- <ul>
+        <li>Animals
+            <ul>
+                <li>Mammals
+                    <ul>
+                        <li>Cows</li>
+                        <li>Donkeys</li>
+                        <li>Dogs</li>
+                        <li>Tigers</li>
+                    </ul>
+                </li>
+                <li>Other
+                    <ul>
+                        <li>Snakes</li>
+                        <li>Birds</li>
+                        <li>Lizards</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Fishes
+            <ul>
+                <li>Aquarium
+                    <ul>
+                        <li>Guppy</li>
+                        <li>Angelfish</li>
+                    </ul>
+                </li>
+                <li>Sea
+                    <ul>
+                        <li>Sea trout</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul> --->
+
+
+    <!-- date calender -->
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 3px;
+            text-align: center;
+        }
+
+        th {
+            font-weight: bold;
+            background-color: #E6E6E6;
+        }
     </style>
+    <div id="calendar"></div>
+    <table>
+        <caption>Monthly Expenses</caption>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rent</td>
+            <td>$1000</td>
+          </tr>
+          <tr>
+            <td>Utilities</td>
+            <td>$150</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td>$1150</td>
+          </tr>
+        </tfoot>
+      </table>
+      
     <script>
         // document.write('<b>Hello from JS</b>');
 
@@ -34,56 +118,56 @@
         // document.body.append(ul);
 
         // while (true) {
-        //     let data = prompt("Enter the text for the list item", "");
+        // let data = prompt("Enter the text for the list item", "");
 
-        //     if (!data) {
-        //         break;
-        //     }
+        // if (!data) {
+        // break;
+        // }
 
 
-        //     let li = document.createElement('li');
-        //     li.textContent = data;
-        //     ul.append(li);
+        // let li = document.createElement('li');
+        // li.textContent = data;
+        // ul.append(li);
         // }
 
 
         //createTree(cont, data);
 
-        let data = {
-            "Fish": {
-                "trout": {},
-                "salmon": {}
-            },
+        // let data = {
+        // "Fish": {
+        // "trout": {},
+        // "salmon": {}
+        // },
 
-            "Tree": {
-                "Huge": {
-                    "sequoia": {},
-                    "oak": {}
-                },
-                "Flowering": {
-                    "apple tree": {},
-                    "magnolia": {}
-                }
-            }
-        };
+        // "Tree": {
+        // "Huge": {
+        // "sequoia": {},
+        // "oak": {}
+        // },
+        // "Flowering": {
+        // "apple tree": {},
+        // "magnolia": {}
+        // }
+        // }
+        // };
 
         // function createTree(container, data) {
-        //     container.innerHTML = createTreeText(data);
+        // container.innerHTML = createTreeText(data);
         // }
 
         // function createTreeText(obj) {
-        //     let li = '';
-        //     let ul;
+        // let li = '';
+        // let ul;
 
-        //     for (let key in obj) {
-        //         li += '<li>' + key + createTreeText(obj[key]) + '</li>';
-        //     }
+        // for (let key in obj) {
+        // li += '<li>' + key + createTreeText(obj[key]) + '</li>';
+        // }
 
-        //     if (li) {
-        //         ul = '<ul>' + li + '</ul>'
-        //     }
+        // if (li) {
+        // ul = '<ul>' + li + '</ul>'
+        // }
 
-        //     return ul || '';
+        // return ul || '';
         // }
         // let container = document.createElement('div');
 
@@ -95,34 +179,101 @@
         //or
 
         // function createTree(container, data) {
-        //     container.append(createTreeDom(data));
+        // container.append(createTreeDom(data));
         // }
 
         // function createTreeDom(obj) {
-        //     if (!Object.keys(obj)) return;
+        // if (!Object.keys(obj)) return;
 
-        //     let ul = document.createElement('ul');
+        // let ul = document.createElement('ul');
 
-        //     for (let key in obj) {
-        //         let li = document.createElement('li');
-        //         li.innerHTML = key;
+        // for (let key in obj) {
+        // let li = document.createElement('li');
+        // li.innerHTML = key;
 
-        //         let childUl = createTreeDom(obj[key]);
+        // let childUl = createTreeDom(obj[key]);
 
-        //         if (childUl) {
-        //             li.append(childUl);
-        //         }
+        // if (childUl) {
+        // li.append(childUl);
+        // }
 
-        //         ul.append(li);
-        //     }
-        //     return ul;
+        // ul.append(li);
+        // }
+        // return ul;
         // }
         // let container = document.createElement('div');
 
         // createTree(container, data)
 
         // document.body.append(container);
+
+
+        //showing decendants count
+        // let lis = document.getElementsByTagName('li');
+        // console.log(lis);
+
+        // for (let li of lis) {
+        // let desCount = li.getElementsByTagName('li').length;
+
+        // if (!desCount) { continue; }
+
+        // li.firstChild.data += ' [ ' + desCount + ' ] ';
+        // }
+
+
+        //calender 
+
+        function createCalendar(elem, year, month) {
+
+            let mon = month - 1; // months in JS are 0..11, not 1..12
+            let d = new Date(year, mon);
+
+            let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
+
+            // spaces for the first row
+            // from Monday till the first day of the month
+            // * * * 1  2  3  4
+            for (let i = 0; i < getDay(d); i++) {
+                table += '<td></td>';
+            }
+
+            // <td> with actual dates
+            while (d.getMonth() == mon) {
+                table += '<td>' + d.getDate() + '</td>';
+
+                if (getDay(d) % 7 == 6) { // sunday, last day of week - newline
+                    table += '</tr><tr>';
+                }
+
+                d.setDate(d.getDate() + 1);
+            }
+
+            // add spaces after last days of month for the last row
+            // 29 30 31 * * * *
+            if (getDay(d) != 0) {
+                for (let i = getDay(d); i < 7; i++) {
+                    table += '<td></td>';
+                }
+            }
+
+            // close the table
+            table += '</tr></table>';
+
+            elem.innerHTML = table;
+        }
+
+        function getDay(date) { // get day number from 0 (monday) to 6 (sunday)
+            let day = date.getDay();
+            if (day == 0) day = 7; // make Sunday (0) the last day
+            return day - 1;
+        }
+
+        createCalendar(calendar, 2012, 9);
+
+
+        
     </script>
+
 </body>
 
 </html>
