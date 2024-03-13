@@ -16,6 +16,13 @@
 
 //text encode and decoder
 
-let decoder = new TextDecoder();
-let uint8Arr = new Uint8Array([72, 101, 108, 108, 111]);
-console.log(decoder.decode(uint8Arr)); //Hello
+// let decoder = new TextDecoder();
+// let uint8Arr = new Uint8Array([72, 101, 108, 108, 111]);
+// console.log(decoder.decode(uint8Arr)); //Hello
+
+
+// let encoder = new TextEncoder();
+
+// let str = "Hello World"
+
+// console.log(encoder.encode(str));
