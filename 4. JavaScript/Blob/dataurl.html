@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let link = document.createElement('a')
+        link.download = "hello.js";
+
+        let blob = new Blob(['console.log("Hello, World!")'], { type: 'text/javascript' })
+
+        let reader = new FileReader();
+        reader.readAsDataURL(blob);
+
+        reader.onload = function () {
+            link.href = reader.result;
+            link.click()
+        }
+
+        document.body.append(link);
+    </script>
+</body>
+
+</html>
