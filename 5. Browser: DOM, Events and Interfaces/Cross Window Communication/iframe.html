@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Origin Window</h1>
+
+    <iframe src="https://ajayghimire.com" frameborder="0" id="iframe"></iframe>
+
+    <script>
+
+        iframe.onload = function () {
+            let iframeWindow = iframe.contentWindow;
+
+            try {
+                let doc = iframe.contentDocument;
+            } catch (e) {
+                alert(e)
+            }
+
+            try {
+                let href = iframe.contentWindow.location.href
+            } catch (error) {
+                alert(error)
+            }
+
+            iframe.contentWindow.location = "/"
+            iframe.onload = null;
+        }
+    </script>
+</body>
+
+</html>
