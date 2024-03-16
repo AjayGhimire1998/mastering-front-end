@@ -9,25 +9,35 @@
 
 <body>
     <script>
-        async function fetchData() {
-            let url = "https://yashitech-server.onrender.com/";
+        // async function fetchData() {
+        //     let url = "https://yashitech-server.onrender.com/";
 
-            let response = await fetch(url);
+        //     let response = await fetch(url);
 
-            if (response) {
-                let data = await response.json();
-                console.log(data);
-                let headers = await response.headers
-                console.log(headers);
-                for (let [key, value] of headers) {
-                    console.log(`${key} = ${value}`);
-                }
-            }
-        }
+        //     if (response) {
+        //         let data = await response.json();
+        //         console.log(data);
+        //         let headers = await response.headers
+        //         console.log(headers);
+        //         for (let [key, value] of headers) {
+        //             console.log(`${key} = ${value}`);
+        //         }
+        //     }
+        // }
 
-        const obj = { 0: 'a', 2: 'b', 4: 'c' };
-        console.log(Object.entries(obj));
-        fetchData();
+        // const obj = { 0: 'a', 2: 'b', 4: 'c' };
+        // console.log(Object.entries(obj));
+        // fetchData();
+
+        // function doSomeForCallback(fn) {
+        //     let data = "Hello, world!";
+
+        //     fn(data);
+        // }
+
+        // doSomeForCallback(function (blob) {
+        //     console.log(blob);
+        // })
     </script>
 </body>
 
