@@ -35,5 +35,5 @@
   let result = new TextDecoder("utf-8").decode(chunksAll);
   ;
   let commits = JSON.parse(result);
-    console.log(commits[0]);
+    console.log(commits);
 })();
