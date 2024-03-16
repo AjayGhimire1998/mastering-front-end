@@ -15,10 +15,18 @@
             let response = await fetch(url);
 
             if (response) {
-                data = await response.json();
+                let data = await response.json();
                 console.log(data);
+                let headers = await response.headers
+                console.log(headers);
+                for (let [key, value] of headers) {
+                    console.log(`${key} = ${value}`);
+                }
             }
         }
+
+        const obj = { 0: 'a', 2: 'b', 4: 'c' };
+        console.log(Object.entries(obj));
         fetchData();
     </script>
 </body>
