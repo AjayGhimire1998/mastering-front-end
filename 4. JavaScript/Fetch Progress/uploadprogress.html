@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" name="file" id="file" onchange="onUpload(this)">
+
+    <script>
+
+        function onUpload(input) {
+            const file = input.files[0];
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.onload = function () {
+                console.log(reader.result);
+            }
+
+            reader.onprogress = function (event) {
+                console.log(Math.round(event.loaded / event.total * 100) + '%');
+            }
+
+            reader.onerror = function () {
+                console.log(reader.error);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
