@@ -15,9 +15,10 @@
 
             let file = input.files[0];
 
+            console.log(file.name);
             let reader = new FileReader();
 
-            reader.readAsArrayBuffer(file);
+            reader.readAsBinaryString(file);
 
             reader.onload = function () {
                 console.log(reader.result);
