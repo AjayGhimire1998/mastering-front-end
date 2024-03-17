@@ -1,0 +1,1 @@
+let url = new URL('https://google.com/search');
