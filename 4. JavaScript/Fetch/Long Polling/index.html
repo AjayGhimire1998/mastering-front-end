@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div id="message"></div>
+
+    <script>
+        let message = document.getElementById('message');
+        async function subscribe() {
+            let response = await fetch("https://yashitech-server.onrender.com/");
+
+            if (response.status == 502) {
+                await subscribe();
+            } else if (response.status != 200) {
+                message.innerHTML += response.statusText;
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                await subscribe();
+            } else {
+                let msg = await response.text();
+                message.innerHTML += msg;
+                await subscribe();
+
+            }
+        }
+        // subscribe();
+    </script>
 </body>
+
 </html>
