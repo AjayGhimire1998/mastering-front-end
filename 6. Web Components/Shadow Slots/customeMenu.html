@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <template id="tmpl">
+        <style>
+            /* menu styles */
+            .closed ul {
+                display: none;
+            }
+        </style>
+        <div class="menu">
+            <slot name="title"></slot>
+            <ul>
+                <slot name="item"></slot>
+            </ul>
+        </div>
+    </template>
+
+    <script>
+        customElements.define('custom-menu', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({ mode: 'open' });
+                this.shadowRoot.append(tmpl.content.cloneNode(true));
+
+                this.shadowRoot.querySelector('slot[name="title"]').onclick = () => {
+                    this.shadowRoot.querySelector('.menu').classList.toggle('closed');
+                }
+            }
+        })
+    </script>
+
+    <custom-menu>
+        <span slot="title">Candy menu</span>
+        <li slot="item">Lollipop</li>
+        <li slot="item">Fruit Toast</li>
+        <li slot="item">Cup Cake</li>
+    </custom-menu>
+</body>
+
+</html>
