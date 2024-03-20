@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <script>
+  <!-- <script>
     class TimeFormatted extends HTMLElement {
       constructor() {
         super();
@@ -32,10 +32,49 @@
     customElements.define("time-formatted", TimeFormatted)
 
     console.log(customElements.get('time-formatted'));
+  </script> -->
+
+
+  <script>
+    class TimeFormatted extends HTMLElement {
+      render() { // (1)
+        let date = new Date(this.getAttribute('datetime') || Date.now());
+
+        this.innerHTML = new Intl.DateTimeFormat("default", {
+          year: this.getAttribute('year') || undefined,
+          month: this.getAttribute('month') || undefined,
+          day: this.getAttribute('day') || undefined,
+          hour: this.getAttribute('hour') || undefined,
+          minute: this.getAttribute('minute') || undefined,
+          second: this.getAttribute('second') || undefined,
+          timeZoneName: this.getAttribute('time-zone-name') || undefined,
+        }).format(date);
+      }
+
+      connectedCallback() {
+        if (!this.rendered) {
+          this.render();
+          this.rendered = true;
+        }
+      }
+
+      static get observedAttributes() {
+        return ['datetime', 'year', 'month', 'day', 'hour', 'minute', 'second', 'time-zone-name'];
+      }
+
+      attributeChangedCallback(name, oldValue, newValue) {
+        this.render();
+      }
+
+    }
+    customElements.define("time-formatted", TimeFormatted);
   </script>
 
-  <time-formatted datetime="2019-12-01" year="numeric" month="long" day="numeric" hour="numeric" minute="numeric"
+  <time-formatted id="elem" year="numeric" month="long" day="numeric" hour="numeric" minute="numeric"
     second="numeric" time-zone-name="short"></time-formatted>
+  <script>
+    setInterval(() => elem.setAttribute('datetime', new Date()), 1000); // (5)
+  </script>
 </body>
 
 </html>
