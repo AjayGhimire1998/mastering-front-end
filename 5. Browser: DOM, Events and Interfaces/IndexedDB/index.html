@@ -47,24 +47,44 @@
 
 
         let openRequest = indexedDB.open("db2", 1);
+        let db;
         openRequest.onsuccess = function () {
-            let db = openRequest.result;
+            db = openRequest.result;
 
             console.log(db);
 
 
         }
         openRequest.onupgradeneeded = function () {
-            let db = openRequest.result;
+
             if (!db.objectStoreNames.contains('books')) {
                 db.createObjectStore('books', { keyPath: 'id' });
-           
+
             }
             console.log(db);
-
-            db.deleteObjectStore('books')
-            console.log(db);
         }
+
+        let transaction = db.transaction("books", "readwrite");
+
+let book = { id: 'js', price: 10 };
+
+let request = transaction.objectStore("books").add(book);
+
+request.onerror = function(event) {
+  // ConstraintError occurs when an object with the same id already exists
+  if (request.error.name == "ConstraintError") {
+    console.log("Book with such id already exists"); // handle the error
+    event.preventDefault(); // don't abort the transaction
+    // use another key for the book?
+  } else {
+    // unexpected error, can't handle it
+    // the transaction will abort
+  }
+};
+
+transaction.onabort = function() {
+  console.log("Error", transaction.error);
+};
     </script>
 </body>
 
