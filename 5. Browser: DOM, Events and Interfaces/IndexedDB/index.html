@@ -17,6 +17,21 @@
         //     }
         // })();
 
+        let openRequest = indexedDB.open("store", 1);
+
+        openRequest.onupgradeneeded = function(){
+            console.log("UPGRADE NEEDED!!");
+        }
+
+        openRequest.onerror = function (){
+            console.log("Error:" + openRequest.error);
+        }
+
+        openRequest.onsuccess = function(){
+            let db = openRequest.result;
+
+            console.log(db.name);
+        }
     </script>
 </body>
 
