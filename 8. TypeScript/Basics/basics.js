@@ -1,5 +1,8 @@
+"use strict";
 // let num: number = 5;
 // console.log(num);
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hello = void 0;
 // type Person = {
 //   name: string;
 // };
@@ -24,7 +27,16 @@
 // }
 // const message: Array<string> = ["Hello", "World"];
 // message.forEach((msg: string) => console.log(msg));
-function greet(person, date) {
-    console.log("Hello ".concat(person, ", today is ").concat(date, "!"));
+// function greet(person: string, date: Date) {
+//   console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+// }
+// greet("Brendan", new Date());
+// let nums: Array<number> = [1,2,3,4,5];
+// let nums2: number[] = [4,5,6,7,8];
+// console.log(nums2);
+var world = 'world';
+function hello(who) {
+    if (who === void 0) { who = world; }
+    return "Hello ".concat(who, "! ");
 }
-greet("Brendan", new Date());
+exports.hello = hello;

@@ -31,8 +31,20 @@
 // const message: Array<string> = ["Hello", "World"];
 // message.forEach((msg: string) => console.log(msg));
 
-function greet(person: string, date: Date) {
-  console.log(`Hello ${person}, today is ${date}!`);
-}
+// function greet(person: string, date: Date) {
+//   console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+// }
  
-greet("Brendan", new Date());
+// greet("Brendan", new Date());
+
+
+// let nums: Array<number> = [1,2,3,4,5];
+// let nums2: number[] = [4,5,6,7,8];
+
+// console.log(nums2);
+
+const world = 'world';
+
+export function hello(who: string = world): string {
+  return `Hello ${who}! `;
+}
