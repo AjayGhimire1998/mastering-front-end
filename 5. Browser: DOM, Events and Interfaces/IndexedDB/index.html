@@ -17,20 +17,53 @@
         //     }
         // })();
 
-        let openRequest = indexedDB.open("store", 1);
+        // let openRequest = indexedDB.open("store", 3);
 
-        openRequest.onupgradeneeded = function(){
-            console.log("UPGRADE NEEDED!!");
-        }
+        // openRequest.onupgradeneeded = function(event){
 
-        openRequest.onerror = function (){
-            console.log("Error:" + openRequest.error);
-        }
+        //     let db = openRequest.result;
+        //     switch (event.oldVersion) {
+        //         case 0:
+        //             console.log(event.oldVersion);
+        //             break;
+        //         case 1: 
+        //             console.log(event.newVersion);
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        //     console.log("UPGRADE NEEDED!!");
+        // }
 
-        openRequest.onsuccess = function(){
+        // openRequest.onerror = function (){
+        //     console.log("Error:" + openRequest.error);
+        // }
+
+        // openRequest.onsuccess = function(){
+        //     let db = openRequest.result;
+
+        //     console.log(db.name);
+        // }
+
+
+        let openRequest = indexedDB.open("db2", 1);
+        openRequest.onsuccess = function () {
             let db = openRequest.result;
 
-            console.log(db.name);
+            console.log(db);
+
+
+        }
+        openRequest.onupgradeneeded = function () {
+            let db = openRequest.result;
+            if (!db.objectStoreNames.contains('books')) {
+                db.createObjectStore('books', { keyPath: 'id' });
+           
+            }
+            console.log(db);
+
+            db.deleteObjectStore('books')
+            console.log(db);
         }
     </script>
 </body>
