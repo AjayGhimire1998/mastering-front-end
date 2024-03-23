@@ -92,18 +92,57 @@ checking. */
 
 //or
 
-type ID = number | string;
+// type ID = number | string;
 
+// /**
+//  * The function `printID` takes an `ID` parameter and prints it in uppercase if it is a string.
+//  * @param {ID} id - The `id` parameter is of type `ID`, which is expected to be a string.
+//  */
+// function printID(id: ID) {
+//   if (typeof id === "string") {
+//     console.log(id.toUpperCase());
+//   }
+//   console.log(id);
+// }
+
+// printID("ajay123");
+// printID(2445);
+
+//interfaces
 /**
- * The function `printID` takes an `ID` parameter and prints it in uppercase if it is a string.
- * @param {ID} id - The `id` parameter is of type `ID`, which is expected to be a string.
+ * The function `getBear` takes in a `Bear` object and returns it.
+ * @param {Bear} bear - The `bear` parameter in the `getBear` function is of type `Bear`, which extends
+ * the `Animal` interface and includes an additional property `honey` of type boolean.
+ * @returns The function `getBear` is returning an object with the properties `{name: "Bear1", honey:
+ * false}`.
  */
-function printID(id: ID) {
-  if (typeof id === "string") {
-    console.log(id.toUpperCase());
-  }
-  console.log(id);
-}
 
-printID("ajay123");
-printID(2445);
+// interface Animal {
+//   name: string;
+// }
+
+// interface Bear extends Animal{
+//   honey: boolean;
+// }
+
+// function getBear(bear: Bear){
+//   return bear;
+// }
+
+// console.log(getBear({name: "Bear1", honey: false}));
+
+// interface Animal {
+//   name: string;
+// }
+
+// interface Animal {
+//   honey: boolean;
+// }
+
+
+
+// function getBear(bear: Animal){
+//   return bear;
+// }
+
+// console.log(getBear({name: "Bear1"}));
