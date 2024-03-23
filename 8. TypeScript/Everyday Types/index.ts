@@ -139,10 +139,18 @@ checking. */
 //   honey: boolean;
 // }
 
-
-
 // function getBear(bear: Animal){
 //   return bear;
 // }
 
 // console.log(getBear({name: "Bear1"}));
+
+//type assertions
+// const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+
+// let x = "hello" as any as number;
+
+// // x = 2;
+
+// console.log(x);
+
