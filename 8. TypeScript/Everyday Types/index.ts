@@ -55,3 +55,11 @@
 
 
 //union types
+
+function printId(id: string|number){
+  console.log("ID is: " + id);
+}
+
+printId("ajay123")
+printId(234);
+// printId({id: 123})

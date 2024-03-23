@@ -39,3 +39,9 @@
 // printName({ first: "Bob" });
 // printName({ first: "Alice", last: "Alisson" });
 //union types
+function printId(id) {
+    console.log("ID is: " + id);
+}
+printId("ajay123");
+printId(234);
+// printId({id: 123})
