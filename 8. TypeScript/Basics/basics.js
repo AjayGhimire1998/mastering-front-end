@@ -1,8 +1,5 @@
-"use strict";
 // let num: number = 5;
 // console.log(num);
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.hello = void 0;
 // type Person = {
 //   name: string;
 // };
@@ -34,9 +31,8 @@ exports.hello = void 0;
 // let nums: Array<number> = [1,2,3,4,5];
 // let nums2: number[] = [4,5,6,7,8];
 // console.log(nums2);
-var world = 'world';
-function hello(who) {
-    if (who === void 0) { who = world; }
-    return "Hello ".concat(who, "! ");
-}
-exports.hello = hello;
+// const world = 'world';
+// export function hello(who: string = world): string {
+//   return `Hello ${who}! `;
+// }
+// let ok = "OK"

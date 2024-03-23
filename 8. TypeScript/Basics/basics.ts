@@ -43,8 +43,11 @@
 
 // console.log(nums2);
 
-const world = 'world';
+// const world = 'world';
 
-export function hello(who: string = world): string {
-  return `Hello ${who}! `;
-}
+// export function hello(who: string = world): string {
+//   return `Hello ${who}! `;
+// }
+
+
+// let ok = "OK"
