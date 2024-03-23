@@ -2,6 +2,7 @@ var myName = "Ajay";
 console.log(myName);
 //functions
 function greet(name) {
-    return new String("hello " + name);
+    return "hy " + name;
 }
-console.log(greet(myName).toString());
+// console.log(greet(myName, 35));
+// console.log(greet(42));

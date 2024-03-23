@@ -3,9 +3,10 @@ console.log(myName);
 
 //functions
 
-function greet(name: string): String {
-  return new String("hello " + name);
+function greet(name: string): string {
+  return "hy " + name;
 }
 
-console.log(greet(myName).toString());
+// console.log(greet(myName, 35));
+// console.log(greet(42));
 
