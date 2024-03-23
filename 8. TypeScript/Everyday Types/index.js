@@ -1,8 +1,20 @@
-var myName = "Ajay";
-console.log(myName);
-//functions
-function greet(name) {
-    return "hy " + name;
-}
-// console.log(greet(myName, 35));
-// console.log(greet(42));
+// let myName: string = "Ajay";
+// console.log(myName);
+// //functions
+// function greet(name: string): string {
+//   return "hy " + name;
+// }
+// // console.log(greet(myName, 35));
+// // console.log(greet(42));
+// async function getNum(): Promise<number> {
+//   return new Promise((res, rej) => res(26));
+// }
+// getNum().then((res) => {
+//   console.log(res);
+// }).then(() => {
+//     console.log(27);
+// })
+var names = ["ajay", "alice", "bob"];
+names.forEach(function (s) {
+    console.log(s.toUpperCase());
+});
