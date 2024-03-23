@@ -56,10 +56,22 @@
 
 //union types
 
-function printId(id: string|number){
-  console.log("ID is: " + id);
-}
+// function printId(id: string|number){
+//   console.log("ID is: " + id);
+// }
 
-printId("ajay123")
-printId(234);
+// printId("ajay123")
+// printId(234);
 // printId({id: 123})
+
+function welcomePeople(x: string[] | string) {
+  if (Array.isArray(x)) {
+    // Here: 'x' is 'string[]'
+    console.log("Hello, " + x.join(" and "));
+  } else {
+    // Here: 'x' is 'string'
+    console.log("Welcome lone traveler " + x);
+  }
+}
+welcomePeople(["alice", "jhane"])
+welcomePeople("ajay");
