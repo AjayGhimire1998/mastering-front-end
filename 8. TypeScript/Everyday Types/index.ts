@@ -1,3 +1,6 @@
+/* The commented code block is written in TypeScript and demonstrates various concepts such as variable
+declaration, functions, async functions, type annotations, union types, type aliases, and type
+checking. */
 // let myName: string = "Ajay";
 // console.log(myName);
 
@@ -38,7 +41,6 @@
 //   console.log(obj.first + obj.last);
 // }
 
-
 // function printName(obj: { first: string; last?: string }) {
 //   // Error - might crash if 'obj.last' wasn't provided!
 //   console.log(obj.last?.toUpperCase());
@@ -46,13 +48,12 @@
 //     // OK
 //     console.log(obj.last.toUpperCase());
 //   }
- 
+
 //   // A safe alternative using modern JavaScript syntax:
 //   console.log(obj.last?.toUpperCase());
 // }
 // printName({ first: "Bob" });
 // printName({ first: "Alice", last: "Alisson" });
-
 
 //union types
 
@@ -76,5 +77,33 @@
 // welcomePeople(["alice", "jhane"])
 // welcomePeople("ajay");
 
-
 //type aliases
+
+// type Name = {
+//   first: string,
+//   last: string
+// }
+
+// function printName(name: Name){
+//   console.log(name.first + " " + name.last );
+// }
+
+// printName({first: "Ajay", last: "Ghimire"});
+
+//or
+
+type ID = number | string;
+
+/**
+ * The function `printID` takes an `ID` parameter and prints it in uppercase if it is a string.
+ * @param {ID} id - The `id` parameter is of type `ID`, which is expected to be a string.
+ */
+function printID(id: ID) {
+  if (typeof id === "string") {
+    console.log(id.toUpperCase());
+  }
+  console.log(id);
+}
+
+printID("ajay123");
+printID(2445);
