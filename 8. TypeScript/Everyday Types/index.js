@@ -115,3 +115,27 @@ checking. */
 // let x = "hello" as any as number;
 // // x = 2;
 // console.log(x);
+//literal types
+// let x : "hola" = "hello";
+// // x = "hola";
+// console.log(x);
+// function compare(a: string, b: string): -1 | 0 | 1 {
+//   return a === b ? 0 : a > b ? 1 : -1;
+// }
+//literal types inference
+// function handleReq(url: string, method: "GET" | "POST"): void {
+//   console.log(url, method);
+// }
+// const req = { url: "www.xyx.com", method: "GET" };
+// handleReq(req.url, req.method as "GET");
+// const req2 = { url: "www.xyx.com", method: "POST" } as const;
+// handleReq(req2.url, req2.method);
+//null and undefined
+// function doSome(x:string | null | undefined){
+//   if(x === null || x === undefined){
+//     console.log("Null detected");
+//   } else {
+//     console.log("Hello " + x.toUpperCase());
+//   }
+// }
+// doSome("ok");
