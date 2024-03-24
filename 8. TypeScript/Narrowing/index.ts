@@ -22,7 +22,21 @@
 //   }
 // }
 
-
 // printAll(["ajay", "alice"])
 
-console.log(typeof 245215686561389562379857823n);
+// console.log(typeof 245215686561389562379857823n);
+
+// function printAll(strs: string | string[] | null) {
+//   if (strs && typeof strs === "object") {
+//     for (const s of strs) {
+//       console.log(s);
+//     }
+//   } else if (typeof strs === "string") {
+//     console.log(strs);
+//   } else {
+//     console.log("null");
+//   }
+// }
+
+// printAll(["ajay", "alice"]);
+// printAll("ajay");
