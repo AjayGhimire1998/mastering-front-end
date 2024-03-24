@@ -56,3 +56,37 @@
 // example("one", "one")
 // example("", false);
 
+//in operator narrowing
+
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    return animal.swim();
+  }
+
+  return animal.fly();
+}
+
+console.log(
+  move({
+    swim: () => {
+      return "I am swimming";
+    },
+  })
+);
+
+
+//instancof narrowing
+
+function logVal(x: Date | string){
+    if (x instanceof Date){
+        console.log(x.toUTCString());
+    } else {
+        console.log(x.toUpperCase());
+        
+    }
+}
+
+logVal(new Date())
