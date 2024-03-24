@@ -190,3 +190,11 @@ checking. */
 // }
 
 // doSome("ok");
+
+
+// function dangerousOP(x?: number | null){
+//   console.log(x!.toFixed(2));
+  
+// }
+
+// dangerousOP(9.6485)
