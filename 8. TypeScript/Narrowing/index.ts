@@ -1,3 +1,4 @@
+export {};
 // function padLeft(padding: number | string, input: string): string {
 //   if (typeof padding === "number") {
 //     return " ".repeat(padding) + input;
@@ -58,35 +59,69 @@
 
 //in operator narrowing
 
-type Fish = { swim: () => void };
-type Bird = { fly: () => void };
+// type Fish = { swim: () => void };
+// type Bird = { fly: () => void };
 
-function move(animal: Fish | Bird) {
-  if ("swim" in animal) {
-    return animal.swim();
+// function move(animal: Fish | Bird) {
+//   if ("swim" in animal) {
+//     return animal.swim();
+//   }
+
+//   return animal.fly();
+// }
+
+// console.log(
+//   move({
+//     swim: () => {
+//       return "I am swimming";
+//     },
+//   })
+// );
+
+// //instancof narrowing
+
+// function logVal(x: Date | string) {
+//   if (x instanceof Date) {
+//     console.log(x.toUTCString());
+//   } else {
+//     console.log(x.toUpperCase());
+//   }
+// }
+
+// logVal(new Date());
+
+//assignments
+
+// let x = Math.random() < 0.5 ? 10 : "hello world!";
+
+// let x: string | number;
+// x = 1;
+
+// console.log(x);
+
+// let x: number;
+// x = "goodbye!";
+
+// console.log(x);
+
+//flow analysis
+
+function example() {
+  let x: string | number | boolean;
+
+  x = Math.random() < 0.5;
+
+  console.log(x);
+
+  if (Math.random() < 0.5) {
+    x = "hello";
+    console.log(x);
+  } else {
+    x = 100;
+    console.log(x);
   }
 
-  return animal.fly();
+  return x;
 }
 
-console.log(
-  move({
-    swim: () => {
-      return "I am swimming";
-    },
-  })
-);
-
-
-//instancof narrowing
-
-function logVal(x: Date | string){
-    if (x instanceof Date){
-        console.log(x.toUTCString());
-    } else {
-        console.log(x.toUpperCase());
-        
-    }
-}
-
-logVal(new Date())
+example()
