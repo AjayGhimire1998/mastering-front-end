@@ -51,5 +51,8 @@ function myMap<Input, Output>(
   return arr.map(func);
 }
 
-const parsed = myMap([1, 2, 3], (n) => String(n));
+const parsed = myMap(["1", "2", "3"], (n) => parseInt(n));
 console.log(parsed);
+
+const parsed2 = myMap([1, 2, 3], (n) => String(n));
+console.log(parsed2);

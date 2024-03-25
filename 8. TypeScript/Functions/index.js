@@ -35,5 +35,7 @@
 function myMap(arr, func) {
     return arr.map(func);
 }
-var parsed = myMap([1, 2, 3], function (n) { return String(n); });
+var parsed = myMap(["1", "2", "3"], function (n) { return parseInt(n); });
 console.log(parsed);
+var parsed2 = myMap([1, 2, 3], function (n) { return String(n); });
+console.log(parsed2);
