@@ -22,13 +22,18 @@
 //   return new cont("hello");
 // }
 // console.log(fn());
-function firstElement(arr) {
-    return arr[arr.length - 1];
+// function firstElement<T>(arr: T[]): T | undefined {
+//   return arr[arr.length - 1];
+// }
+// // s is of type 'string'
+// const s = firstElement(["a", 5, false]);
+// // n is of type 'number'
+// const n = firstElement([1, 2, 3]);
+// // u is of type undefined
+// const u = firstElement([]);
+// console.log(s, n, u);
+function myMap(arr, func) {
+    return arr.map(func);
 }
-// s is of type 'string'
-var s = firstElement(["a", 5, false]);
-// n is of type 'number'
-var n = firstElement([1, 2, 3]);
-// u is of type undefined
-var u = firstElement([]);
-console.log(s, n, u);
+var parsed = myMap(["1", "2", "3"], function (n) { return parseInt(n); });
+console.log(parsed);
