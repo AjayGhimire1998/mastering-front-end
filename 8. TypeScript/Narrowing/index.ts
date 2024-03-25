@@ -137,8 +137,20 @@ export {};
 
 //discriminated unions
 
-interface Shape {
-  kind: "circle" | "square";
-  radius?: number;
-  sideLength?: number;
-}
+// interface Shape {
+//   kind: "circle" | "square";
+//   radius?: number;
+//   sideLength?: number;
+// }
+
+// // function handleShape(shape: Shape){
+// //     if(shape.kind === "rect"){
+
+// //     }
+// // }
+
+// function getArea(shape: Shape) {
+//   if (shape.kind === "circle") {
+//     return Math.PI * shape.radius ** 2;
+//   }
+// }
