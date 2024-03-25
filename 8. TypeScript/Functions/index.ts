@@ -57,23 +57,32 @@
 // const parsed2 = myMap([1, 2, 3], (n) => String(n));
 // console.log(parsed2);
 
-function longest<Type extends { length: number }>(a: Type, b: Type) {
-  if (a.length >= b.length) {
-    return a;
-  } else {
-    return b;
-  }
+// function longest<Type extends { length: number }>(a: Type, b: Type) {
+//   if (a.length >= b.length) {
+//     return a;
+//   } else {
+//     return b;
+//   }
+// }
+
+// const longerArray = longest([1, 2], [1, 2, 3]);
+// // longerString is of type 'alice' | 'bob'
+// const longerString = longest("alice", "bob");
+// // Error! Numbers don't have a 'length' property
+// // const notOK = longest(100, 10);
+
+// console.log(longerArray);
+// console.log(longerString);
+// console.log(notOK);
+
+// function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
+//   return arr1.concat(arr2);
+// }
+
+// const arr = combine<string | number>([1, 2, 3], ["hello"]);
+
+// console.log(arr);
+
+function f(x?: number) {
+  console.log(x);
 }
-
-const longerArray = longest([1, 2], [1, 2, 3]);
-// longerString is of type 'alice' | 'bob'
-const longerString = longest("alice", "bob");
-// Error! Numbers don't have a 'length' property
-const notOK = longest(100, 10);
-
-console.log(longerArray);
-console.log(longerString);
-console.log(notOK);
-
-
-
