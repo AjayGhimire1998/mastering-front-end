@@ -1,78 +1,12 @@
 //call signatures
-// type DescribableFunction = {
-//   description: string;
-//   (someArg: number): boolean;
-// };
-// function doSomething(fn: DescribableFunction) {
-//   console.log(fn.description + " returned " + fn(1));
-// }
-// function myFunc(someArg: number) {
-//   return someArg > 3;
-// }
-// myFunc.description = "default desc";
-// doSomething(myFunc);
-//construct signature
-// interface SomeObject {
-//   name: string;
-// }
-// type SomeConst = {
-//   new (s: string): any;
-// };
-// function fn(cont: SomeConst) {
-//   return new cont("hello");
-// }
-// console.log(fn());
-// function firstElement<T>(arr: T[]): T | undefined {
-//   return arr[arr.length - 1];
-// }
-// // s is of type 'string'
-// const s = firstElement(["a", 5, false]);
-// // n is of type 'number'
-// const n = firstElement([1, 2, 3]);
-// // u is of type undefined
-// const u = firstElement([]);
-// console.log(s, n, u);
-// function myMap<Input, Output>(
-//   arr: Input[],
-//   func: (arg: Input) => Output
-// ): Output[] {
-//   return arr.map(func);
-// }
-// const parsed = myMap(["1", "2", "3"], (n) => parseInt(n));
-// console.log(parsed);
-// const parsed2 = myMap([1, 2, 3], (n) => String(n));
-// console.log(parsed2);
-// function longest<Type extends { length: number }>(a: Type, b: Type) {
-//   if (a.length >= b.length) {
-//     return a;
-//   } else {
-//     return b;
-//   }
-// }
-// const longerArray = longest([1, 2], [1, 2, 3]);
-// // longerString is of type 'alice' | 'bob'
-// const longerString = longest("alice", "bob");
-// // Error! Numbers don't have a 'length' property
-// // const notOK = longest(100, 10);
-// console.log(longerArray);
-// console.log(longerString);
-// console.log(notOK);
-// function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
-//   return arr1.concat(arr2);
-// }
-// const arr = combine<string | number>([1, 2, 3], ["hello"]);
-// console.log(arr);
-//optional params
-// function f(x?: number) {
-//   console.log(x);
-// }
-// function f(_x = 10) {
-//     // ...
-//   }
-function myForEach(arr, callback) {
-    for (var i = 0; i < arr.length; i++) {
-        callback(arr[i], i);
+function makeDate(mOrTimestamp, d, y) {
+    if (d !== undefined && y !== undefined) {
+        return new Date(y, mOrTimestamp, d);
+    }
+    else {
+        return new Date(mOrTimestamp);
     }
 }
-myForEach([1, 2, 3], function (a) { return console.log(a); });
-myForEach([1.2, 2.3, 3.4], function (a, i) { return console.log(a.toFixed(2), i); });
+var d1 = makeDate(12345678);
+var d2 = makeDate(5, 5, 5);
+var d3 = makeDate(1, 3);

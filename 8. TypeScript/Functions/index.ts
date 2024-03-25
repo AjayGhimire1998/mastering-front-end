@@ -93,14 +93,37 @@
 //     // ...
 //   }
 
-function myForEach(
-  arr: any[],
-  callback: (arg: any, index?: number) => void
-): void {
-  for (let i = 0; i < arr.length; i++) {
-    callback(arr[i], i);
+// function myForEach(
+//   arr: any[],
+//   callback: (arg: any, index?: number) => void
+// ): void {
+//   for (let i = 0; i < arr.length; i++) {
+//     callback(arr[i], i);
+//   }
+// }
+
+// myForEach([1, 2, 3], (a) => console.log(a));
+// myForEach([1.2, 2.3, 3.4], (a, i) => console.log(a.toFixed(2), i));
+
+// function wow(s: string) {
+//   console.log(s);
+// }
+
+// function wow(s: string, n: number) {
+//   console.log(s, n);
+// }
+
+
+function makeDate(timestamp: number): Date;
+function makeDate(m: number, d: number, y: number): Date;
+function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
+  if (d !== undefined && y !== undefined) {
+    return new Date(y, mOrTimestamp, d);
+  } else {
+    return new Date(mOrTimestamp);
   }
 }
 
-myForEach([1, 2, 3], (a) => console.log(a));
-myForEach([1.2, 2.3, 3.4], (a, i) => console.log(a.toFixed(2), i));
+const d1 = makeDate(12345678);
+const d2 = makeDate(5, 5, 5);
+const d3 = makeDate(1, 3);
