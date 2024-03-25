@@ -10,3 +10,4 @@ function makeDate(mOrTimestamp, d, y) {
 var d1 = makeDate(12345678);
 var d2 = makeDate(5, 5, 5);
 var d3 = makeDate(1, 3);
+console.log(d1, d2, d3);
