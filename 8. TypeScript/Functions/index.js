@@ -62,6 +62,17 @@
 // }
 // const arr = combine<string | number>([1, 2, 3], ["hello"]);
 // console.log(arr);
-function f(x) {
-    console.log(x);
+//optional params
+// function f(x?: number) {
+//   console.log(x);
+// }
+// function f(_x = 10) {
+//     // ...
+//   }
+function myForEach(arr, callback) {
+    for (var i = 0; i < arr.length; i++) {
+        callback(arr[i], i);
+    }
 }
+myForEach([1, 2, 3], function (a) { return console.log(a); });
+myForEach([1.2, 2.3, 3.4], function (a, i) { return console.log(a.toFixed(2), i); });

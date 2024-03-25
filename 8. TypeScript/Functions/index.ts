@@ -83,6 +83,24 @@
 
 // console.log(arr);
 
-function f(x?: number) {
-  console.log(x);
+//optional params
+
+// function f(x?: number) {
+//   console.log(x);
+// }
+
+// function f(_x = 10) {
+//     // ...
+//   }
+
+function myForEach(
+  arr: any[],
+  callback: (arg: any, index?: number) => void
+): void {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], i);
+  }
 }
+
+myForEach([1, 2, 3], (a) => console.log(a));
+myForEach([1.2, 2.3, 3.4], (a, i) => console.log(a.toFixed(2), i));
