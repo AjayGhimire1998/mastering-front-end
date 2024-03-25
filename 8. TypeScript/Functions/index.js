@@ -32,10 +32,29 @@
 // // u is of type undefined
 // const u = firstElement([]);
 // console.log(s, n, u);
-function myMap(arr, func) {
-    return arr.map(func);
+// function myMap<Input, Output>(
+//   arr: Input[],
+//   func: (arg: Input) => Output
+// ): Output[] {
+//   return arr.map(func);
+// }
+// const parsed = myMap(["1", "2", "3"], (n) => parseInt(n));
+// console.log(parsed);
+// const parsed2 = myMap([1, 2, 3], (n) => String(n));
+// console.log(parsed2);
+function longest(a, b) {
+    if (a.length >= b.length) {
+        return a;
+    }
+    else {
+        return b;
+    }
 }
-var parsed = myMap(["1", "2", "3"], function (n) { return parseInt(n); });
-console.log(parsed);
-var parsed2 = myMap([1, 2, 3], function (n) { return String(n); });
-console.log(parsed2);
+var longerArray = longest([1, 2], [1, 2, 3]);
+// longerString is of type 'alice' | 'bob'
+var longerString = longest("alice", "bob");
+// Error! Numbers don't have a 'length' property
+var notOK = longest(100, 10);
+console.log(longerArray);
+console.log(longerString);
+console.log(notOK);
