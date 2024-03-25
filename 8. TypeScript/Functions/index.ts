@@ -15,4 +15,22 @@
 // myFunc.description = "default desc";
 // doSomething(myFunc);
 
+//construct signature
+
+// interface SomeObject {
+//   name: string;
+// }
+
+// type SomeConst = {
+//   new (s: string): any;
+// };
+
+
+// function fn(cont: SomeConst) {
+//   return new cont("hello");
+// }
+
+// console.log(fn());
+
+
 
