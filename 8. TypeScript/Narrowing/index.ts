@@ -106,22 +106,39 @@ export {};
 
 //flow analysis
 
-function example() {
-  let x: string | number | boolean;
+// function example() {
+//   let x: string | number | boolean;
 
-  x = Math.random() < 0.5;
+//   x = Math.random() < 0.5;
 
-  console.log(x);
+//   console.log(x);
 
-  if (Math.random() < 0.5) {
-    x = "hello";
-    console.log(x);
-  } else {
-    x = 100;
-    console.log(x);
-  }
+//   if (Math.random() < 0.5) {
+//     x = "hello";
+//     console.log(x);
+//   } else {
+//     x = 100;
+//     console.log(x);
+//   }
 
-  return x;
+//   return x;
+// }
+
+// example()
+
+// type Fish = { swim: () => void };
+// type Bird = { fly: () => void };
+
+// function isFish(pet: Fish | Bird): pet is Fish {
+//   return (pet as Fish).swim !== undefined;
+// }
+
+// console.log(isFish({ swim: () => "I swim" }));
+
+//discriminated unions
+
+interface Shape {
+  kind: "circle" | "square";
+  radius?: number;
+  sideLength?: number;
 }
-
-example()
